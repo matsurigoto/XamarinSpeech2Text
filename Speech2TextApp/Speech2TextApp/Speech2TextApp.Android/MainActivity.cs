@@ -8,17 +8,19 @@ namespace Speech2TextApp.Droid
     [Activity(Label = "Speech2TextApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        private bool isRecording;
-        private readonly int VOICE = 10;
-        private TextView textBox;
-        private Button recButton;
+        //private bool isRecording;
+        //private readonly int VOICE = 10;
+        //private TextView textBox;
+        //private Button recButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            isRecording = false;
-            SetContentView(Resource.Layout.Main);
+
+
+            //isRecording = false;
+            //SetContentView(Resource.Layout.Main);
             //recButton = FindViewById<Button>(Resource.Id.btnRecord);
             //textBox = FindViewById<TextView>(Resource.Id.textYourText);
 
