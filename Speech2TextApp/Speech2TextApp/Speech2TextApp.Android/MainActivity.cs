@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 namespace Speech2TextApp.Droid
 {
@@ -12,15 +13,25 @@ namespace Speech2TextApp.Droid
         //private readonly int VOICE = 10;
         //private TextView textBox;
         //private Button recButton;
+        private LinearLayout linearLayout1, linearLayout2, linearLayout3;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Main);
+            linearLayout1 = FindViewById<LinearLayout>(Resource.Id.firstEvent);
+            linearLayout2 = FindViewById<LinearLayout>(Resource.Id.secondEvent);
+            linearLayout3 = FindViewById<LinearLayout>(Resource.Id.thirdEvent);
 
+            linearLayout1.Click += delegate
+            {
+                var intent = new Intent(this, typeof(SwipeFormActivity));
+                this.StartActivity(intent);
+            };
 
 
             //isRecording = false;
-            //SetContentView(Resource.Layout.Main);
+
             //recButton = FindViewById<Button>(Resource.Id.btnRecord);
             //textBox = FindViewById<TextView>(Resource.Id.textYourText);
 
@@ -59,6 +70,11 @@ namespace Speech2TextApp.Droid
             //            StartActivityForResult(voiceIntent, VOICE);
             //        }
             //    };
+        }
+
+        private void LinearLayout1_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         //protected override void OnActivityResult(int requestCode, Result resultVal, Intent data)
