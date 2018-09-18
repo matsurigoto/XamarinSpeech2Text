@@ -1,5 +1,5 @@
-﻿using Android.App;
-using Android.OS;
+﻿using Android.OS;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 
@@ -19,7 +19,7 @@ namespace Speech2TextApp.Droid.Fragments
             View view = inflater.Inflate(Resource.Layout.Page1Fragment, container, false);
             textview = view.FindViewById<TextView>(Resource.Id.textPage1Fragement);
             textview.Text = Arguments.GetInt("count").ToString();
-            return inflater.Inflate(Resource.Layout.Page1Fragment, container, false);
+            return view;
         }
     }
 }

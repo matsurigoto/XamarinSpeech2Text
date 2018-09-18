@@ -1,5 +1,6 @@
 ﻿using Android.OS;
 using Android.Support.V4.App;
+using Speech2TextApp.Droid.Fragments;
 
 namespace Speech2TextApp.Droid.Adapter
 {
@@ -11,7 +12,7 @@ namespace Speech2TextApp.Droid.Adapter
 
         public override Fragment GetItem(int position)
         {
-            Fragment fragment = new Fragment();
+            Page1Fragment fragment = new Page1Fragment();
             Bundle bundle = new Bundle();
             bundle.PutInt("count", position);
             fragment.Arguments = bundle;

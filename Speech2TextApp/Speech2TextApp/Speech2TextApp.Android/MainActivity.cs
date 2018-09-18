@@ -29,6 +29,18 @@ namespace Speech2TextApp.Droid
                 this.StartActivity(intent);
             };
 
+            linearLayout2.Click += delegate
+            {
+                var intent = new Intent(this, typeof(SwipeFormActivity));
+                this.StartActivity(intent);
+            };
+
+            linearLayout3.Click += delegate
+            {
+                var intent = new Intent(this, typeof(SwipeFormActivity));
+                this.StartActivity(intent);
+            };
+
 
             //isRecording = false;
 
