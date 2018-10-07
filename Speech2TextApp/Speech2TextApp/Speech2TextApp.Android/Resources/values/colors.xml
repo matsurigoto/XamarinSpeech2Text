@@ -7,4 +7,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlue">#2894FF</color>
-</resources>
+    <color name="form_color_blue">#4A90E2</color>
+  </resources>
