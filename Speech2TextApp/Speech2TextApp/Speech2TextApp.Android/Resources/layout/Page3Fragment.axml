@@ -17,7 +17,7 @@
 			android:layout_height="match_parent"
 			android:layout_marginLeft="10px"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="1"/>
 
@@ -31,7 +31,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="2"/>
 
@@ -45,7 +45,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="3"/>
 
@@ -59,7 +59,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="4"/>
 
@@ -73,7 +73,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="5"/>
 	</LinearLayout>

@@ -17,7 +17,7 @@
 			android:layout_height="match_parent"
 			android:layout_marginLeft="10px"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="1"/>
 
@@ -31,7 +31,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="2"/>
 
@@ -45,7 +45,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="3"/>
 
@@ -59,7 +59,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="4"/>
 
@@ -73,7 +73,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:background="@drawable/circle"
-			android:textColor="@colors/form_color_blue"
+			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="5"/>
 	</LinearLayout>
@@ -101,7 +101,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:layout_marginRight="20px"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			<TextView
 				android:text="3"
@@ -111,7 +111,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:id="@+id/times"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			<TextView
 				android:text="紀錄檢視"
@@ -119,7 +119,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 		</LinearLayout>
 
@@ -137,7 +137,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			<TextView
 				android:text="陳鳳貴"
@@ -146,7 +146,7 @@
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 		</LinearLayout>
 
@@ -164,7 +164,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			<TextView
 				android:text="陳阿嬌"
@@ -173,7 +173,7 @@
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 		</LinearLayout>
 
@@ -191,7 +191,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			<TextView
 				android:text="母女"
@@ -200,7 +200,7 @@
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 		</LinearLayout>
 
@@ -218,7 +218,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			
 		</LinearLayout>
@@ -234,7 +234,7 @@
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 		</LinearLayout>
 
@@ -252,7 +252,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			
 		</LinearLayout>
@@ -308,7 +308,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			
 			
@@ -355,7 +355,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			
 			
@@ -386,7 +386,7 @@
 				android:minWidth="25px"
 				android:minHeight="25px"
 				android:textSize="14sp"
-				android:textColor="@colors/form_color_blue"
+				android:textColor="@color/form_color_blue"
 				android:layout_below="@id/circle_view01"/>
 			
 		</LinearLayout>
