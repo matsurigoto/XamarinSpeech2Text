@@ -83,8 +83,12 @@
 		android:textAppearance="?android:attr/textAppearanceMedium"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:layout_marginLeft="85px"
+		android:layout_marginTop="30px"
 		android:minWidth="25px"
 		android:minHeight="25px"
+		android:text="This is Text: 3"
+		android:textColor="@colors/form_color_blue"
 		android:id="@+id/textPage1Fragement"
 		android:layout_below="@id/circle_view01"/>
 
