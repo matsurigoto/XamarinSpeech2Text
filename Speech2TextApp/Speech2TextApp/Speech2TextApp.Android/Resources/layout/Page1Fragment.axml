@@ -77,19 +77,343 @@
 			android:gravity="center"
 			android:text="5"/>
 	</LinearLayout>
-
-	<TextView
-		android:text="Page 1 Fragemnt"
-		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="wrap_content"
+	<ScrollView
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent"
+	>
+	<LinearLayout
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginLeft="85px"
-		android:layout_marginTop="30px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:text="This is Text: 3"
-		android:textColor="@colors/form_color_blue"
-		android:id="@+id/textPage1Fragement"
-		android:layout_below="@id/circle_view01"/>
+		android:layout_marginLeft="47px"
+		android:layout_marginRight="85px"
+		android:layout_marginTop="100px"
+		android:orientation="vertical">
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="訪視次數"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_marginRight="20px"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			<TextView
+				android:text="3"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:id="@+id/times"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			<TextView
+				android:text="紀錄檢視"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+		</LinearLayout>
 
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="申請人"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			<TextView
+				android:text="陳鳳貴"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="受訪者"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			<TextView
+				android:text="陳阿嬌"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="申請者與受訪者關係"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			<TextView
+				android:text="母女"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="聯絡電話 "
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="0923877900"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="訪視地點"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			
+		</LinearLayout>
+		
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			
+		<Button
+			android:text="戶籍地址"
+			android:layout_width="100sp"
+			android:layout_height="wrap_content"
+			android:id="@+id/address1" />
+
+		<Button
+			android:text="居住地址"
+			android:layout_width="100sp"
+			android:layout_height="wrap_content"
+				android:layout_marginLeft="0px"
+				android:layout_marginRight="0px"
+			android:id="@+id/address2" />	
+			
+		<Button
+			android:text="其它"
+			android:layout_width="100sp"
+			android:layout_height="wrap_content"
+			android:id="@+id/address3" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			
+	
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="受訪者是否在家"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			
+			
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<RadioGroup
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:id="@+id/radioGroup1">
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:checked="true"
+						android:text="是"
+						android:id="@+id/radioButton1" />
+				<RadioButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="否"
+					android:id="@+id/radioButton2" />
+			</RadioGroup>
+			
+		</LinearLayout>
+
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+				
+			<TextView
+				android:text="訪視時間"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			
+			
+		</LinearLayout>
+		
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<DatePicker
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/datePicker1" />
+		</LinearLayout>
+		
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<TextView
+				android:text="訪視概述"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="20px"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@colors/form_color_blue"
+				android:layout_below="@id/circle_view01"/>
+			
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<EditText
+					android:inputType="textMultiLine"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:id="@+id/editText1" />
+		</LinearLayout>
+			<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<Button
+			android:text="下一步"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/next" />
+		</LinearLayout>
+	</LinearLayout>
+	</ScrollView>
+	
 </RelativeLayout>
