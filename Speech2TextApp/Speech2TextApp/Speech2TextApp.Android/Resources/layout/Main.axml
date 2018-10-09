@@ -19,13 +19,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:layout_marginBottom="30px"
-			android:textColor="#ffedf01d" />
+			android:textColor="@color/form_color_blue" />
         <TextView
 			android:text="共 3 筆  訪視資料"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#ffedf01d" />
+            android:textColor="@color/form_color_blue" />
     </LinearLayout>
 
     <LinearLayout
@@ -90,14 +90,14 @@
 					android:layout_height="wrap_content"
 					android:textColor="@color/form_color_blue"
 					android:layout_marginLeft="30px"
-					android:layout_weight="0.7"/>
+					android:layout_weight="0.8"/>
 					<TextView
 					android:text=" - "
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textColor="@color/form_color_blue"
-					android:layout_weight="1.3"/>
+					android:layout_weight="1.2"/>
 				</LinearLayout>
 			</LinearLayout>
 			<ImageView
@@ -136,7 +136,7 @@
 					android:textColor="@color/form_color_blue"
 					android:layout_marginTop="20px"
 					android:layout_marginLeft="30px"
-					android:layout_weight="0.7"/>
+					android:layout_weight="0.8"/>
 					<TextView
 					android:text="訪視次數 2 次"
 					android:textAppearance="?android:attr/textAppearanceMedium"
@@ -144,7 +144,7 @@
 					android:layout_height="wrap_content"
 					android:textColor="@color/form_color_blue"
 					android:layout_marginTop="20px"
-					android:layout_weight="1.3"/>
+					android:layout_weight="1.2"/>
 				</LinearLayout>
 			<LinearLayout
 				android:orientation="horizontal"
@@ -161,7 +161,7 @@
 					android:layout_marginLeft="30px"
 					android:layout_weight="0.9"/>
 					<TextView
-					android:text=" 2018/09/06 下午 3:25"
+					android:text="  2018/09/06 下午 3:25"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -204,7 +204,7 @@
 				android:textColor="@color/form_color_blue"
 				android:layout_marginLeft="30px"
 				android:layout_marginTop="20px"	
-				android:layout_weight="0.7"/>
+				android:layout_weight="0.8"/>
 				<TextView
 				android:text="訪視次數 4 次"
 				android:textAppearance="?android:attr/textAppearanceMedium"
@@ -212,7 +212,7 @@
 				android:layout_height="wrap_content"
 				android:textColor="@color/form_color_blue"
 				android:layout_marginTop="20px"
-				android:layout_weight="1.3"/>
+				android:layout_weight="1.2"/>
 			</LinearLayout>
 			<LinearLayout
 			android:orientation="horizontal"
@@ -225,11 +225,11 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="120px"
 				android:layout_height="wrap_content"
-				android:textColor="@color/form_color_blu"
+				android:textColor="@color/form_color_blue"
 				android:layout_marginLeft="30px" 
 				android:layout_weight="1.1"/>
 				<TextView
-				android:text=" 2018/09/06 下午 3:25"
+				android:text="  2018/09/06 下午 3:25"
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
