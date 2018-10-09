@@ -2916,6 +2916,9 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090028
 			public const int bottom = 2131296296;
 			
+			// aapt resource value: 0x7f0900c2
+			public const int btn_fragment_1_next = 2131296450;
+			
 			// aapt resource value: 0x7f09004b
 			public const int buttonPanel = 2131296331;
 			
@@ -3044,9 +3047,6 @@ namespace Speech2TextApp.Droid
 			
 			// aapt resource value: 0x7f09003f
 			public const int @fixed = 2131296319;
-			
-			// aapt resource value: 0x7f0900c2
-			public const int fragment_1_next = 2131296450;
 			
 			// aapt resource value: 0x7f090005
 			public const int home = 2131296261;

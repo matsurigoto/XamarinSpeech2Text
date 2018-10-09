@@ -129,9 +129,9 @@ namespace Speech2TextApp.Droid.Fragments
             radioButton2.Click += VisitStatusClick;
             #endregion
 
-            next = view.FindViewById<Button>(Resource.Id.fragment_1_next);
+            next = view.FindViewById<Button>(Resource.Id.btn_fragment_1_next);
             var nextEvent = (SwipeFormActivity)Activity;
-            next.Click += nextEvent.NextClicked;
+            next.Click += nextEvent.ClickNextButton;
 
             return view;
         }

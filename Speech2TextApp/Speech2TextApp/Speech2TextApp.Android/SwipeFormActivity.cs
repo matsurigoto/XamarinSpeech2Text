@@ -48,48 +48,21 @@ namespace Speech2TextApp.Droid
         //    }
         //}
 
-        public void NextClicked(object sender, EventArgs e)
+        public void ClickNextButton(object sender, EventArgs e)
         {
-            if (viewPager.CurrentItem == 0)
+            if (viewPager.CurrentItem < 4)
             {
-                return;
+                viewPager.CurrentItem = viewPager.CurrentItem + 1;
             }
-            viewPager.CurrentItem = viewPager.CurrentItem + 1;
-            //circle1.SetBackgroundResource(Resource.Drawable.circle);
-            //circle1.SetTextColor(Color.Blue);
-            //circle2.SetBackgroundResource(Resource.Drawable.circle);
-            //circle2.SetTextColor(Color.Blue);
-            //circle3.SetBackgroundResource(Resource.Drawable.circle);
-            //circle3.SetTextColor(Color.Blue);
-            //circle4.SetBackgroundResource(Resource.Drawable.circle);
-            //circle4.SetTextColor(Color.Blue);
-            //circle5.SetBackgroundResource(Resource.Drawable.circle);
-            //circle5.SetTextColor(Color.Blue);
-
-            //switch (viewPager.CurrentItem) {
-            //    case 0:
-            //        circle1.SetBackgroundResource(Resource.Drawable.circle_activity);
-            //        circle1.SetTextColor(Color.White);
-            //        break;
-            //    case 1:
-            //        circle2.SetBackgroundResource(Resource.Drawable.circle_activity);
-            //        circle2.SetTextColor(Color.White);
-            //        break;
-            //    case 2:
-            //        circle3.SetBackgroundResource(Resource.Drawable.circle_activity);
-            //        circle3.SetTextColor(Color.White);
-            //        break;
-            //    case 3:
-            //        circle4.SetBackgroundResource(Resource.Drawable.circle_activity);
-            //        circle4.SetTextColor(Color.White);
-            //        break;
-            //    case 4:
-            //        circle5.SetBackgroundResource(Resource.Drawable.circle_activity);
-            //        circle5.SetTextColor(Color.White);
-            //        break;
             
-            //}
+        }
 
+        public void ClickPrevButton(object sender, EventArgs e)
+        {
+            if (viewPager.CurrentItem > 0)
+            {
+                viewPager.CurrentItem = viewPager.CurrentItem -1 ;
+            }
         }
 
     }
