@@ -53,8 +53,7 @@ namespace Speech2TextApp.Droid
             if (viewPager.CurrentItem < 4)
             {
                 viewPager.CurrentItem = viewPager.CurrentItem + 1;
-            }
-            
+            }         
         }
 
         public void ClickPrevButton(object sender, EventArgs e)
