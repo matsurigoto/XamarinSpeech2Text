@@ -85,15 +85,13 @@
 			android:text="5"/>
 	</LinearLayout>
 
-	<ScrollView
-		android:layout_height="match_parent"
-		android:layout_width="match_parent">
+
 		<android.support.v4.view.ViewPager
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_below="@id/circle_view01"
 			android:id="@+id/swipeFormViewPager" />
-	</ScrollView>
+
 		
 	<Button
 		android:text="下一步"
