@@ -131,7 +131,7 @@ namespace Speech2TextApp.Droid.Fragments
 
             next = view.FindViewById<Button>(Resource.Id.fragment_1_next);
             var nextEvent = (SwipeFormActivity)Activity;
-            next.Click += nextEvent.Next_Clicked;
+            next.Click += nextEvent.NextClicked;
 
             return view;
         }

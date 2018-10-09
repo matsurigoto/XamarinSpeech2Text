@@ -48,8 +48,12 @@ namespace Speech2TextApp.Droid
         //    }
         //}
 
-        public void Next_Clicked(object sender, EventArgs e)
+        public void NextClicked(object sender, EventArgs e)
         {
+            if (viewPager.CurrentItem == 0)
+            {
+                return;
+            }
             viewPager.CurrentItem = viewPager.CurrentItem + 1;
             //circle1.SetBackgroundResource(Resource.Drawable.circle);
             //circle1.SetTextColor(Color.Blue);
