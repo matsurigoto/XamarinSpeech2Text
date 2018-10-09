@@ -68,6 +68,7 @@
     <Compile Include="Adapter\SwipeAdapter.cs" />
     <Compile Include="Fragments\Page1Fragment.cs" />
     <Compile Include="Fragments\Page2Fragment.cs" />
+    <Compile Include="Fragments\Page2LiveStatusDialog.cs" />
     <Compile Include="Fragments\Page3Fragment.cs" />
     <Compile Include="Fragments\Page4Fragment.cs" />
     <Compile Include="Fragments\Page5Fragment.cs" />
@@ -188,6 +189,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\blue_button_activity.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Page2LiveStatusDialog.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

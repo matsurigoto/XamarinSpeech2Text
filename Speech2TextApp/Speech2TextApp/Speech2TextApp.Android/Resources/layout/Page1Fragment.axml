@@ -282,7 +282,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 			    android:id="@+id/areaDesc"
-			    android:visibility="invisible"
+			    android:visibility="visible"
 				android:orientation="vertical">
 				<TextView
 					android:text="訪視概述"
@@ -290,8 +290,6 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginRight="20px"
-					android:minWidth="25px"
-					android:minHeight="25px"
 					android:textSize="14sp"
 					android:textColor="@color/form_color_blue"
 					/>
