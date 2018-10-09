@@ -2937,23 +2937,23 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f0900ac
 			public const int chronometer = 2131296428;
 			
-			// aapt resource value: 0x7f0900df
-			public const int circle1 = 2131296479;
+			// aapt resource value: 0x7f0900e6
+			public const int circle1 = 2131296486;
 			
-			// aapt resource value: 0x7f0900e0
-			public const int circle2 = 2131296480;
+			// aapt resource value: 0x7f0900e7
+			public const int circle2 = 2131296487;
 			
-			// aapt resource value: 0x7f0900e1
-			public const int circle3 = 2131296481;
+			// aapt resource value: 0x7f0900e8
+			public const int circle3 = 2131296488;
 			
-			// aapt resource value: 0x7f0900e2
-			public const int circle4 = 2131296482;
+			// aapt resource value: 0x7f0900e9
+			public const int circle4 = 2131296489;
 			
-			// aapt resource value: 0x7f0900e3
-			public const int circle5 = 2131296483;
+			// aapt resource value: 0x7f0900ea
+			public const int circle5 = 2131296490;
 			
-			// aapt resource value: 0x7f0900de
-			public const int circle_view01 = 2131296478;
+			// aapt resource value: 0x7f0900e5
+			public const int circle_view01 = 2131296485;
 			
 			// aapt resource value: 0x7f090039
 			public const int clip_horizontal = 2131296313;
@@ -3111,23 +3111,44 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f0900cd
 			public const int liveStatusE = 2131296461;
 			
+			// aapt resource value: 0x7f0900e1
+			public const int liveStatusOK = 2131296481;
+			
 			// aapt resource value: 0x7f0900cc
 			public const int liveStatusOrg = 2131296460;
 			
 			// aapt resource value: 0x7f0900c9
 			public const int liveStatusRant = 2131296457;
 			
+			// aapt resource value: 0x7f0900dc
+			public const int liveStatusRant1 = 2131296476;
+			
+			// aapt resource value: 0x7f0900dd
+			public const int liveStatusRant2 = 2131296477;
+			
+			// aapt resource value: 0x7f0900de
+			public const int liveStatusRant3 = 2131296478;
+			
+			// aapt resource value: 0x7f0900df
+			public const int liveStatusRant4 = 2131296479;
+			
+			// aapt resource value: 0x7f0900e0
+			public const int liveStatusRantCost = 2131296480;
+			
+			// aapt resource value: 0x7f0900db
+			public const int liveStatusRantType = 2131296475;
+			
 			// aapt resource value: 0x7f0900c8
 			public const int liveStatusSelf = 2131296456;
 			
-			// aapt resource value: 0x7f0900db
-			public const int liveTogether = 2131296475;
+			// aapt resource value: 0x7f0900e2
+			public const int liveTogether = 2131296482;
 			
-			// aapt resource value: 0x7f0900dd
-			public const int liveTogetherN = 2131296477;
+			// aapt resource value: 0x7f0900e4
+			public const int liveTogetherN = 2131296484;
 			
-			// aapt resource value: 0x7f0900dc
-			public const int liveTogetherY = 2131296476;
+			// aapt resource value: 0x7f0900e3
+			public const int liveTogetherY = 2131296483;
 			
 			// aapt resource value: 0x7f090081
 			public const int mainLinearLayout2 = 2131296385;
@@ -3135,8 +3156,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090085
 			public const int mainLinearLayout3 = 2131296389;
 			
-			// aapt resource value: 0x7f0900e8
-			public const int masked = 2131296488;
+			// aapt resource value: 0x7f0900ef
+			public const int masked = 2131296495;
 			
 			// aapt resource value: 0x7f0900a6
 			public const int media_actions = 2131296422;
@@ -3381,8 +3402,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f0900e5
-			public const int sliding_tabs = 2131296485;
+			// aapt resource value: 0x7f0900ec
+			public const int sliding_tabs = 2131296492;
 			
 			// aapt resource value: 0x7f090073
 			public const int smallLabel = 2131296371;
@@ -3423,8 +3444,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f0900e4
-			public const int swipeFormViewPager = 2131296484;
+			// aapt resource value: 0x7f0900eb
+			public const int swipeFormViewPager = 2131296491;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
@@ -3468,8 +3489,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090057
 			public const int title_template = 2131296343;
 			
-			// aapt resource value: 0x7f0900e6
-			public const int toolbar = 2131296486;
+			// aapt resource value: 0x7f0900ed
+			public const int toolbar = 2131296493;
 			
 			// aapt resource value: 0x7f090029
 			public const int top = 2131296297;
@@ -3507,8 +3528,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0900e7
-			public const int visible = 2131296487;
+			// aapt resource value: 0x7f0900ee
+			public const int visible = 2131296494;
 			
 			// aapt resource value: 0x7f0900bf
 			public const int visitDate = 2131296447;
@@ -3799,34 +3820,37 @@ namespace Speech2TextApp.Droid
 			public const int Page2Fragment = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int Page3Fragment = 2130968641;
+			public const int Page2LiveStatusDialog = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int Page4Fragment = 2130968642;
+			public const int Page3Fragment = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int Page5Fragment = 2130968643;
+			public const int Page4Fragment = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int select_dialog_item_material = 2130968644;
+			public const int Page5Fragment = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int select_dialog_multichoice_material = 2130968645;
+			public const int select_dialog_item_material = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int select_dialog_singlechoice_material = 2130968646;
+			public const int select_dialog_multichoice_material = 2130968646;
 			
 			// aapt resource value: 0x7f040047
-			public const int support_simple_spinner_dropdown_item = 2130968647;
+			public const int select_dialog_singlechoice_material = 2130968647;
 			
 			// aapt resource value: 0x7f040048
-			public const int SwipeFormActivity = 2130968648;
+			public const int support_simple_spinner_dropdown_item = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int Tabbar = 2130968649;
+			public const int SwipeFormActivity = 2130968649;
 			
 			// aapt resource value: 0x7f04004a
-			public const int Toolbar = 2130968650;
+			public const int Tabbar = 2130968650;
+			
+			// aapt resource value: 0x7f04004b
+			public const int Toolbar = 2130968651;
 			
 			static Layout()
 			{

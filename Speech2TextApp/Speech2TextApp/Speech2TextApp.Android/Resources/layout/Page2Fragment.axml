@@ -83,6 +83,7 @@
 					android:layout_height="wrap_content"
 					android:text="租賃"
 					android:id="@+id/liveStatusRant" />
+				
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
