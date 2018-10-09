@@ -48,7 +48,7 @@ namespace Speech2TextApp.Droid
         //    }
         //}
 
-        private void Next_Clicked(object sender, EventArgs e)
+        public void Next_Clicked(object sender, EventArgs e)
         {
             viewPager.CurrentItem = viewPager.CurrentItem + 1;
             //circle1.SetBackgroundResource(Resource.Drawable.circle);

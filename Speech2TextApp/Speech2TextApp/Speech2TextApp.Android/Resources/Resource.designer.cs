@@ -3045,6 +3045,9 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09003f
 			public const int @fixed = 2131296319;
 			
+			// aapt resource value: 0x7f0900c2
+			public const int fragment_1_next = 2131296450;
+			
 			// aapt resource value: 0x7f090005
 			public const int home = 2131296261;
 			
@@ -3135,8 +3138,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090085
 			public const int mainLinearLayout3 = 2131296389;
 			
-			// aapt resource value: 0x7f0900e8
-			public const int masked = 2131296488;
+			// aapt resource value: 0x7f0900e9
+			public const int masked = 2131296489;
 			
 			// aapt resource value: 0x7f0900a6
 			public const int media_actions = 2131296422;
@@ -3231,8 +3234,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
 			
-			// aapt resource value: 0x7f0900c2
-			public const int next = 2131296450;
+			// aapt resource value: 0x7f0900e5
+			public const int next = 2131296485;
 			
 			// aapt resource value: 0x7f090014
 			public const int none = 2131296276;
@@ -3381,8 +3384,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f0900e5
-			public const int sliding_tabs = 2131296485;
+			// aapt resource value: 0x7f0900e6
+			public const int sliding_tabs = 2131296486;
 			
 			// aapt resource value: 0x7f090073
 			public const int smallLabel = 2131296371;
@@ -3468,8 +3471,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090057
 			public const int title_template = 2131296343;
 			
-			// aapt resource value: 0x7f0900e6
-			public const int toolbar = 2131296486;
+			// aapt resource value: 0x7f0900e7
+			public const int toolbar = 2131296487;
 			
 			// aapt resource value: 0x7f090029
 			public const int top = 2131296297;
@@ -3507,8 +3510,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0900e7
-			public const int visible = 2131296487;
+			// aapt resource value: 0x7f0900e8
+			public const int visible = 2131296488;
 			
 			// aapt resource value: 0x7f0900bf
 			public const int visitDate = 2131296447;

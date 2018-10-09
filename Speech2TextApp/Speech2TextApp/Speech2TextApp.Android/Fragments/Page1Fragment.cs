@@ -1,5 +1,4 @@
-﻿using Android.Graphics;
-using Android.OS;
+﻿using Android.OS;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
@@ -16,6 +15,7 @@ namespace Speech2TextApp.Droid.Fragments
         Button address1;
         Button address2;
         Button address3;
+        Button next;
         EditText visitDate;
         RadioButton radioButton1;
         RadioButton radioButton2;
@@ -128,6 +128,11 @@ namespace Speech2TextApp.Droid.Fragments
             radioButton1.Click += VisitStatusClick;
             radioButton2.Click += VisitStatusClick;
             #endregion
+
+            next = view.FindViewById<Button>(Resource.Id.fragment_1_next);
+            var nextEvent = (SwipeFormActivity)Activity;
+            next.Click += nextEvent.Next_Clicked;
+
             return view;
         }
 
