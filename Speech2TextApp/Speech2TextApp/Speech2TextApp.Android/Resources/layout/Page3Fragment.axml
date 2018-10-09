@@ -4,79 +4,6 @@
     android:layout_height="match_parent"
 	android:background="@android:color/white">
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="65px"
-		android:layout_marginLeft="85px"
-		android:layout_marginRight="85px"
-		android:layout_marginTop="29px"
-		android:orientation="horizontal"
-		android:id="@+id/circle_view03">
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:layout_marginLeft="10px"
-			android:background="@drawable/circle"
-			android:textColor="@color/form_color_blue"
-			android:gravity="center"
-			android:text="1"/>
-
-		<View
-			android:layout_width="50dp"
-			android:layout_height="2dp"
-			android:layout_gravity="center_vertical"
-			android:background="#4A90E2"/>
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:background="@drawable/circle"
-			android:textColor="@color/form_color_blue"
-			android:gravity="center"
-			android:text="2"/>
-
-		<View
-			android:layout_width="50dp"
-			android:layout_height="2dp"
-			android:layout_gravity="center_vertical"
-			android:background="#4A90E2"/>
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:background="@drawable/circle"
-			android:textColor="@color/form_color_blue"
-			android:gravity="center"
-			android:text="3"/>
-
-		<View
-			android:layout_width="50dp"
-			android:layout_height="2dp"
-			android:layout_gravity="center_vertical"
-			android:background="#4A90E2"/>
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:background="@drawable/circle"
-			android:textColor="@color/form_color_blue"
-			android:gravity="center"
-			android:text="4"/>
-
-		<View
-			android:layout_width="50dp"
-			android:layout_height="2dp"
-			android:layout_gravity="center_vertical"
-			android:background="#4A90E2"/>
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:background="@drawable/circle"
-			android:textColor="@color/form_color_blue"
-			android:gravity="center"
-			android:text="5"/>
-	</LinearLayout>
 	<LinearLayout 
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -90,11 +17,14 @@
 			android:layout_marginBottom="21px"
 			android:orientation="vertical">
 			<TextView
-			android:layout_width="130px"
-			android:layout_height="22px"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			
 			android:text="列計人口基本資料"
-			android:textColor="#FF4A90E2"
-			android:textSize="16px"
+			android:textColor="@color/form_color_blue"
 			/>
 			
 		</LinearLayout>
@@ -105,11 +35,14 @@
 			android:layout_marginBottom="13px"
 			android:orientation="vertical">
 			<TextView
-			android:layout_width="126px"
-			android:layout_height="22px"
 			android:text="共 1 筆  列表人口"
-			android:textColor="#FF4A90E2"
-			android:textSize="16px"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:textSize="14sp"
+			android:textColor="@color/form_color_blue"
 			/>
 			<View
 android:layout_width="48px"
@@ -127,16 +60,5 @@ android:background="#FF4A90E2"
 
 	
 	
-	<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="13px"
-			android:orientation="horizontal">
-			<Button
-			android:text="下一步"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/next" />
-		</LinearLayout>
 	</LinearLayout>
 </RelativeLayout>

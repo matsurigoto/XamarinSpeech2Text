@@ -1,9 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:orientation="vertical">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="65px"
+		android:layout_marginLeft="85px"
+		android:layout_marginRight="85px"
+		android:layout_marginTop="29px"
+		android:orientation="horizontal"
+		android:id="@+id/circle_view01">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="10px"
+			android:id="@+id/circle1"
+			android:background="@drawable/circle_activity"
+			android:textColor="#FFFFFF"
+			android:gravity="center"
+			android:text="1"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle2"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="2"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle3"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="3"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle4"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="4"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle5"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="5"/>
+	</LinearLayout>
 	<android.support.v4.view.ViewPager
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/circle_view01"
 		android:id="@+id/swipeFormViewPager" />
-</RelativeLayout>
+			
+	<Button
+			android:text="下一步"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="0px"
+			android:layout_below="@id/swipeFormViewPager"
+			android:onClick="Next_Clicked"
+			android:id="@+id/next" />
+	
+	
+</LinearLayout>

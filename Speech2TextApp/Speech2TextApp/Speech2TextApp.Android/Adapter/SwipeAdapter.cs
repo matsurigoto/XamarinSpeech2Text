@@ -1,4 +1,5 @@
-﻿using Android.OS;
+﻿using Android.Content;
+using Android.OS;
 using Android.Support.V4.App;
 using Speech2TextApp.Droid.Fragments;
 

@@ -1,12 +1,14 @@
 ﻿using Android.Support.V4.App;
 using Android.OS;
 using Android.Views;
-
+using Android.Widget;
+using Android.Graphics;
 
 namespace Speech2TextApp.Droid.Fragments
 {
     public class Page2Fragment : Fragment
     {
+        TextView circle;
         public Page2Fragment()
         {
 
@@ -15,8 +17,8 @@ namespace Speech2TextApp.Droid.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            return base.OnCreateView(inflater, container, savedInstanceState);
+            View view = inflater.Inflate(Resource.Layout.Page2Fragment, container, false);
+            return view;
         }
     }
 }
