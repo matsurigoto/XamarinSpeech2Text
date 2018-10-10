@@ -3,6 +3,12 @@ using Android.Content.PM;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using Speech2TextApp.Interface;
+using Speech2TextApp.Data;
+using System.Collections.Generic;
+using Speech2TextApp.Service;
+using System;
+using System.Linq;
 
 namespace Speech2TextApp.Droid
 {
@@ -13,35 +19,39 @@ namespace Speech2TextApp.Droid
         //private readonly int VOICE = 10;
         //private TextView textBox;
         //private Button recButton;
-        private LinearLayout linearLayout1, linearLayout2, linearLayout3;
+        private LinearLayout dataLayout;
+        private IData dataService;
+        public List<ApplyResult> datas { get; set; }
+        public List<ApplyResult> datasInStatus { get; set; }
+        public static ApplyResult dataCurrent { get; set; }
+        Button visitStatusN;
+        Button visitStatusY;
+        TextView dataCount;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             SetContentView(Resource.Layout.Main);
-            linearLayout1 = FindViewById<LinearLayout>(Resource.Id.firstEvent);
-            linearLayout2 = FindViewById<LinearLayout>(Resource.Id.secondEvent);
-            linearLayout3 = FindViewById<LinearLayout>(Resource.Id.thirdEvent);
+            string path = this.GetExternalFilesDir(null).AbsolutePath; 
+            dataService = new DataService();
+            datas = dataService.GetDatas(path);
+            
+            if (datas.Count == 0) {
+                dataService.GenData(path);
+                this.datas = dataService.GetDatas(path);
+            }
 
-            linearLayout1.Click += delegate
-            {
-                var intent = new Intent(this, typeof(SwipeFormActivity));
-                this.StartActivity(intent);
-            };
+           
 
-            linearLayout2.Click += delegate
-            {
-                var intent = new Intent(this, typeof(SwipeFormActivity));
-                this.StartActivity(intent);
-            };
-
-            linearLayout3.Click += delegate
-            {
-                var intent = new Intent(this, typeof(SwipeFormActivity));
-                this.StartActivity(intent);
-            };
+            visitStatusN = FindViewById<Button>(Resource.Id.visit_status_n);
+            visitStatusY = FindViewById<Button>(Resource.Id.visit_status_Y);
+            dataCount = FindViewById<TextView>(Resource.Id.data_count);
+            dataLayout = FindViewById<LinearLayout>(Resource.Id.data_layout);
 
 
+            visitStatusN.Click += LoadVisitStatusClick;
+            visitStatusY.Click += LoadVisitStatusClick;
             //isRecording = false;
 
             //recButton = FindViewById<Button>(Resource.Id.btnRecord);
@@ -84,6 +94,30 @@ namespace Speech2TextApp.Droid
             //    };
         }
 
+
+        private void LoadVisitStatusClick(object sender, EventArgs e)
+        {
+            Button rb = (Button)sender;
+            string status = (rb.Id == Resource.Id.visit_status_Y)?"Y":"N";
+            string countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
+            this.datasInStatus = datas.Where(x => x.Status == status).ToList();
+            dataCount.Text = string.Format("共 {0} 筆 {1}", datasInStatus.Count().ToString(), countDesc);
+            foreach (var data in datasInStatus)
+            {
+                LinearLayout layout = new LinearLayout(this);
+                TextView name = new TextView(this);
+                name.Text = data.ApplyName;
+                layout.AddView(name);
+                layout.Click += delegate
+                {
+                    var intent = new Intent(this, typeof(SwipeFormActivity));
+                    this.StartActivity(intent);
+                };
+                dataLayout.AddView(layout);
+            }
+
+
+        }
         private void LinearLayout1_Click(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();

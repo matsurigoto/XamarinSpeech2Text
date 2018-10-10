@@ -2985,6 +2985,12 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090054
 			public const int customPanel = 2131296340;
 			
+			// aapt resource value: 0x7f090083
+			public const int data_count = 2131296387;
+			
+			// aapt resource value: 0x7f090084
+			public const int data_layout = 2131296388;
+			
 			// aapt resource value: 0x7f090062
 			public const int decor_content_parent = 2131296354;
 			
@@ -3044,9 +3050,6 @@ namespace Speech2TextApp.Droid
 			
 			// aapt resource value: 0x7f090033
 			public const int fill_vertical = 2131296307;
-			
-			// aapt resource value: 0x7f090082
-			public const int firstEvent = 2131296386;
 			
 			// aapt resource value: 0x7f09003f
 			public const int @fixed = 2131296319;
@@ -3155,9 +3158,6 @@ namespace Speech2TextApp.Droid
 			
 			// aapt resource value: 0x7f0900e4
 			public const int liveTogetherY = 2131296484;
-			
-			// aapt resource value: 0x7f090081
-			public const int mainLinearLayout2 = 2131296385;
 			
 			// aapt resource value: 0x7f090085
 			public const int mainLinearLayout3 = 2131296389;
@@ -3387,9 +3387,6 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090071
 			public const int search_voice_btn = 2131296369;
 			
-			// aapt resource value: 0x7f090083
-			public const int secondEvent = 2131296387;
-			
 			// aapt resource value: 0x7f090072
 			public const int select_dialog_listview = 2131296370;
 			
@@ -3477,9 +3474,6 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000d
 			public const int textinput_error = 2131296269;
 			
-			// aapt resource value: 0x7f090084
-			public const int thirdEvent = 2131296388;
-			
 			// aapt resource value: 0x7f0900ab
 			public const int time = 2131296427;
 			
@@ -3539,6 +3533,12 @@ namespace Speech2TextApp.Droid
 			
 			// aapt resource value: 0x7f0900bf
 			public const int visitDate = 2131296447;
+			
+			// aapt resource value: 0x7f090082
+			public const int visit_status_Y = 2131296386;
+			
+			// aapt resource value: 0x7f090081
+			public const int visit_status_n = 2131296385;
 			
 			// aapt resource value: 0x7f090098
 			public const int volume_item_container = 2131296408;

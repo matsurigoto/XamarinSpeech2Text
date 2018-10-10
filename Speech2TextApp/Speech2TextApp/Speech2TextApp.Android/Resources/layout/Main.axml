@@ -20,230 +20,48 @@
             android:layout_height="wrap_content"
 			android:layout_marginBottom="30px"
 			android:textColor="@color/form_color_blue" />
+		<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="horizontal">
+				<Button
+					android:text="需訪視列表"
+					android:layout_width="100sp"
+					android:layout_height="wrap_content"
+				    android:background="@drawable/blue_button_activity"
+					android:id="@+id/visit_status_n" />
+				<Button
+					android:text="已送出訪視表"
+					android:layout_width="100sp"
+					android:layout_height="wrap_content"
+					android:background="@drawable/blue_button"
+					android:layout_marginLeft="0px"
+					android:layout_marginRight="0px"
+					android:id="@+id/visit_status_Y" />
+				
+			</LinearLayout>
         <TextView
-			android:text="共 3 筆  訪視資料"
+			android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/form_color_blue" />
+            android:textColor="@color/form_color_blue" 
+			android:id="@+id/data_count"/>
     </LinearLayout>
-
+	
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:background="@drawable/main_border"
-        android:id="@+id/mainLinearLayout2"
+        android:id="@+id/data_layout"
 		android:layout_marginTop="15px"
 		android:layout_marginLeft="110px"
 		android:layout_marginRight="100px"
         android:layout_weight="1"
 		android:weightSum="3">
-
-		<LinearLayout
-		android:id="@+id/firstEvent"	
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-		android:weightSum="2">
-			<LinearLayout
-			android:orientation="vertical"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_weight="1.6"
-			android:weightSum="2">
-			<LinearLayout
-				android:orientation="horizontal"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:weightSum="2">
-					<TextView
-					android:text="江玉榮"
-					android:textAppearance="?android:attr/textAppearanceLarge"
-					android:layout_width="120px"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_marginTop="20px"
-					android:layout_marginLeft="30px"
-					android:layout_weight="0.6"/>
-					<TextView
-					android:text="訪視次數 0 次"
-					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_marginTop="20px"
-					android:layout_weight="1.4"/>
-				</LinearLayout>
-			<LinearLayout
-				android:orientation="horizontal"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:weightSum="2">
-					<TextView
-					android:text="最後訪視"
-					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="120px"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_marginLeft="30px"
-					android:layout_weight="0.8"/>
-					<TextView
-					android:text=" - "
-					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_weight="1.2"/>
-				</LinearLayout>
-			</LinearLayout>
-			<ImageView
-			android:src="@drawable/baseline_keyboard_arrow_right_24"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:layout_weight="0.4">
-			</ImageView>
-		</LinearLayout>
-
-		<LinearLayout
-		android:id="@+id/secondEvent"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		android:background="@drawable/main_border"
-        android:layout_weight="1"
-		android:weightSum="2">
-			<LinearLayout
-			android:orientation="vertical"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_weight="1.6"
-			android:weightSum="2">
-			<LinearLayout
-				android:orientation="horizontal"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:weightSum="2">
-					<TextView
-					android:text="陳阿嬌"
-					android:textAppearance="?android:attr/textAppearanceLarge"
-					android:layout_width="120px"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_marginTop="20px"
-					android:layout_marginLeft="30px"
-					android:layout_weight="0.6"/>
-					<TextView
-					android:text="訪視次數 2 次"
-					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_marginTop="20px"
-					android:layout_weight="1.4"/>
-				</LinearLayout>
-			<LinearLayout
-				android:orientation="horizontal"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:weightSum="2">
-					<TextView
-					android:text="最後訪視"
-					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="120px"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_marginLeft="30px"
-					android:layout_weight="1.1"/>
-					<TextView
-					android:text="  2018/09/06 下午 3:25"
-					android:textAppearance="?android:attr/textAppearanceMedium"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="@color/form_color_blue"
-					android:layout_weight="0.9"/>
-				</LinearLayout>
-			</LinearLayout>
-			<ImageView
-			android:src="@drawable/baseline_keyboard_arrow_right_24"
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:layout_weight="0.4">
-			</ImageView>
-		</LinearLayout>
-
-		<LinearLayout
-		android:id="@+id/thirdEvent"			
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-		android:weightSum="2">
-			<LinearLayout
-			android:orientation="vertical"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_weight="1.6"
-			android:weightSum="2">
-			<LinearLayout
-			android:orientation="horizontal"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:weightSum="2">
-				<TextView
-				android:text="李淑貴"	
-				android:textAppearance="?android:attr/textAppearanceLarge"
-				android:layout_width="120px"
-				android:layout_height="wrap_content"
-				android:textColor="@color/form_color_blue"
-				android:layout_marginLeft="30px"
-				android:layout_marginTop="20px"	
-				android:layout_weight="0.6"/>
-				<TextView
-				android:text="訪視次數 4 次"
-				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/form_color_blue"
-				android:layout_marginTop="20px"
-				android:layout_weight="1.4"/>
-			</LinearLayout>
-			<LinearLayout
-			android:orientation="horizontal"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:weightSum="2">
-				<TextView
-				android:text="最後訪視"
-				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="120px"
-				android:layout_height="wrap_content"
-				android:textColor="@color/form_color_blue"
-				android:layout_marginLeft="30px" 
-				android:layout_weight="1.1"/>
-				<TextView
-				android:text="  2018/09/06 下午 3:25"
-				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="@color/form_color_blue"
-				android:layout_weight="0.9"/>
-			</LinearLayout>
-			</LinearLayout>
-			<ImageView
-				android:src="@drawable/baseline_keyboard_arrow_right_24"
-				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
-				android:layout_weight="0.34">
-			</ImageView>
-		</LinearLayout>		
+	
     </LinearLayout>
 
     <LinearLayout

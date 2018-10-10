@@ -282,7 +282,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 			    android:id="@+id/areaDesc"
-			    android:visibility="visible"
+			    android:visibility="invisible"
 				android:orientation="vertical">
 				<TextView
 					android:text="訪視概述"
