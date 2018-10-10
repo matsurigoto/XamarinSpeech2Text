@@ -1,11 +1,11 @@
-﻿using Android.OS;
+﻿using Android.Content;
+using Android.OS;
+using Android.Speech;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using Java.Util;
 using System;
-
-
 namespace Speech2TextApp.Droid.Fragments
 {
     public class Page1Fragment : Fragment
@@ -16,10 +16,13 @@ namespace Speech2TextApp.Droid.Fragments
         Button address2;
         Button address3;
         Button next;
+        Button record;
         EditText visitDate;
+        EditText editText1;
         RadioButton radioButton1;
         RadioButton radioButton2;
         LinearLayout descLayout;
+        private readonly int VOICE = 10;
 
         public Page1Fragment()
         {
@@ -134,7 +137,57 @@ namespace Speech2TextApp.Droid.Fragments
             var nextEvent = (SwipeFormActivity)Activity;
             next.Click += nextEvent.ClickNextButton;
 
+            var isRecording = false;
+            record = view.FindViewById<Button>(Resource.Id.btn_record);
+            editText1 = view.FindViewById<EditText>(Resource.Id.editText1);
+            record.Click += delegate
+            {
+                record.Text = "結束錄音";
+                isRecording = !isRecording;
+                if (isRecording)
+                {
+                    // create the intent and start the activity
+                    var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
+
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, Android.App.Application.Context.GetString(Resource.String.messageSpeakNow));
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
+
+                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
+                    StartActivityForResult(voiceIntent, VOICE);
+                }
+            };
+
             return view;
+        }
+
+        public override void OnActivityResult(int requestCode, int resultVal, Intent data)
+        {
+            if (requestCode == VOICE)
+            {
+                if (resultVal == (int)Android.App.Result.Ok)
+                {
+                    var matches = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+                    if (matches.Count != 0)
+                    {
+                        string textInput = editText1.Text + matches[0];
+
+                        // limit the output to 500 characters
+                        if (textInput.Length > 500)
+                            textInput = textInput.Substring(0, 500);
+                        editText1.Text = textInput;
+                    }
+                    else
+                    {
+                        editText1.Text = "No speech was recognised";
+                    }
+
+                    record.Text = "開始錄音";
+                }
+            }
         }
 
         private void VisitStatusClick(object sender, EventArgs e)

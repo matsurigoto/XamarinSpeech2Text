@@ -2916,8 +2916,11 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090028
 			public const int bottom = 2131296296;
 			
+			// aapt resource value: 0x7f0900c3
+			public const int btn_fragment_1_next = 2131296451;
+			
 			// aapt resource value: 0x7f0900c2
-			public const int btn_fragment_1_next = 2131296450;
+			public const int btn_record = 2131296450;
 			
 			// aapt resource value: 0x7f09004b
 			public const int buttonPanel = 2131296331;
@@ -2940,23 +2943,23 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f0900ac
 			public const int chronometer = 2131296428;
 			
-			// aapt resource value: 0x7f0900e6
-			public const int circle1 = 2131296486;
-			
 			// aapt resource value: 0x7f0900e7
-			public const int circle2 = 2131296487;
+			public const int circle1 = 2131296487;
 			
 			// aapt resource value: 0x7f0900e8
-			public const int circle3 = 2131296488;
+			public const int circle2 = 2131296488;
 			
 			// aapt resource value: 0x7f0900e9
-			public const int circle4 = 2131296489;
+			public const int circle3 = 2131296489;
 			
 			// aapt resource value: 0x7f0900ea
-			public const int circle5 = 2131296490;
+			public const int circle4 = 2131296490;
 			
-			// aapt resource value: 0x7f0900e5
-			public const int circle_view01 = 2131296485;
+			// aapt resource value: 0x7f0900eb
+			public const int circle5 = 2131296491;
+			
+			// aapt resource value: 0x7f0900e6
+			public const int circle_view01 = 2131296486;
 			
 			// aapt resource value: 0x7f090039
 			public const int clip_horizontal = 2131296313;
@@ -3090,68 +3093,68 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090048
 			public const int list_item = 2131296328;
 			
-			// aapt resource value: 0x7f0900c3
-			public const int liveCity = 2131296451;
-			
-			// aapt resource value: 0x7f0900c6
-			public const int liveCityE = 2131296454;
-			
-			// aapt resource value: 0x7f0900c5
-			public const int liveCityN = 2131296453;
-			
 			// aapt resource value: 0x7f0900c4
-			public const int liveCityY = 2131296452;
+			public const int liveCity = 2131296452;
 			
 			// aapt resource value: 0x7f0900c7
-			public const int liveStatus = 2131296455;
+			public const int liveCityE = 2131296455;
 			
-			// aapt resource value: 0x7f0900ca
-			public const int liveStatusAssign = 2131296458;
+			// aapt resource value: 0x7f0900c6
+			public const int liveCityN = 2131296454;
 			
-			// aapt resource value: 0x7f0900cb
-			public const int liveStatusBorrow = 2131296459;
-			
-			// aapt resource value: 0x7f0900cd
-			public const int liveStatusE = 2131296461;
-			
-			// aapt resource value: 0x7f0900e1
-			public const int liveStatusOK = 2131296481;
-			
-			// aapt resource value: 0x7f0900cc
-			public const int liveStatusOrg = 2131296460;
-			
-			// aapt resource value: 0x7f0900c9
-			public const int liveStatusRant = 2131296457;
-			
-			// aapt resource value: 0x7f0900dc
-			public const int liveStatusRant1 = 2131296476;
-			
-			// aapt resource value: 0x7f0900dd
-			public const int liveStatusRant2 = 2131296477;
-			
-			// aapt resource value: 0x7f0900de
-			public const int liveStatusRant3 = 2131296478;
-			
-			// aapt resource value: 0x7f0900df
-			public const int liveStatusRant4 = 2131296479;
-			
-			// aapt resource value: 0x7f0900e0
-			public const int liveStatusRantCost = 2131296480;
-			
-			// aapt resource value: 0x7f0900db
-			public const int liveStatusRantType = 2131296475;
+			// aapt resource value: 0x7f0900c5
+			public const int liveCityY = 2131296453;
 			
 			// aapt resource value: 0x7f0900c8
-			public const int liveStatusSelf = 2131296456;
+			public const int liveStatus = 2131296456;
+			
+			// aapt resource value: 0x7f0900cb
+			public const int liveStatusAssign = 2131296459;
+			
+			// aapt resource value: 0x7f0900cc
+			public const int liveStatusBorrow = 2131296460;
+			
+			// aapt resource value: 0x7f0900ce
+			public const int liveStatusE = 2131296462;
 			
 			// aapt resource value: 0x7f0900e2
-			public const int liveTogether = 2131296482;
+			public const int liveStatusOK = 2131296482;
 			
-			// aapt resource value: 0x7f0900e4
-			public const int liveTogetherN = 2131296484;
+			// aapt resource value: 0x7f0900cd
+			public const int liveStatusOrg = 2131296461;
+			
+			// aapt resource value: 0x7f0900ca
+			public const int liveStatusRant = 2131296458;
+			
+			// aapt resource value: 0x7f0900dd
+			public const int liveStatusRant1 = 2131296477;
+			
+			// aapt resource value: 0x7f0900de
+			public const int liveStatusRant2 = 2131296478;
+			
+			// aapt resource value: 0x7f0900df
+			public const int liveStatusRant3 = 2131296479;
+			
+			// aapt resource value: 0x7f0900e0
+			public const int liveStatusRant4 = 2131296480;
+			
+			// aapt resource value: 0x7f0900e1
+			public const int liveStatusRantCost = 2131296481;
+			
+			// aapt resource value: 0x7f0900dc
+			public const int liveStatusRantType = 2131296476;
+			
+			// aapt resource value: 0x7f0900c9
+			public const int liveStatusSelf = 2131296457;
 			
 			// aapt resource value: 0x7f0900e3
-			public const int liveTogetherY = 2131296483;
+			public const int liveTogether = 2131296483;
+			
+			// aapt resource value: 0x7f0900e5
+			public const int liveTogetherN = 2131296485;
+			
+			// aapt resource value: 0x7f0900e4
+			public const int liveTogetherY = 2131296484;
 			
 			// aapt resource value: 0x7f090081
 			public const int mainLinearLayout2 = 2131296385;
@@ -3159,8 +3162,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090085
 			public const int mainLinearLayout3 = 2131296389;
 			
-			// aapt resource value: 0x7f0900f0
-			public const int masked = 2131296496;
+			// aapt resource value: 0x7f0900f1
+			public const int masked = 2131296497;
 			
 			// aapt resource value: 0x7f0900a6
 			public const int media_actions = 2131296422;
@@ -3255,8 +3258,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
 			
-			// aapt resource value: 0x7f0900ec
-			public const int next = 2131296492;
+			// aapt resource value: 0x7f0900ed
+			public const int next = 2131296493;
 			
 			// aapt resource value: 0x7f090014
 			public const int none = 2131296276;
@@ -3300,32 +3303,32 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f0900bc
 			public const int radioGroup1 = 2131296444;
 			
-			// aapt resource value: 0x7f0900d2
-			public const int reason = 2131296466;
-			
-			// aapt resource value: 0x7f0900d4
-			public const int reasonDie = 2131296468;
-			
-			// aapt resource value: 0x7f0900d6
-			public const int reasonDivorce = 2131296470;
-			
-			// aapt resource value: 0x7f0900da
-			public const int reasonE = 2131296474;
+			// aapt resource value: 0x7f0900d3
+			public const int reason = 2131296467;
 			
 			// aapt resource value: 0x7f0900d5
-			public const int reasonJail = 2131296469;
+			public const int reasonDie = 2131296469;
 			
 			// aapt resource value: 0x7f0900d7
-			public const int reasonMuch = 2131296471;
+			public const int reasonDivorce = 2131296471;
 			
-			// aapt resource value: 0x7f0900d3
-			public const int reasonNoWork = 2131296467;
+			// aapt resource value: 0x7f0900db
+			public const int reasonE = 2131296475;
+			
+			// aapt resource value: 0x7f0900d6
+			public const int reasonJail = 2131296470;
 			
 			// aapt resource value: 0x7f0900d8
-			public const int reasonSick = 2131296472;
+			public const int reasonMuch = 2131296472;
+			
+			// aapt resource value: 0x7f0900d4
+			public const int reasonNoWork = 2131296468;
 			
 			// aapt resource value: 0x7f0900d9
-			public const int reasonSick2 = 2131296473;
+			public const int reasonSick = 2131296473;
+			
+			// aapt resource value: 0x7f0900da
+			public const int reasonSick2 = 2131296474;
 			
 			// aapt resource value: 0x7f090035
 			public const int right = 2131296309;
@@ -3405,8 +3408,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f0900ed
-			public const int sliding_tabs = 2131296493;
+			// aapt resource value: 0x7f0900ee
+			public const int sliding_tabs = 2131296494;
 			
 			// aapt resource value: 0x7f090073
 			public const int smallLabel = 2131296371;
@@ -3447,8 +3450,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f0900eb
-			public const int swipeFormViewPager = 2131296491;
+			// aapt resource value: 0x7f0900ec
+			public const int swipeFormViewPager = 2131296492;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
@@ -3492,8 +3495,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090057
 			public const int title_template = 2131296343;
 			
-			// aapt resource value: 0x7f0900ee
-			public const int toolbar = 2131296494;
+			// aapt resource value: 0x7f0900ef
+			public const int toolbar = 2131296495;
 			
 			// aapt resource value: 0x7f090029
 			public const int top = 2131296297;
@@ -3510,17 +3513,17 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000b
 			public const int transition_scene_layoutid_cache = 2131296267;
 			
-			// aapt resource value: 0x7f0900ce
-			public const int type1 = 2131296462;
-			
 			// aapt resource value: 0x7f0900cf
-			public const int type2 = 2131296463;
+			public const int type1 = 2131296463;
 			
 			// aapt resource value: 0x7f0900d0
-			public const int type3 = 2131296464;
+			public const int type2 = 2131296464;
 			
 			// aapt resource value: 0x7f0900d1
-			public const int type4 = 2131296465;
+			public const int type3 = 2131296465;
+			
+			// aapt resource value: 0x7f0900d2
+			public const int type4 = 2131296466;
 			
 			// aapt resource value: 0x7f090009
 			public const int up = 2131296265;
@@ -3531,8 +3534,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0900ef
-			public const int visible = 2131296495;
+			// aapt resource value: 0x7f0900f0
+			public const int visible = 2131296496;
 			
 			// aapt resource value: 0x7f0900bf
 			public const int visitDate = 2131296447;
