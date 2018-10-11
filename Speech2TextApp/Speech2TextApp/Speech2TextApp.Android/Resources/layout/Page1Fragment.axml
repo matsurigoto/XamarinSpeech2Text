@@ -69,6 +69,7 @@
 					android:layout_height="wrap_content"
 					android:minWidth="25px"
 					android:minHeight="25px"
+					android:id="@+id/apply_name"
 					android:textColor="@color/form_color_blue"
 					/>
 			</LinearLayout>
@@ -95,6 +96,7 @@
 					android:layout_height="wrap_content"
 					android:minWidth="25px"
 					android:minHeight="25px"
+					android:id="@+id/visit_name"
 					android:textColor="@color/form_color_blue"
 					/>
 			</LinearLayout>
@@ -121,6 +123,7 @@
 					android:layout_height="wrap_content"
 					android:minWidth="25px"
 					android:minHeight="25px"
+				    android:id="@+id/relatoinship"
 					android:textColor="@color/form_color_blue"
 					/>
 			</LinearLayout>
@@ -153,6 +156,7 @@
 					android:layout_height="wrap_content"
 					android:minWidth="25px"
 					android:minHeight="25px"
+					android:id="@+id/phone"
 					android:textColor="@color/form_color_blue"
 					/>
 			</LinearLayout>

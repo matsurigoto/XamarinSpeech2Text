@@ -10,7 +10,11 @@ namespace Speech2TextApp.Droid.Fragments
 {
     public class Page1Fragment : Fragment
     {
-        TextView circle;
+        TextView times;
+        TextView applyName;
+        TextView visitName;
+        TextView relatoinship;
+        TextView phone;
         LinearLayout addressLayout;
         Button address1;
         Button address2;
@@ -32,6 +36,17 @@ namespace Speech2TextApp.Droid.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View view = inflater.Inflate(Resource.Layout.Page1Fragment, container, false);
+            times = view.FindViewById<TextView>(Resource.Id.times);
+            applyName = view.FindViewById<TextView>(Resource.Id.apply_name);
+            visitName = view.FindViewById<TextView>(Resource.Id.visit_name);
+            relatoinship = view.FindViewById<TextView>(Resource.Id.relatoinship);
+            phone = view.FindViewById<TextView>(Resource.Id.phone);
+
+            times.Text = MainActivity.dataCurrent.VisitDetails.Count.ToString();
+            applyName.Text = MainActivity.dataCurrent.ApplyName;
+            visitName.Text = MainActivity.dataCurrent.VisitName;
+            relatoinship.Text = MainActivity.dataCurrent.Relatoinship;
+            phone.Text = MainActivity.dataCurrent.Phone;
 
             #region address
             addressLayout = (LinearLayout)view.FindViewById(Resource.Id.showAddress);
@@ -47,7 +62,7 @@ namespace Speech2TextApp.Droid.Fragments
 
                 addressLayout.RemoveAllViews();
                 TextView address = new TextView(this.Context);
-                address.Text = "台北市中山區新生里";
+                address.Text = MainActivity.dataCurrent.Address1;
                 addressLayout.AddView(address);
             };
 
@@ -60,7 +75,7 @@ namespace Speech2TextApp.Droid.Fragments
 
                 addressLayout.RemoveAllViews();
                 TextView address = new TextView(this.Context);
-                address.Text = "台北市中山區新生里";
+                address.Text = MainActivity.dataCurrent.Address2;
                 addressLayout.AddView(address);
             };
 

@@ -102,6 +102,7 @@ namespace Speech2TextApp.Droid
             string countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
             this.datasInStatus = datas.Where(x => x.Status == status).ToList();
             dataCount.Text = string.Format("共 {0} 筆 {1}", datasInStatus.Count().ToString(), countDesc);
+            dataLayout.RemoveAllViews();
             foreach (var data in datasInStatus)
             {
                 LinearLayout layout = new LinearLayout(this);
@@ -111,6 +112,7 @@ namespace Speech2TextApp.Droid
                 layout.Click += delegate
                 {
                     var intent = new Intent(this, typeof(SwipeFormActivity));
+                    dataCurrent = data;
                     this.StartActivity(intent);
                 };
                 dataLayout.AddView(layout);
