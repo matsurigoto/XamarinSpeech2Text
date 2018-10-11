@@ -1,5 +1,7 @@
-﻿using Android.Content;
+﻿using Android.App;
+using Android.Content;
 using Android.OS;
+using Android.Runtime;
 using Android.Speech;
 using Android.Support.V4.App;
 using Android.Views;
@@ -8,7 +10,8 @@ using Java.Util;
 using System;
 namespace Speech2TextApp.Droid.Fragments
 {
-    public class Page1Fragment : Fragment
+    [Activity(Label = "Page1Fragment")]
+    public class Page1Fragment :  Activity
     {
         TextView times;
         TextView applyName;
@@ -28,19 +31,17 @@ namespace Speech2TextApp.Droid.Fragments
         LinearLayout descLayout;
         private readonly int VOICE = 10;
 
-        public Page1Fragment()
-        {
+      
 
-        }
-
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.Page1Fragment, container, false);
-            times = view.FindViewById<TextView>(Resource.Id.times);
-            applyName = view.FindViewById<TextView>(Resource.Id.apply_name);
-            visitName = view.FindViewById<TextView>(Resource.Id.visit_name);
-            relatoinship = view.FindViewById<TextView>(Resource.Id.relatoinship);
-            phone = view.FindViewById<TextView>(Resource.Id.phone);
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Page1Fragment);
+            times = FindViewById<TextView>(Resource.Id.times);
+            applyName = FindViewById<TextView>(Resource.Id.apply_name);
+            visitName = FindViewById<TextView>(Resource.Id.visit_name);
+            relatoinship = FindViewById<TextView>(Resource.Id.relatoinship);
+            phone = FindViewById<TextView>(Resource.Id.phone);
 
             times.Text = MainActivity.dataCurrent.VisitDetails.Count.ToString();
             applyName.Text = MainActivity.dataCurrent.ApplyName;
@@ -49,10 +50,10 @@ namespace Speech2TextApp.Droid.Fragments
             phone.Text = MainActivity.dataCurrent.Phone;
 
             #region address
-            addressLayout = (LinearLayout)view.FindViewById(Resource.Id.showAddress);
-            address1 = view.FindViewById<Button>(Resource.Id.address1);
-            address2 = view.FindViewById<Button>(Resource.Id.address2);
-            address3 = view.FindViewById<Button>(Resource.Id.address3);
+            addressLayout = (LinearLayout)FindViewById(Resource.Id.showAddress);
+            address1 = FindViewById<Button>(Resource.Id.address1);
+            address2 = FindViewById<Button>(Resource.Id.address2);
+            address3 = FindViewById<Button>(Resource.Id.address3);
             address1.Click += delegate {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
@@ -61,7 +62,7 @@ namespace Speech2TextApp.Droid.Fragments
                 address1.SetBackgroundResource(Resource.Drawable.blue_button_activity);
 
                 addressLayout.RemoveAllViews();
-                TextView address = new TextView(this.Context);
+                TextView address = new TextView(this);
                 address.Text = MainActivity.dataCurrent.Address1;
                 addressLayout.AddView(address);
             };
@@ -74,7 +75,7 @@ namespace Speech2TextApp.Droid.Fragments
                 address2.SetBackgroundResource(Resource.Drawable.blue_button_activity);
 
                 addressLayout.RemoveAllViews();
-                TextView address = new TextView(this.Context);
+                TextView address = new TextView(this);
                 address.Text = MainActivity.dataCurrent.Address2;
                 addressLayout.AddView(address);
             };
@@ -88,47 +89,47 @@ namespace Speech2TextApp.Droid.Fragments
 
 
                 addressLayout.RemoveAllViews();
-                EditText addressArea = new EditText(this.Context);
+                EditText addressArea = new EditText(this);
                 addressArea.Hint = "區";
                 addressLayout.AddView(addressArea);
-                //TextView address = new TextView(this.Context);
+                //TextView address = new TextView(this);
                 //address.Text = "\\";
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "里";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "鄰";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "路";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "段";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "巷";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "弄";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "號";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressArea.Hint = "樓";
                 addressLayout.AddView(addressArea);
-                TextView address = new TextView(this.Context);
+                TextView address = new TextView(this);
                 address.Text = "之";
                 addressLayout.AddView(address);
-                addressArea = new EditText(this.Context);
+                addressArea = new EditText(this);
                 addressLayout.AddView(addressArea);
             };
 
@@ -136,25 +137,24 @@ namespace Speech2TextApp.Droid.Fragments
 
             #region visit date
             Calendar myCalendar = Calendar.Instance;
-            visitDate = view.FindViewById<EditText>(Resource.Id.visitDate);
+            visitDate = FindViewById<EditText>(Resource.Id.visitDate);
 
             #endregion
 
             #region RadioButton
-            radioButton1 = view.FindViewById<RadioButton>(Resource.Id.radioButton1);
-            radioButton2 = view.FindViewById<RadioButton>(Resource.Id.radioButton2);
-            descLayout = view.FindViewById<LinearLayout>(Resource.Id.areaDesc);
+            radioButton1 = FindViewById<RadioButton>(Resource.Id.radioButton1);
+            radioButton2 = FindViewById<RadioButton>(Resource.Id.radioButton2);
+            descLayout = FindViewById<LinearLayout>(Resource.Id.areaDesc);
             radioButton1.Click += VisitStatusClick;
             radioButton2.Click += VisitStatusClick;
             #endregion
 
-            next = view.FindViewById<Button>(Resource.Id.btn_fragment_1_next);
-            var nextEvent = (SwipeFormActivity)Activity;
-            next.Click += nextEvent.ClickNextButton;
+            next = FindViewById<Button>(Resource.Id.btn_fragment_1_next);
+            next.Click += ClickNextButton;
 
             var isRecording = false;
-            record = view.FindViewById<Button>(Resource.Id.btn_record);
-            editText1 = view.FindViewById<EditText>(Resource.Id.editText1);
+            record = FindViewById<Button>(Resource.Id.btn_record);
+            editText1 = FindViewById<EditText>(Resource.Id.editText1);
             record.Click += delegate
             {
                 record.Text = "結束錄音";
@@ -176,14 +176,14 @@ namespace Speech2TextApp.Droid.Fragments
                 }
             };
 
-            return view;
+            //return view;
         }
 
-        public override void OnActivityResult(int requestCode, int resultVal, Intent data)
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultVal, Intent data)
         {
             if (requestCode == VOICE)
             {
-                if (resultVal == (int)Android.App.Result.Ok)
+                if (resultVal == Android.App.Result.Ok)
                 {
                     var matches = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
                     if (matches.Count != 0)
@@ -205,6 +205,9 @@ namespace Speech2TextApp.Droid.Fragments
             }
         }
 
+
+
+
         private void VisitStatusClick(object sender, EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
@@ -220,6 +223,16 @@ namespace Speech2TextApp.Droid.Fragments
                 descLayout.Visibility = ViewStates.Invisible;
             }
 
+        }
+
+        /// <summary>
+        /// next
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ClickNextButton(object sender, EventArgs e)
+        {
+            
         }
 
     }

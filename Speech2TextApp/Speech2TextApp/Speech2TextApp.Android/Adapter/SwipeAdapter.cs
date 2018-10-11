@@ -8,7 +8,7 @@ namespace Speech2TextApp.Droid.Adapter
     public class SwipeAdapter : FragmentStatePagerAdapter
     {
         private Fragment[] list = new Fragment[] {
-            new Page1Fragment(),
+            //new Page1Fragment(),
             new Page2Fragment(),
             new Page3Fragment(),
             new Page4Fragment(),
@@ -17,7 +17,7 @@ namespace Speech2TextApp.Droid.Adapter
 
         public SwipeAdapter(FragmentManager fm) : base(fm) { }
 
-        public override int Count => 5;
+        public override int Count => 4;
 
         public override Fragment GetItem(int position)
         {

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Speech2TextApp.Service;
 using System;
 using System.Linq;
+using Speech2TextApp.Droid.Fragments;
 
 namespace Speech2TextApp.Droid
 {
@@ -111,7 +112,7 @@ namespace Speech2TextApp.Droid
                 layout.AddView(name);
                 layout.Click += delegate
                 {
-                    var intent = new Intent(this, typeof(SwipeFormActivity));
+                    var intent = new Intent(this, typeof(Page1Fragment));
                     dataCurrent = data;
                     this.StartActivity(intent);
                 };
