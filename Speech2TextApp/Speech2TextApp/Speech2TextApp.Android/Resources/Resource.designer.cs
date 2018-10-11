@@ -2920,7 +2920,16 @@ namespace Speech2TextApp.Droid
 			public const int bottom = 2131296296;
 			
 			// aapt resource value: 0x7f0900cd
-			public const int btn_fragment_1_next = 2131296461;
+			public const int btn_page_1_next = 2131296461;
+			
+			// aapt resource value: 0x7f0900e6
+			public const int btn_page_2_next = 2131296486;
+			
+			// aapt resource value: 0x7f0900ee
+			public const int btn_page_3_next = 2131296494;
+			
+			// aapt resource value: 0x7f0900f3
+			public const int btn_page_4_next = 2131296499;
 			
 			// aapt resource value: 0x7f0900cc
 			public const int btn_record = 2131296460;
@@ -3018,11 +3027,14 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090012
 			public const int disableHome = 2131296274;
 			
-			// aapt resource value: 0x7f0900cb
-			public const int editText1 = 2131296459;
+			// aapt resource value: 0x7f0900f2
+			public const int editText1 = 2131296498;
 			
 			// aapt resource value: 0x7f090066
 			public const int edit_query = 2131296358;
+			
+			// aapt resource value: 0x7f0900cb
+			public const int edittext_desc = 2131296459;
 			
 			// aapt resource value: 0x7f090021
 			public const int end = 2131296289;
@@ -3123,8 +3135,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f0900d8
 			public const int liveStatusE = 2131296472;
 			
-			// aapt resource value: 0x7f0900ec
-			public const int liveStatusOK = 2131296492;
+			// aapt resource value: 0x7f0900ed
+			public const int liveStatusOK = 2131296493;
 			
 			// aapt resource value: 0x7f0900d7
 			public const int liveStatusOrg = 2131296471;
@@ -3132,41 +3144,41 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f0900d4
 			public const int liveStatusRant = 2131296468;
 			
-			// aapt resource value: 0x7f0900e7
-			public const int liveStatusRant1 = 2131296487;
-			
 			// aapt resource value: 0x7f0900e8
-			public const int liveStatusRant2 = 2131296488;
+			public const int liveStatusRant1 = 2131296488;
 			
 			// aapt resource value: 0x7f0900e9
-			public const int liveStatusRant3 = 2131296489;
+			public const int liveStatusRant2 = 2131296489;
 			
 			// aapt resource value: 0x7f0900ea
-			public const int liveStatusRant4 = 2131296490;
+			public const int liveStatusRant3 = 2131296490;
 			
 			// aapt resource value: 0x7f0900eb
-			public const int liveStatusRantCost = 2131296491;
+			public const int liveStatusRant4 = 2131296491;
 			
-			// aapt resource value: 0x7f0900e6
-			public const int liveStatusRantType = 2131296486;
+			// aapt resource value: 0x7f0900ec
+			public const int liveStatusRantCost = 2131296492;
+			
+			// aapt resource value: 0x7f0900e7
+			public const int liveStatusRantType = 2131296487;
 			
 			// aapt resource value: 0x7f0900d3
 			public const int liveStatusSelf = 2131296467;
 			
-			// aapt resource value: 0x7f0900ed
-			public const int liveTogether = 2131296493;
-			
 			// aapt resource value: 0x7f0900ef
-			public const int liveTogetherN = 2131296495;
+			public const int liveTogether = 2131296495;
 			
-			// aapt resource value: 0x7f0900ee
-			public const int liveTogetherY = 2131296494;
+			// aapt resource value: 0x7f0900f1
+			public const int liveTogetherN = 2131296497;
+			
+			// aapt resource value: 0x7f0900f0
+			public const int liveTogetherY = 2131296496;
 			
 			// aapt resource value: 0x7f090085
 			public const int mainLinearLayout3 = 2131296389;
 			
-			// aapt resource value: 0x7f0900f5
-			public const int masked = 2131296501;
+			// aapt resource value: 0x7f0900f9
+			public const int masked = 2131296505;
 			
 			// aapt resource value: 0x7f0900a6
 			public const int media_actions = 2131296422;
@@ -3261,8 +3273,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
 			
-			// aapt resource value: 0x7f0900f1
-			public const int next = 2131296497;
+			// aapt resource value: 0x7f0900f5
+			public const int next = 2131296501;
 			
 			// aapt resource value: 0x7f090014
 			public const int none = 2131296276;
@@ -3414,8 +3426,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f0900f2
-			public const int sliding_tabs = 2131296498;
+			// aapt resource value: 0x7f0900f6
+			public const int sliding_tabs = 2131296502;
 			
 			// aapt resource value: 0x7f090073
 			public const int smallLabel = 2131296371;
@@ -3456,8 +3468,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f0900f0
-			public const int swipeFormViewPager = 2131296496;
+			// aapt resource value: 0x7f0900f4
+			public const int swipeFormViewPager = 2131296500;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
@@ -3498,8 +3510,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090057
 			public const int title_template = 2131296343;
 			
-			// aapt resource value: 0x7f0900f3
-			public const int toolbar = 2131296499;
+			// aapt resource value: 0x7f0900f7
+			public const int toolbar = 2131296503;
 			
 			// aapt resource value: 0x7f090029
 			public const int top = 2131296297;
@@ -3537,8 +3549,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0900f4
-			public const int visible = 2131296500;
+			// aapt resource value: 0x7f0900f8
+			public const int visible = 2131296504;
 			
 			// aapt resource value: 0x7f0900c9
 			public const int visitDate = 2131296457;
@@ -3832,22 +3844,22 @@ namespace Speech2TextApp.Droid
 			public const int notification_template_part_time = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int Page1Fragment = 2130968639;
+			public const int Page1Activity = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int Page2Fragment = 2130968640;
+			public const int Page2Activity = 2130968640;
 			
 			// aapt resource value: 0x7f040041
 			public const int Page2LiveStatusDialog = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int Page3Fragment = 2130968642;
+			public const int Page3Activity = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int Page4Fragment = 2130968643;
+			public const int Page4Activity = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int Page5Fragment = 2130968644;
+			public const int Page5Activity = 2130968644;
 			
 			// aapt resource value: 0x7f040045
 			public const int select_dialog_item_material = 2130968645;

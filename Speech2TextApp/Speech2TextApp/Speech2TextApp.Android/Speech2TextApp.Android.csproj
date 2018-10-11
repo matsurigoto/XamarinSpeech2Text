@@ -65,17 +65,15 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapter\SwipeAdapter.cs" />
-    <Compile Include="Fragments\Page1Fragment.cs" />
-    <Compile Include="Fragments\Page2Fragment.cs" />
-    <Compile Include="Fragments\Page2LiveStatusDialog.cs" />
-    <Compile Include="Fragments\Page3Fragment.cs" />
-    <Compile Include="Fragments\Page4Fragment.cs" />
-    <Compile Include="Fragments\Page5Fragment.cs" />
+    <Compile Include="Pages\Page1Activity.cs" />
+    <Compile Include="Pages\Page2Activity.cs" />
+    <Compile Include="Pages\Page2LiveStatusDialog.cs" />
+    <Compile Include="Pages\Page3Activity.cs" />
+    <Compile Include="Pages\Page4Activity.cs" />
+    <Compile Include="Pages\Page5Activity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="SwipeFormActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -136,7 +134,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\main_border.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Page1Fragment.axml">
+    <AndroidResource Include="Resources\layout\Page1Activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -146,22 +144,22 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Page2Fragment.axml">
+    <AndroidResource Include="Resources\layout\Page2Activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Page3Fragment.axml">
+    <AndroidResource Include="Resources\layout\Page3Activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Page4Fragment.axml">
+    <AndroidResource Include="Resources\layout\Page4Activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Page5Fragment.axml">
+    <AndroidResource Include="Resources\layout\Page5Activity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -196,6 +194,9 @@
     <AndroidResource Include="Resources\layout\Page2LiveStatusDialog.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Adapter\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

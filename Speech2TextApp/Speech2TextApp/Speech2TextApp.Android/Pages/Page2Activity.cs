@@ -1,13 +1,12 @@
-﻿using Android.Support.V4.App;
-using Android.OS;
-using Android.Views;
+﻿using Android.OS;
 using Android.Widget;
-using Android.Graphics;
 using System;
+using Android.App;
 
-namespace Speech2TextApp.Droid.Fragments
+namespace Speech2TextApp.Droid.Pages
 {
-    public class Page2Fragment : Fragment, Page2LiveStatusDialog.NoticeDialogListener
+    [Activity(Label = "Page2Activity")]
+    public class Page2Activity : Activity, Page2LiveStatusDialog.NoticeDialogListener
     {
         TextView circle;
         RadioButton liveStatusSelf;
@@ -16,22 +15,19 @@ namespace Speech2TextApp.Droid.Fragments
         RadioButton liveStatusBorrow;
         RadioButton liveStatusOrg;
         RadioButton liveStatusE;
-        public Page2Fragment()
-        {
 
-        }
-
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
-            View view = inflater.Inflate(Resource.Layout.Page2Fragment, container, false);
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Page2Activity);
             #region live status
-            liveStatusSelf = view.FindViewById<RadioButton>(Resource.Id.liveStatusSelf);
-            liveStatusRant = view.FindViewById<RadioButton>(Resource.Id.liveStatusRant);
-            liveStatusAssign = view.FindViewById<RadioButton>(Resource.Id.liveStatusAssign);
-            liveStatusBorrow = view.FindViewById<RadioButton>(Resource.Id.liveStatusBorrow);
-            liveStatusOrg = view.FindViewById<RadioButton>(Resource.Id.liveStatusOrg);
-            liveStatusE = view.FindViewById<RadioButton>(Resource.Id.liveStatusE);
+            liveStatusSelf = FindViewById<RadioButton>(Resource.Id.liveStatusSelf);
+            liveStatusRant = FindViewById<RadioButton>(Resource.Id.liveStatusRant);
+            liveStatusAssign = FindViewById<RadioButton>(Resource.Id.liveStatusAssign);
+            liveStatusBorrow = FindViewById<RadioButton>(Resource.Id.liveStatusBorrow);
+            liveStatusOrg = FindViewById<RadioButton>(Resource.Id.liveStatusOrg);
+            liveStatusE = FindViewById<RadioButton>(Resource.Id.liveStatusE);
             liveStatusSelf.Click += LiveStatusClick;
             liveStatusRant.Click += LiveStatusClick;
             liveStatusAssign.Click += LiveStatusClick;
@@ -39,10 +35,12 @@ namespace Speech2TextApp.Droid.Fragments
             liveStatusOrg.Click += LiveStatusClick;
             liveStatusE.Click += LiveStatusClick;
             #endregion
-            return view;
+
+            var next = FindViewById<Button>(Resource.Id.btn_page_2_next);
+            next.Click += NextButtonEvent;
         }
 
-        public void OnDialogPositiveClick(DialogFragment dialog)
+        public void OnDialogPositiveClick(Android.Support.V4.App.DialogFragment dialog)
         {
             liveStatusRant.Text = string.Format("{0}({1}:{2})",
                 (dialog as Page2LiveStatusDialog).LiveStatusType.Text,
@@ -58,13 +56,17 @@ namespace Speech2TextApp.Droid.Fragments
                 // Create and show the dialog.
                 Page2LiveStatusDialog newFragment = Page2LiveStatusDialog.NewInstance(null);
                 //Add fragment
-                newFragment.Show(this.FragmentManager, "dialog");
+                //newFragment.Show(this.FragmentManager, "dialog");
             }
             else
             {
                 liveStatusRant.Text = "租賃";
             }
+        }
 
+        public void NextButtonEvent(object sender, EventArgs e)
+        {
+            StartActivity(typeof(Page3Activity));
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using Speech2TextApp.Service;
 using System;
 using System.Linq;
-using Speech2TextApp.Droid.Fragments;
+using Speech2TextApp.Droid.Pages;
 
 namespace Speech2TextApp.Droid
 {
@@ -112,7 +112,7 @@ namespace Speech2TextApp.Droid
                 layout.AddView(name);
                 layout.Click += delegate
                 {
-                    var intent = new Intent(this, typeof(Page1Fragment));
+                    var intent = new Intent(this, typeof(Page1Activity));
                     dataCurrent = data;
                     this.StartActivity(intent);
                 };

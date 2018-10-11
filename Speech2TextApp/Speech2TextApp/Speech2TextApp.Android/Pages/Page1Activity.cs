@@ -3,50 +3,42 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Speech;
-using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using Java.Util;
 using System;
-namespace Speech2TextApp.Droid.Fragments
+namespace Speech2TextApp.Droid.Pages
 {
-    [Activity(Label = "Page1Fragment")]
-    public class Page1Fragment :  Activity
+    [Activity(Label = "Page1Activity")]
+    public class Page1Activity :  Activity
     {
-        TextView times;
-        TextView applyName;
-        TextView visitName;
-        TextView relatoinship;
-        TextView phone;
         LinearLayout addressLayout;
         Button address1;
         Button address2;
         Button address3;
-        Button next;
-        Button record;
         EditText visitDate;
-        EditText editText1;
+        
         RadioButton radioButton1;
         RadioButton radioButton2;
         LinearLayout descLayout;
-        private readonly int VOICE = 10;
 
-      
+        private  EditText _description;
+        private readonly int VOICE = 10;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Page1Fragment);
-            times = FindViewById<TextView>(Resource.Id.times);
-            applyName = FindViewById<TextView>(Resource.Id.apply_name);
-            visitName = FindViewById<TextView>(Resource.Id.visit_name);
-            relatoinship = FindViewById<TextView>(Resource.Id.relatoinship);
-            phone = FindViewById<TextView>(Resource.Id.phone);
+            SetContentView(Resource.Layout.Page1Activity);
+            var times = FindViewById<TextView>(Resource.Id.times);
+            var applyName = FindViewById<TextView>(Resource.Id.apply_name);
+            var visitName = FindViewById<TextView>(Resource.Id.visit_name);
+            var relationship = FindViewById<TextView>(Resource.Id.relatoinship);
+            var phone = FindViewById<TextView>(Resource.Id.phone);
 
             times.Text = MainActivity.dataCurrent.VisitDetails.Count.ToString();
             applyName.Text = MainActivity.dataCurrent.ApplyName;
             visitName.Text = MainActivity.dataCurrent.VisitName;
-            relatoinship.Text = MainActivity.dataCurrent.Relatoinship;
+            relationship.Text = MainActivity.dataCurrent.Relatoinship;
             phone.Text = MainActivity.dataCurrent.Phone;
 
             #region address
@@ -149,91 +141,68 @@ namespace Speech2TextApp.Droid.Fragments
             radioButton2.Click += VisitStatusClick;
             #endregion
 
-            next = FindViewById<Button>(Resource.Id.btn_fragment_1_next);
-            next.Click += ClickNextButton;
 
-            var isRecording = false;
-            record = FindViewById<Button>(Resource.Id.btn_record);
-            editText1 = FindViewById<EditText>(Resource.Id.editText1);
-            record.Click += delegate
-            {
-                record.Text = "結束錄音";
-                isRecording = !isRecording;
-                if (isRecording)
-                {
-                    // create the intent and start the activity
-                    var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
+            var next = FindViewById<Button>(Resource.Id.btn_page_1_next);
+            next.Click += NextButtonEvent;
 
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, Android.App.Application.Context.GetString(Resource.String.messageSpeakNow));
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
-
-                    voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
-                    StartActivityForResult(voiceIntent, VOICE);
-                }
-            };
-
-            //return view;
+            var record = FindViewById<Button>(Resource.Id.btn_record);
+            _description = FindViewById<EditText>(Resource.Id.edittext_desc);
+            record.Click += RecordEvent;
         }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultVal, Intent data)
         {
-            if (requestCode == VOICE)
+            if (requestCode != VOICE) return;
+            if (resultVal != Result.Ok) return;
+            var matches = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+            if (matches.Count != 0)
             {
-                if (resultVal == Android.App.Result.Ok)
-                {
-                    var matches = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
-                    if (matches.Count != 0)
-                    {
-                        string textInput = editText1.Text + matches[0];
-
-                        // limit the output to 500 characters
-                        if (textInput.Length > 500)
-                            textInput = textInput.Substring(0, 500);
-                        editText1.Text = textInput;
-                    }
-                    else
-                    {
-                        editText1.Text = "No speech was recognised";
-                    }
-
-                    record.Text = "開始錄音";
-                }
+                var textInput = _description.Text + matches[0];
+                if (textInput.Length > 500)
+                    textInput = textInput.Substring(0, 500);
+                _description.Text = textInput;
+            }
+            else
+            {
+                _description.Text = "No speech was recognized";
             }
         }
-
-
-
 
         private void VisitStatusClick(object sender, EventArgs e)
         {
-            RadioButton rb = (RadioButton)sender;
-            if (rb.Id == Resource.Id.radioButton1)
+            var rb = (RadioButton)sender;
+            switch (rb.Id)
             {
-                descLayout.Visibility = ViewStates.Invisible;
+                case Resource.Id.radioButton1:
+                    descLayout.Visibility = ViewStates.Invisible;
+                    break;
+                case Resource.Id.radioButton2:
+                    descLayout.Visibility = ViewStates.Visible;
+                    break;
+                default:
+                    descLayout.Visibility = ViewStates.Invisible;
+                    break;
             }
-            else if (rb.Id == Resource.Id.radioButton2)
-            {
-                descLayout.Visibility = ViewStates.Visible;
-            }
-            else {
-                descLayout.Visibility = ViewStates.Invisible;
-            }
-
         }
 
-        /// <summary>
-        /// next
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void ClickNextButton(object sender, EventArgs e)
+        public void RecordEvent(object sender, EventArgs e)
         {
-            
+            var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
+            voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
+
+            voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, Android.App.Application.Context.GetString(Resource.String.messageSpeakNow));
+            voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
+            voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
+            voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
+            voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
+
+            voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
+            StartActivityForResult(voiceIntent, VOICE);
         }
 
+        public void NextButtonEvent(object sender, EventArgs e)
+        {
+            StartActivity(typeof(Page2Activity));
+        }
     }
 }

@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-namespace Speech2TextApp.Droid.Fragments
+namespace Speech2TextApp.Droid.Pages
 {
     public class Page2LiveStatusDialog : DialogFragment
     {
