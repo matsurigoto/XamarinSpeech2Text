@@ -30,7 +30,7 @@ namespace Speech2TextApp.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Main);
-            string path = this.GetExternalFilesDir(null).AbsolutePath; 
+            var path = GetExternalFilesDir(null).AbsolutePath; 
             dataService = new DataService();
             datas = dataService.GetDatas(path);
             
@@ -39,8 +39,7 @@ namespace Speech2TextApp.Droid
                 this.datas = dataService.GetDatas(path);
             }
 
-           
-
+          
             visitStatusN = FindViewById<Button>(Resource.Id.visit_status_n);
             visitStatusY = FindViewById<Button>(Resource.Id.visit_status_Y);
             dataCount = FindViewById<TextView>(Resource.Id.data_count);
@@ -73,9 +72,8 @@ namespace Speech2TextApp.Droid
                 };
                 dataLayout.AddView(layout);
             }
-
-
         }
+
         private void LinearLayout1_Click(object sender, System.EventArgs e)
         {
             throw new System.NotImplementedException();
