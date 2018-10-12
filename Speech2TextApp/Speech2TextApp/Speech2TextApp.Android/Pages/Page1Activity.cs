@@ -54,8 +54,10 @@ namespace Speech2TextApp.Droid.Pages
                 address1.SetBackgroundResource(Resource.Drawable.blue_button_activity);
 
                 addressLayout.RemoveAllViews();
-                TextView address = new TextView(this);
-                address.Text = MainActivity.dataCurrent.Address1;
+                var address = new TextView(this)
+                {
+                    Text = MainActivity.dataCurrent.Address1
+                };
                 addressLayout.AddView(address);
             };
 
