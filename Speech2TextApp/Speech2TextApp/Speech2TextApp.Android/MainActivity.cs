@@ -10,6 +10,7 @@ using Speech2TextApp.Service;
 using System;
 using System.Linq;
 using Android.Graphics;
+using Android.Graphics.Drawables;
 using Speech2TextApp.Droid.Pages;
 
 namespace Speech2TextApp.Droid
@@ -57,20 +58,26 @@ namespace Speech2TextApp.Droid
             dataLayout.RemoveAllViews();
             foreach (var data in datasInStatus)
             {
+                var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent,
+                    Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f);
+                layoutParameter.SetMargins(20,5,0,0);
                 // first layout
                 var firstLayout = new LinearLayout(this)
                 {
                     Orientation = Orientation.Horizontal,
                     WeightSum = 2,
-                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f)   
+                    LayoutParameters = layoutParameter
                 };
 
                 var name = new TextView(this)
                 {
-                    Text = data.ApplyName
+                    Text = data.ApplyName,
                 };
                 name.SetTextColor(Color.ParseColor("#4A90E2"));
                 name.SetTextSize(Android.Util.ComplexUnitType.Sp, 22);
+                var textViewTitleParams = new LinearLayout.LayoutParams(190, Android.Views.ViewGroup.LayoutParams.WrapContent);
+                name.LayoutParameters = textViewTitleParams;
+
 
                 var count = new TextView(this)
                 {
@@ -86,7 +93,7 @@ namespace Speech2TextApp.Droid
                 var secondLayout = new LinearLayout(this)
                 {
                     Orientation = Orientation.Horizontal,
-                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f)
+                    LayoutParameters = layoutParameter
                 };
 
                 var dateTitle = new TextView(this)
@@ -95,6 +102,7 @@ namespace Speech2TextApp.Droid
                 };
                 dateTitle.SetTextColor(Color.ParseColor("#4A90E2"));
                 dateTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, 22);
+                dateTitle.LayoutParameters = textViewTitleParams;
 
                 var date = new TextView(this)
                 {
@@ -121,6 +129,7 @@ namespace Speech2TextApp.Droid
                     dataCurrent = data;
                     StartActivity(intent);
                 };
+                mainLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
                 dataLayout.AddView(mainLayout);
             }
         }
