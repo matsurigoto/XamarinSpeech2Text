@@ -74,8 +74,8 @@ namespace Speech2TextApp.Droid
                     Text = data.ApplyName,
                 };
                 name.SetTextColor(Color.ParseColor("#4A90E2"));
-                name.SetTextSize(Android.Util.ComplexUnitType.Sp, 22);
-                var textViewTitleParams = new LinearLayout.LayoutParams(190, Android.Views.ViewGroup.LayoutParams.WrapContent);
+                name.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                var textViewTitleParams = new LinearLayout.LayoutParams(250, Android.Views.ViewGroup.LayoutParams.WrapContent);
                 name.LayoutParameters = textViewTitleParams;
 
 
@@ -84,7 +84,7 @@ namespace Speech2TextApp.Droid
                     Text = "探訪次數 : 3次"
                 };
                 count.SetTextColor(Color.ParseColor("#4A90E2"));
-                count.SetTextSize(Android.Util.ComplexUnitType.Sp, 16);
+                count.SetTextSize(Android.Util.ComplexUnitType.Sp, 14);
 
                 firstLayout.AddView(name);
                 firstLayout.AddView(count);

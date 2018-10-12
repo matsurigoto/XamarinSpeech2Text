@@ -4,41 +4,42 @@
     android:layout_height="match_parent"
 	android:background="@android:color/white">
 
-
-	<LinearLayout 
+	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginLeft="47px"
-		android:layout_marginRight="85px"
-		android:layout_marginTop="100px"
-		android:orientation="vertical">
-		<LinearLayout
-			android:layout_width="wrap_content"
+		android:layout_height="match_parent">
+		<LinearLayout 
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="13px"
+			android:layout_marginLeft="47px"
+			android:layout_marginRight="85px"
+			android:layout_marginTop="100px"
 			android:orientation="vertical">
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
 			<TextView
-			android:text="申請人是否實際居住本市"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:textSize="14sp"
-			android:textColor="@color/form_color_blue"
-			/>
-		<RadioGroup
+				android:text="申請人是否實際居住本市"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"/>
+			<RadioGroup
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
 				android:layout_centerHorizontal="true"
 				android:id="@+id/liveCity">
-					<RadioButton
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:checked="true"
-						android:text="是"
-						android:id="@+id/liveCityY" />
+				<Radtton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="是"
+					android:id="@+id/liveCityY" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -67,23 +68,22 @@
 			android:textSize="14sp"
 			android:textColor="@color/form_color_blue"
 			/>
-		<RadioGroup
+			<RadioGroup
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:id="@+id/liveStatus">
-					<RadioButton
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:checked="true"
-						android:text="自有"
-						android:id="@+id/liveStatusSelf" />
+				<RadioButton
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="自有"
+					android:id="@+id/liveStatusSelf" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="租賃"
 					android:id="@+id/liveStatusRant" />
-				
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -120,105 +120,106 @@
 			android:minWidth="25px"
 			android:minHeight="25px"
 			android:textSize="14sp"
-			android:textColor="@color/form_color_blue"
-			/>
+			android:textColor="@color/form_color_blue"/>
 			<CheckBox
 				android:text="低收入戶"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:id="@+id/type1"  />
+				android:id="@+id/type1"/>
 			<CheckBox
 				android:text="中低收入戶"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:id="@+id/type2"  />
+				android:id="@+id/type2"/>
 			<CheckBox
 				android:text="中低收入老人生活津貼"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:id="@+id/type3"  />
+				android:id="@+id/type3"/>
 			<CheckBox
 				android:text="身心障礙者生活輔助"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:id="@+id/type4"  />
+				android:id="@+id/type4"/>
 		</LinearLayout>
 
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="13px"
-			android:orientation="vertical">
-			<TextView
-			android:text="申請低收入主要原因"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:textSize="14sp"
-			android:textColor="@color/form_color_blue"
-			/>
-		<RadioGroup
+			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:id="@+id/reason">
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+				<TextView
+				android:text="申請低收入主要原因"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"
+				/>
+				<RadioGroup
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/reason">
+						<RadioButton
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:checked="true"
+							android:text="負擔家計者失業"
+							android:id="@+id/reasonNoWork" />
 					<RadioButton
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:checked="true"
-						android:text="負擔家計者失業"
-						android:id="@+id/reasonNoWork" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="負擔家計者死亡"
-					android:id="@+id/reasonDie" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="負擔家計者入獄服刑"
-					android:id="@+id/reasonJail" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="離婚"
-					android:id="@+id/reasonDivorce" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="依賴人口眾多"
-					android:id="@+id/reasonMuch" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="家人長期重病"
-					android:id="@+id/reasonSick" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="身心障礙"
-					android:id="@+id/reasonSick2" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="其他"
-					android:id="@+id/reasonE" />
-			</RadioGroup>
-		</LinearLayout>
+						android:text="負擔家計者死亡"
+						android:id="@+id/reasonDie" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="負擔家計者入獄服刑"
+						android:id="@+id/reasonJail" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="離婚"
+						android:id="@+id/reasonDivorce" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="依賴人口眾多"
+						android:id="@+id/reasonMuch" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="家人長期重病"
+						android:id="@+id/reasonSick" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="身心障礙"
+						android:id="@+id/reasonSick2" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="其他"
+						android:id="@+id/reasonE" />
+				</RadioGroup>
+			</LinearLayout>
 	
-		<LinearLayout
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_marginBottom="13px"
-			android:orientation="horizontal">
-			<Button
-				android:text="下一步"
+			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:id="@+id/btn_page_2_next"/>
-		</LinearLayout>
+				android:layout_marginBottom="13px"
+				android:orientation="horizontal">
+				<Button
+					android:text="下一步"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:id="@+id/btn_page_2_next"/>
+			</LinearLayout>
 			
-	</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+	
 </RelativeLayout>
