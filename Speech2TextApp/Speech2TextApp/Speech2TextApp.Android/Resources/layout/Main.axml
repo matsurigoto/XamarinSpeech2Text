@@ -21,26 +21,25 @@
 			android:layout_marginBottom="30px"
 			android:textColor="@color/form_color_blue" />
 		<LinearLayout
-				android:layout_width="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="horizontal">
+			<Button
+				android:text="需訪視列表"
+				android:layout_width="100sp"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
-				android:orientation="horizontal">
-				<Button
-					android:text="需訪視列表"
-					android:layout_width="100sp"
-					android:layout_height="wrap_content"
-				    android:background="@drawable/blue_button_activity"
-					android:id="@+id/visit_status_n" />
-				<Button
-					android:text="已送出訪視表"
-					android:layout_width="100sp"
-					android:layout_height="wrap_content"
-					android:background="@drawable/blue_button"
-					android:layout_marginLeft="0px"
-					android:layout_marginRight="0px"
-					android:id="@+id/visit_status_Y" />
-				
-			</LinearLayout>
+			    android:background="@drawable/blue_button_activity"
+				android:id="@+id/visit_status_n" />
+			<Button
+				android:text="已送出訪視表"
+				android:layout_width="100sp"
+				android:layout_height="wrap_content"
+				android:background="@drawable/blue_button"
+				android:layout_marginLeft="0px"
+				android:layout_marginRight="0px"
+				android:id="@+id/visit_status_Y" />				
+		</LinearLayout>
         <TextView
 			android:text=""
             android:layout_width="wrap_content"
@@ -61,7 +60,6 @@
 		android:layout_marginRight="100px"
         android:layout_weight="1"
 		android:weightSum="3">
-	
     </LinearLayout>
 
     <LinearLayout

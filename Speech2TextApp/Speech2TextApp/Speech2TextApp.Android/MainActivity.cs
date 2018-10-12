@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Speech2TextApp.Service;
 using System;
 using System.Linq;
+using Android.Graphics;
 using Speech2TextApp.Droid.Pages;
 
 namespace Speech2TextApp.Droid
@@ -21,37 +22,32 @@ namespace Speech2TextApp.Droid
         public List<ApplyResult> datas { get; set; }
         public List<ApplyResult> datasInStatus { get; set; }
         public static ApplyResult dataCurrent { get; set; }
-        Button visitStatusN;
-        Button visitStatusY;
         TextView dataCount;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.Main);
+
             var path = GetExternalFilesDir(null).AbsolutePath; 
             dataService = new DataService();
             datas = dataService.GetDatas(path);
             
             if (datas.Count == 0) {
                 dataService.GenData(path);
-                this.datas = dataService.GetDatas(path);
+                datas = dataService.GetDatas(path);
             }
-
-          
-            visitStatusN = FindViewById<Button>(Resource.Id.visit_status_n);
-            visitStatusY = FindViewById<Button>(Resource.Id.visit_status_Y);
+    
+            var nonVisitedButton = FindViewById<Button>(Resource.Id.visit_status_n);
+            var visitedButton = FindViewById<Button>(Resource.Id.visit_status_Y);
             dataCount = FindViewById<TextView>(Resource.Id.data_count);
             dataLayout = FindViewById<LinearLayout>(Resource.Id.data_layout);
 
-
-            visitStatusN.Click += LoadVisitStatusClick;
-            visitStatusY.Click += LoadVisitStatusClick;
+            nonVisitedButton.Click += GetVisitData;
+            visitedButton.Click += GetVisitData;
         }
 
-
-        private void LoadVisitStatusClick(object sender, EventArgs e)
+        private void GetVisitData(object sender, EventArgs e)
         {
             var rb = (Button)sender;
             var status = (rb.Id == Resource.Id.visit_status_Y) ? "Y" : "N";
@@ -61,22 +57,77 @@ namespace Speech2TextApp.Droid
             dataLayout.RemoveAllViews();
             foreach (var data in datasInStatus)
             {
-                var layout = new LinearLayout(this);
-                var name = new TextView(this) {Text = data.ApplyName};
-                layout.AddView(name);
-                layout.Click += delegate
+                // first layout
+                var firstLayout = new LinearLayout(this)
+                {
+                    Orientation = Orientation.Horizontal,
+                    WeightSum = 2,
+                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f)   
+                };
+
+                var name = new TextView(this)
+                {
+                    Text = data.ApplyName
+                };
+                name.SetTextColor(Color.ParseColor("#4A90E2"));
+                name.SetTextSize(Android.Util.ComplexUnitType.Sp, 22);
+
+                var count = new TextView(this)
+                {
+                    Text = "探訪次數 : 3次"
+                };
+                count.SetTextColor(Color.ParseColor("#4A90E2"));
+                count.SetTextSize(Android.Util.ComplexUnitType.Sp, 16);
+
+                firstLayout.AddView(name);
+                firstLayout.AddView(count);
+
+                // second layout
+                var secondLayout = new LinearLayout(this)
+                {
+                    Orientation = Orientation.Horizontal,
+                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f)
+                };
+
+                var dateTitle = new TextView(this)
+                {
+                    Text = "探訪時間"
+                };
+                dateTitle.SetTextColor(Color.ParseColor("#4A90E2"));
+                dateTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, 22);
+
+                var date = new TextView(this)
+                {
+                    Text = "2018 年 10月 12日 下午 1:30"
+                };
+                date.SetTextColor(Color.ParseColor("#4A90E2"));
+                date.SetTextSize(Android.Util.ComplexUnitType.Sp, 16);
+
+                secondLayout.AddView(dateTitle);
+                secondLayout.AddView(date);
+
+                // main layout
+                var mainLayout = new LinearLayout(this)
+                {
+                    Orientation = Orientation.Vertical,
+                    WeightSum = 2,
+                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent)
+                };
+                mainLayout.AddView(firstLayout);
+                mainLayout.AddView(secondLayout);
+                mainLayout.Click += delegate
                 {
                     var intent = new Intent(this, typeof(Page1Activity));
                     dataCurrent = data;
-                    this.StartActivity(intent);
+                    StartActivity(intent);
                 };
-                dataLayout.AddView(layout);
+                dataLayout.AddView(mainLayout);
             }
         }
 
         private void LinearLayout1_Click(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }
