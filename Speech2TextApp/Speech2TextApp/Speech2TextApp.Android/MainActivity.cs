@@ -54,17 +54,16 @@ namespace Speech2TextApp.Droid
 
         private void LoadVisitStatusClick(object sender, EventArgs e)
         {
-            Button rb = (Button)sender;
-            string status = (rb.Id == Resource.Id.visit_status_Y)?"Y":"N";
-            string countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
-            this.datasInStatus = datas.Where(x => x.Status == status).ToList();
-            dataCount.Text = string.Format("共 {0} 筆 {1}", datasInStatus.Count().ToString(), countDesc);
+            var rb = (Button)sender;
+            var status = (rb.Id == Resource.Id.visit_status_Y) ? "Y" : "N";
+            var countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
+            datasInStatus = datas.Where(x => x.Status == status).ToList();
+            dataCount.Text = $"共 {datasInStatus.Count().ToString()} 筆 {countDesc}";
             dataLayout.RemoveAllViews();
             foreach (var data in datasInStatus)
             {
-                LinearLayout layout = new LinearLayout(this);
-                TextView name = new TextView(this);
-                name.Text = data.ApplyName;
+                var layout = new LinearLayout(this);
+                var name = new TextView(this) {Text = data.ApplyName};
                 layout.AddView(name);
                 layout.Click += delegate
                 {
