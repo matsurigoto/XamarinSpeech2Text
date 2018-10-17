@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 	android:background="@android:color/white">
-	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="65px"
@@ -11,32 +10,16 @@
 		android:layout_marginRight="85px"
 		android:layout_marginTop="29px"
 		android:orientation="horizontal"
-		android:background="@android:color/white"
 		android:id="@+id/circle_view01">
+		
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
-			android:id="@+id/circle2"
+			android:id="@+id/circle1"
 			android:background="@drawable/circle"
 			android:textColor="@color/form_color_blue"
 			android:gravity="center"
 			android:text="1"/>
-
-		<View
-			android:layout_width="50dp"
-			android:layout_height="2dp"
-			android:layout_gravity="center_vertical"
-			android:background="#4A90E2"/>
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="match_parent"
-			android:layout_marginLeft="10px"
-			android:id="@+id/circle1"
-			android:background="@drawable/circle_activity"
-			android:textColor="#FFFFFF"
-			android:gravity="center"
-			android:text="2"/>
-		
 
 		<View
 			android:layout_width="50dp"
@@ -51,8 +34,25 @@
 			android:background="@drawable/circle"
 			android:textColor="@color/form_color_blue"
 			android:gravity="center"
-			android:text="3"/>
+			android:text="2"/>
 
+		
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="10px"
+			android:id="@+id/circle3"
+			android:background="@drawable/circle_activity"
+			android:textColor="#FFFFFF"
+			android:gravity="center"
+			android:text="3"/>
 		<View
 			android:layout_width="50dp"
 			android:layout_height="2dp"
@@ -85,20 +85,82 @@
 	</LinearLayout>
 	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="match_parent">
 		<LinearLayout 
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="47px"
 			android:layout_marginRight="85px"
+			android:layout_marginTop="100px"
 			android:orientation="vertical">
+			
+			<LinearLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="47px"
+			android:layout_marginRight="85px"
+			android:orientation="vertical">
+				<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="新增人口基本資料"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"/>
+			
+			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 			<TextView
-				android:text="申請人是否實際居住本市"
+				android:text="稱謂"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"/>
+			  <EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/title" />
+			</LinearLayout>
+				<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="姓名"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"/>
+			  <EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/name" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="是否同住"
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -112,23 +174,19 @@
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
 				android:layout_centerHorizontal="true"
-				android:id="@+id/liveCity">
+				android:id="@+id/liveTogether">
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:checked="true"
 					android:text="是"
-					android:id="@+id/liveCityY" />
+					android:id="@+id/liveTogetherY" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="否"
-					android:id="@+id/liveCityN" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="其它"
-					android:id="@+id/liveCityE" />
+					android:id="@+id/liveTogetherN" />
+			
 			</RadioGroup>
 			</LinearLayout>
 	
@@ -138,7 +196,7 @@
 			android:layout_marginBottom="13px"
 			android:orientation="vertical">
 			<TextView
-			android:text="住宅狀況"
+			android:text="身心健康狀況"
 			android:textAppearance="?android:attr/textAppearanceMedium"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -151,75 +209,30 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
-				android:id="@+id/liveStatus">
+				android:id="@+id/healthStatus">
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:checked="true"
-					android:text="自有"
-					android:id="@+id/liveStatusSelf" />
+					android:text="無明顯異常"
+					android:id="@+id/healthStatusN" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="租賃"
-					android:id="@+id/liveStatusRant" />
+					android:text="長期患病"
+					android:id="@+id/healthStatusSick" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="配住"
-					android:id="@+id/liveStatusAssign" />
+					android:text="身心障礙(肢障)"
+					android:id="@+id/healthStatusSick2" />
 				<RadioButton
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="借住"
-					android:id="@+id/liveStatusBorrow" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="機構安置"
-					android:id="@+id/liveStatusOrg" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="其他"
-					android:id="@+id/liveStatusE" />
+					android:text="身心障礙(中度)"
+					android:id="@+id/healthStatusSick3" />
+				
 			</RadioGroup>
-		</LinearLayout>
-
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="13px"
-			android:orientation="vertical">
-			<TextView
-			android:text="申請項目"
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:textSize="14sp"
-			android:textColor="@color/form_color_blue"/>
-			<CheckBox
-				android:text="低收入戶"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/type1"/>
-			<CheckBox
-				android:text="中低收入戶"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/type2"/>
-			<CheckBox
-				android:text="中低收入老人生活津貼"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/type3"/>
-			<CheckBox
-				android:text="身心障礙者生活輔助"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/type4"/>
 		</LinearLayout>
 
 			<LinearLayout
@@ -228,7 +241,7 @@
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 				<TextView
-				android:text="申請低收入主要原因"
+				android:text="就業狀況"
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -241,63 +254,117 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
-					android:id="@+id/reason">
+					android:id="@+id/workStatus">
 						<RadioButton
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
 							android:checked="true"
-							android:text="負擔家計者失業"
-							android:id="@+id/reasonNoWork" />
+							android:text="固定工作"
+							android:id="@+id/workStatusFix" />
 					<RadioButton
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="負擔家計者死亡"
-						android:id="@+id/reasonDie" />
+						android:text="臨時工作"
+						android:id="@+id/workStatusTemp" />
 					<RadioButton
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="負擔家計者入獄服刑"
-						android:id="@+id/reasonJail" />
+						android:text="攤販"
+						android:id="@+id/workStatusStree" />
 					<RadioButton
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="離婚"
-						android:id="@+id/reasonDivorce" />
-					<RadioButton
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="依賴人口眾多"
-						android:id="@+id/reasonMuch" />
-					<RadioButton
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="家人長期重病"
-						android:id="@+id/reasonSick" />
-					<RadioButton
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="身心障礙"
-						android:id="@+id/reasonSick2" />
-					<RadioButton
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="其他"
-						android:id="@+id/reasonE" />
+						android:text="無工作"
+						android:id="@+id/workStatusNo" />
+					
 				</RadioGroup>
 			</LinearLayout>
-	
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+				<TextView
+				android:text="轉介就業服務"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"
+				/>
+				<RadioGroup
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/referrals">
+						
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="同意"
+						android:id="@+id/referralsY" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="不同意"
+						android:id="@+id/referralsN" />
+					
+				</RadioGroup>
+			</LinearLayout>
+				<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+				<TextView
+				android:text="是否安置於療養院所"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"
+				/>
+				<RadioGroup
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/isInNursingHome">
+						
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="是"
+						android:id="@+id/isInNursingHomeY" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="否"
+						android:id="@+id/isInNursingHomeN" />
+					
+				</RadioGroup>
+			</LinearLayout>
+		</LinearLayout>
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
+				android:layout_marginBottom="13px"
 				android:orientation="horizontal">
 				<Button
-					android:text="下一步"
-					android:layout_width="match_parent"
+					android:text="取消"
+					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
-					android:id="@+id/btn_page_2_next"/>
+					android:id="@+id/btn_page_3_cancel"/>
+				<Button
+					android:text="確定"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:id="@+id/btn_page_3_add"/>
 			</LinearLayout>
-			
+	
 		</LinearLayout>
 	</ScrollView>
-	
 </RelativeLayout>

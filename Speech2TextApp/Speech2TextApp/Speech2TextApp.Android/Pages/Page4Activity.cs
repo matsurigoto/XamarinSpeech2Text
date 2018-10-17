@@ -8,13 +8,34 @@ namespace Speech2TextApp.Droid.Pages
     [Activity(Label = "Page4Activity")]
     public class Page4Activity : Activity
     {
+        RadioButton liveTogetherY;
+        RadioButton liveTogetherN;
+
+        EditText otherDesc;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page4Activity);
+            liveTogetherY = FindViewById<RadioButton>(Resource.Id.liveTogetherY);
+            liveTogetherN = FindViewById<RadioButton>(Resource.Id.liveTogetherN);
+            otherDesc = FindViewById<EditText>(Resource.Id.otherDesc);
 
-            var next = FindViewById<Button>(Resource.Id.btn_page_2_next);
+            InitLiveTogethe(liveTogetherY);
+            InitLiveTogethe(liveTogetherY);
+            InitOtherDesc();
+            var next = FindViewById<Button>(Resource.Id.btn_page_4_next);
             next.Click += NextButtonEvent;
+
+        }
+
+        private void InitLiveTogethe(RadioButton rb) {
+            if (rb.Text == MainActivity.dataCurrent.VisitDetail.OtherPeople) {
+                rb.Checked = true;
+            }
+        }
+
+        private void InitOtherDesc() {
+            otherDesc.Text = MainActivity.dataCurrent.VisitDetail.OtherDesc;
         }
 
         public void NextButtonEvent(object sender, EventArgs e)

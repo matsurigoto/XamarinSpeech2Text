@@ -165,7 +165,7 @@ namespace Speech2TextApp.Service
                 Status = "是",
                 LiveCityStatus = "是",
                 LiveStatus = "租賃(一般租屋 3000元/月)",
-                ApplyType = new string[] { "低收入戶", "中低收入戶" },
+                ApplyType = new List<string>() { "低收入戶", "中低收入戶" },
                 ApplyReason = "負擔家計者失業",
                 OtherPeople = "是",
                 OtherDesc = "此案件居住環境不佳，屋況老舊且有隨時坍塌的可能，且住的人口眾多，母親中風長期臥病在床",

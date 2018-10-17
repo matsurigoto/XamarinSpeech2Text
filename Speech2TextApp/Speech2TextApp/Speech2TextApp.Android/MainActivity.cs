@@ -81,7 +81,7 @@ namespace Speech2TextApp.Droid
 
                 var count = new TextView(this)
                 {
-                    Text = "探訪次數 : 3次"
+                    Text = string.Format("探訪次數 : {0}次",data.VisitDetails.Count())
                 };
                 count.SetTextColor(Color.ParseColor("#4A90E2"));
                 count.SetTextSize(Android.Util.ComplexUnitType.Sp, 14);
@@ -96,6 +96,7 @@ namespace Speech2TextApp.Droid
                     LayoutParameters = layoutParameter
                 };
 
+                
                 var dateTitle = new TextView(this)
                 {
                     Text = "探訪時間"
@@ -126,7 +127,16 @@ namespace Speech2TextApp.Droid
                 mainLayout.Click += delegate
                 {
                     var intent = new Intent(this, typeof(Page1Activity));
+                    if (data.VisitDetail == null)
+                    {
+                        data.VisitDetail = new ApplyDetail()
+                        {
+                            Status = "Y"
+                        };
+                    }
                     dataCurrent = data;
+                   
+
                     StartActivity(intent);
                 };
                 mainLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);

@@ -7,39 +7,48 @@ using Android.Views;
 using Android.Widget;
 using Java.Util;
 using System;
+using System.Collections.Generic;
+
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page1Activity")]
     public class Page1Activity :  Activity
     {
+        TextView times;
+        TextView applyName;
+        TextView visitName;
+        TextView relatoinship;
+        TextView phone;
         LinearLayout addressLayout;
+        public string AddressType { get; set; }
         Button address1;
         Button address2;
         Button address3;
+        Button next;
+        Button record;
         EditText visitDate;
-        
-        RadioButton radioButton1;
-        RadioButton radioButton2;
+        EditText _description;
+        RadioButton radoiAtHomeY;
+        RadioButton radoiAtHomeN;
         LinearLayout descLayout;
-
-        private  EditText _description;
         private readonly int VOICE = 10;
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page1Activity);
-            var times = FindViewById<TextView>(Resource.Id.times);
-            var applyName = FindViewById<TextView>(Resource.Id.apply_name);
-            var visitName = FindViewById<TextView>(Resource.Id.visit_name);
-            var relationship = FindViewById<TextView>(Resource.Id.relatoinship);
-            var phone = FindViewById<TextView>(Resource.Id.phone);
+            times = FindViewById<TextView>(Resource.Id.times);
+            applyName = FindViewById<TextView>(Resource.Id.apply_name);
+            visitName = FindViewById<TextView>(Resource.Id.visit_name);
+            relatoinship = FindViewById<TextView>(Resource.Id.relatoinship);
+            phone = FindViewById<TextView>(Resource.Id.phone);
 
             times.Text = MainActivity.dataCurrent.VisitDetails.Count.ToString();
             applyName.Text = MainActivity.dataCurrent.ApplyName;
             visitName.Text = MainActivity.dataCurrent.VisitName;
-            relationship.Text = MainActivity.dataCurrent.Relatoinship;
+            relatoinship.Text = MainActivity.dataCurrent.Relatoinship;
             phone.Text = MainActivity.dataCurrent.Phone;
+            AddressType = MainActivity.dataCurrent.AddressType;
 
             #region address
             addressLayout = (LinearLayout)FindViewById(Resource.Id.showAddress);
@@ -54,10 +63,9 @@ namespace Speech2TextApp.Droid.Pages
                 address1.SetBackgroundResource(Resource.Drawable.blue_button_activity);
 
                 addressLayout.RemoveAllViews();
-                var address = new TextView(this)
-                {
-                    Text = MainActivity.dataCurrent.Address1
-                };
+                TextView address = new TextView(this);
+                address.Text = MainActivity.dataCurrent.Address1;
+                AddressType = "戶籍地址";
                 addressLayout.AddView(address);
             };
 
@@ -71,6 +79,7 @@ namespace Speech2TextApp.Droid.Pages
                 addressLayout.RemoveAllViews();
                 TextView address = new TextView(this);
                 address.Text = MainActivity.dataCurrent.Address2;
+                AddressType = "居住地址";
                 addressLayout.AddView(address);
             };
 
@@ -124,6 +133,7 @@ namespace Speech2TextApp.Droid.Pages
                 address.Text = "之";
                 addressLayout.AddView(address);
                 addressArea = new EditText(this);
+                AddressType = "其它";
                 addressLayout.AddView(addressArea);
             };
 
@@ -136,11 +146,19 @@ namespace Speech2TextApp.Droid.Pages
             #endregion
 
             #region RadioButton
-            radioButton1 = FindViewById<RadioButton>(Resource.Id.radioButton1);
-            radioButton2 = FindViewById<RadioButton>(Resource.Id.radioButton2);
+            radoiAtHomeY = FindViewById<RadioButton>(Resource.Id.radoiAtHomeY);
+            radoiAtHomeN = FindViewById<RadioButton>(Resource.Id.radoiAtHomeN);
             descLayout = FindViewById<LinearLayout>(Resource.Id.areaDesc);
-            radioButton1.Click += VisitStatusClick;
-            radioButton2.Click += VisitStatusClick;
+            if (MainActivity.dataCurrent.VisitDetail.Status == "N")
+            {
+                radoiAtHomeN.Checked = true;
+            }
+            else
+            {
+                radoiAtHomeY.Checked = true;
+            }
+            radoiAtHomeY.Click += VisitStatusClick;
+            radoiAtHomeN.Click += VisitStatusClick;
             #endregion
 
 
@@ -175,10 +193,10 @@ namespace Speech2TextApp.Droid.Pages
             var rb = (RadioButton)sender;
             switch (rb.Id)
             {
-                case Resource.Id.radioButton1:
+                case Resource.Id.radoiAtHomeY:
                     descLayout.Visibility = ViewStates.Invisible;
                     break;
-                case Resource.Id.radioButton2:
+                case Resource.Id.radoiAtHomeN:
                     descLayout.Visibility = ViewStates.Visible;
                     break;
                 default:
@@ -204,6 +222,19 @@ namespace Speech2TextApp.Droid.Pages
 
         public void NextButtonEvent(object sender, EventArgs e)
         {
+            MainActivity.dataCurrent.AddressType = AddressType;
+            if (AddressType == "其它")
+            {
+                //MainActivity.dataCurrent.Address3 = 
+            }
+            //MainActivity.dataCurrent.VisitDetail.VisitDate = visitDate.Text;
+            MainActivity.dataCurrent.VisitDetail.VisitDesc = _description.Text;
+
+            MainActivity.dataCurrent.VisitDetail.LiveCityStatus = "是";
+            MainActivity.dataCurrent.VisitDetail.LiveStatus = "自有";
+            MainActivity.dataCurrent.VisitDetail.ApplyType = new List<string>() { "低收入戶", "中低收入戶" };
+            MainActivity.dataCurrent.VisitDetail.ApplyReason = "負擔家計者失業";
+
             StartActivity(typeof(Page2Activity));
         }
     }

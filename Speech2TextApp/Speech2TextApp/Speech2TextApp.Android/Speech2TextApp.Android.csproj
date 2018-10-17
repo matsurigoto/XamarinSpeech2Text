@@ -69,6 +69,7 @@
     <Compile Include="Pages\Page2Activity.cs" />
     <Compile Include="Pages\Page2LiveStatusDialog.cs" />
     <Compile Include="Pages\Page3Activity.cs" />
+    <Compile Include="Pages\Page3AddMemberActivity.cs" />
     <Compile Include="Pages\Page4Activity.cs" />
     <Compile Include="Pages\Page5Activity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -203,6 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\main_bottom_border.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Page3AddMemberActivity.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

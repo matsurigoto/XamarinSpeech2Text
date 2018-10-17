@@ -56,7 +56,7 @@ namespace Speech2TextApp.Data
         /// <summary>
         /// 申請項目
         /// </summary>
-        public IEnumerable<string> ApplyType { get; set; }
+        public List<string> ApplyType { get; set; }
 
         /// <summary>
         /// 申請低收入主要原因
