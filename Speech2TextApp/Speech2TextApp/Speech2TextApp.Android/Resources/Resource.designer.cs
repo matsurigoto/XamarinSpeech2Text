@@ -2943,6 +2943,9 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090109
 			public const int btn_page_4_next = 2131296521;
 			
+			// aapt resource value: 0x7f09010a
+			public const int btn_page_5_next = 2131296522;
+			
 			// aapt resource value: 0x7f0900cc
 			public const int btn_record = 2131296460;
 			
@@ -3210,8 +3213,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090085
 			public const int mainLinearLayout3 = 2131296389;
 			
-			// aapt resource value: 0x7f09010f
-			public const int masked = 2131296527;
+			// aapt resource value: 0x7f090110
+			public const int masked = 2131296528;
 			
 			// aapt resource value: 0x7f0900a6
 			public const int media_actions = 2131296422;
@@ -3315,8 +3318,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
 			
-			// aapt resource value: 0x7f09010b
-			public const int next = 2131296523;
+			// aapt resource value: 0x7f09010c
+			public const int next = 2131296524;
 			
 			// aapt resource value: 0x7f090014
 			public const int none = 2131296276;
@@ -3480,8 +3483,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f09010c
-			public const int sliding_tabs = 2131296524;
+			// aapt resource value: 0x7f09010d
+			public const int sliding_tabs = 2131296525;
 			
 			// aapt resource value: 0x7f090073
 			public const int smallLabel = 2131296371;
@@ -3522,8 +3525,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f09010a
-			public const int swipeFormViewPager = 2131296522;
+			// aapt resource value: 0x7f09010b
+			public const int swipeFormViewPager = 2131296523;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
@@ -3564,8 +3567,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090057
 			public const int title_template = 2131296343;
 			
-			// aapt resource value: 0x7f09010d
-			public const int toolbar = 2131296525;
+			// aapt resource value: 0x7f09010e
+			public const int toolbar = 2131296526;
 			
 			// aapt resource value: 0x7f090029
 			public const int top = 2131296297;
@@ -3603,8 +3606,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f09010e
-			public const int visible = 2131296526;
+			// aapt resource value: 0x7f09010f
+			public const int visible = 2131296527;
 			
 			// aapt resource value: 0x7f0900c9
 			public const int visitDate = 2131296457;

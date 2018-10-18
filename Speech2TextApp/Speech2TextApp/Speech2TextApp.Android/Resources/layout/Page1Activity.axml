@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	android:background="@android:color/white">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:background="@android:color/white"
+	android:orientation="vertical">
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="65px"
@@ -10,6 +11,7 @@
 		android:layout_marginRight="85px"
 		android:layout_marginTop="29px"
 		android:orientation="horizontal"
+		android:background="#FFFFFF"
 		android:id="@+id/circle_view01">
 		<TextView
 			android:layout_width="wrap_content"
@@ -83,13 +85,13 @@
 	</LinearLayout>
 	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="wrap_content">
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="47px"
 			android:layout_marginRight="85px"
-			android:layout_marginTop="100px"
+				
 			android:orientation="vertical">
 			<LinearLayout
 				android:layout_width="wrap_content"
@@ -403,4 +405,4 @@
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>
-</RelativeLayout>
+</LinearLayout>

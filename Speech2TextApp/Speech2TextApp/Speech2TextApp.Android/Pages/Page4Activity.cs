@@ -32,6 +32,10 @@ namespace Speech2TextApp.Droid.Pages
             if (rb.Text == MainActivity.dataCurrent.VisitDetail.OtherPeople) {
                 rb.Checked = true;
             }
+            rb.Click += delegate
+            {
+                MainActivity.dataCurrent.VisitDetail.OtherPeople = rb.Text;
+            };
         }
 
         private void InitOtherDesc() {
@@ -40,6 +44,7 @@ namespace Speech2TextApp.Droid.Pages
 
         public void NextButtonEvent(object sender, EventArgs e)
         {
+            MainActivity.dataCurrent.VisitDetail.OtherDesc = otherDesc.Text;
             StartActivity(typeof(Page5Activity));
         }
     }
