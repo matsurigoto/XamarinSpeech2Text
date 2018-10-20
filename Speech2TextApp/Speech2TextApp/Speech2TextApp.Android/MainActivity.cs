@@ -20,6 +20,8 @@ namespace Speech2TextApp.Droid
     {
         private LinearLayout dataLayout;
         private IData dataService;
+        private Button nonVisitedButton;
+        private Button visitedButton;
         public List<ApplyResult> datas { get; set; }
         public List<ApplyResult> datasInStatus { get; set; }
         public static ApplyResult dataCurrent { get; set; }
@@ -39,8 +41,8 @@ namespace Speech2TextApp.Droid
                 datas = dataService.GetDatas(path);
             }
     
-            var nonVisitedButton = FindViewById<Button>(Resource.Id.visit_status_n);
-            var visitedButton = FindViewById<Button>(Resource.Id.visit_status_Y);
+            nonVisitedButton = FindViewById<Button>(Resource.Id.visit_status_n);
+            visitedButton = FindViewById<Button>(Resource.Id.visit_status_Y);
             dataCount = FindViewById<TextView>(Resource.Id.data_count);
             dataLayout = FindViewById<LinearLayout>(Resource.Id.data_layout);
 
@@ -54,6 +56,18 @@ namespace Speech2TextApp.Droid
         {
             var rb = (Button)sender;
             var status = (rb.Id == Resource.Id.visit_status_Y) ? "Y" : "N";
+
+            nonVisitedButton.SetBackgroundResource(Resource.Drawable.blue_button);
+            visitedButton.SetBackgroundResource(Resource.Drawable.blue_button);
+            if (status == "Y")
+            {
+                visitedButton.SetBackgroundResource(Resource.Drawable.blue_button_activity);
+            }
+            else
+            {
+                nonVisitedButton.SetBackgroundResource(Resource.Drawable.blue_button_activity);
+            }
+
             var countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
             datasInStatus = datas.Where(x => x.Status == status).ToList();
             dataCount.Text = $"共 {datasInStatus.Count().ToString()} 筆 {countDesc}";
