@@ -62,9 +62,42 @@ namespace Speech2TextApp.Droid.Pages
             line.LayoutParameters = lineParameter;
             layout.AddView(line);
 
-            var visitedCount = new TextView(this);
-            visitedCount.Text = $"訪視次數:{MainActivity.dataCurrent.VisitCount}";
+            var visitedCount = new TextView(this) {Text = $"訪視次數  {MainActivity.dataCurrent.VisitCount}"};
             visitedCount.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(visitedCount);
+
+            var applyName = new TextView(this) { Text = $"申請人  {MainActivity.dataCurrent.ApplyName}"};
+            applyName.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(applyName);
+
+            var visitName = new TextView(this) { Text = $"受訪人  {MainActivity.dataCurrent.VisitName}" };
+            visitName.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(visitName);
+
+            var relatoinship = new TextView(this) {Text = $"申請人與受訪人關係  {MainActivity.dataCurrent.Relatoinship}"};
+            relatoinship.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(relatoinship);
+
+            var phone = new TextView(this) { Text = $"連絡電話  {MainActivity.dataCurrent.Phone}" };
+            phone.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(phone);
+
+            var addressTitle = new TextView(this) { Text = "訪視地址" };
+            addressTitle.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(addressTitle);
+            var addressType = new TextView(this) { Text = $"{MainActivity.dataCurrent.AddressType}" };
+            phone.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(addressType);
+            var address = new TextView(this) { Text = $"{MainActivity.dataCurrent.Address1}{MainActivity.dataCurrent.Address2}{MainActivity.dataCurrent.Address3}" };
+            address.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(address);
+
+            var visitTimeTitle = new TextView(this) { Text = "訪視時間" };
+            visitTimeTitle.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            layout.AddView(visitTimeTitle);
+            //var visitTime = new TextView(this) {   };
+            //visitTime.SetTextColor(Android.Graphics.Color.ParseColor("#4A90E2"));
+            //layout.AddView(visitTime);
 
             return layout;
         }
