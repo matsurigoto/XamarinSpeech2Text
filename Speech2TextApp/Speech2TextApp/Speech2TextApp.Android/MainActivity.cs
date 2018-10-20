@@ -46,6 +46,8 @@ namespace Speech2TextApp.Droid
 
             nonVisitedButton.Click += GetVisitData;
             visitedButton.Click += GetVisitData;
+
+            visitedButton.PerformClick();
         }
 
         private void GetVisitData(object sender, EventArgs e)
@@ -95,8 +97,7 @@ namespace Speech2TextApp.Droid
                     Orientation = Orientation.Horizontal,
                     LayoutParameters = layoutParameter
                 };
-
-                
+             
                 var dateTitle = new TextView(this)
                 {
                     Text = "探訪時間"
@@ -136,17 +137,11 @@ namespace Speech2TextApp.Droid
                     }
                     dataCurrent = data;
                    
-
                     StartActivity(intent);
                 };
                 mainLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
                 dataLayout.AddView(mainLayout);
             }
-        }
-
-        private void LinearLayout1_Click(object sender, System.EventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

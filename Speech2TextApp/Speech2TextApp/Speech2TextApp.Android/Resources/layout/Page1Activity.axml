@@ -346,8 +346,7 @@
 					android:minWidth="25px"
 					android:minHeight="25px"
 					android:textSize="14sp"
-					android:textColor="@color/form_color_blue"
-					/>
+					android:textColor="@color/form_color_blue"/>
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
@@ -359,8 +358,7 @@
 					android:layout_height="match_parent"
 					android:clickable="true"
 					android:editable="false"
-					android:id="@+id/visitDate" />
-				
+					android:id="@+id/visitDate" />	
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="match_parent"
@@ -376,12 +374,11 @@
 					android:layout_height="wrap_content"
 					android:layout_marginRight="20px"
 					android:textSize="14sp"
-					android:textColor="@color/form_color_blue"
-					/>
+					android:textColor="@color/form_color_blue"/>
 				<EditText
 					android:inputType="textMultiLine"
 				    android:minLines="4" 
-					android:background="@drawable/editTextBackground"
+					android:background="@drawable/edit_text_background_border"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:id="@+id/edittext_desc" />
