@@ -381,6 +381,7 @@
 				<EditText
 					android:inputType="textMultiLine"
 				    android:minLines="4" 
+					android:background="@drawable/editTextBackground"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:id="@+id/edittext_desc" />
