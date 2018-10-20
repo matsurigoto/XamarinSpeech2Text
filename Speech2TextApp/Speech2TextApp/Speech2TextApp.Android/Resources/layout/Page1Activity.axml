@@ -83,6 +83,7 @@
 			android:gravity="center"
 			android:text="5"/>
 	</LinearLayout>
+
 	<ScrollView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
@@ -281,7 +282,6 @@
 					android:text="其它"
 					android:layout_width="100sp"
 					android:layout_height="wrap_content"
-				
 					android:background="@drawable/blue_button"
 					android:id="@+id/address3" />
 			</LinearLayout>
@@ -379,7 +379,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
-					android:background="@drawable/edit_text_background_border"
+					android:background="@drawable/edit_text_background_border">
 					<EditText
 						android:inputType="textMultiLine"
 						android:minLines="4" 

@@ -62,6 +62,11 @@ namespace Speech2TextApp.Data
         /// 訪問歷程
         /// </summary>
         public List<ApplyDetail> VisitDetails { get; set; }
+
+        /// <summary>
+        /// 訪視次數
+        /// </summary>
+        public int VisitCount { get; set; }
     }
 
    

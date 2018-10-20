@@ -10,7 +10,6 @@ using Speech2TextApp.Service;
 using System;
 using System.Linq;
 using Android.Graphics;
-using Android.Graphics.Drawables;
 using Speech2TextApp.Droid.Pages;
 
 namespace Speech2TextApp.Droid
