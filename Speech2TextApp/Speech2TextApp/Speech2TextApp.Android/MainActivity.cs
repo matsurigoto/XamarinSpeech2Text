@@ -47,7 +47,7 @@ namespace Speech2TextApp.Droid
             nonVisitedButton.Click += GetVisitData;
             visitedButton.Click += GetVisitData;
 
-            visitedButton.PerformClick();
+            nonVisitedButton.PerformClick();
         }
 
         private void GetVisitData(object sender, EventArgs e)

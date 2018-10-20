@@ -365,7 +365,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 			    android:id="@+id/areaDesc"
-			    android:visibility="invisible"
+			    android:visibility="visible"
 				android:orientation="vertical">
 				<TextView
 					android:text="訪視概述"
@@ -375,19 +375,24 @@
 					android:layout_marginRight="20px"
 					android:textSize="14sp"
 					android:textColor="@color/form_color_blue"/>
-				<EditText
-					android:inputType="textMultiLine"
-				    android:minLines="4" 
-					android:background="@drawable/edit_text_background_border"
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:id="@+id/edittext_desc" />
-			    <Button
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="record"
-				    android:id="@+id/btn_record">
-				</Button>
+					android:orientation="vertical"
+					android:background="@drawable/edit_text_background_border"
+					<EditText
+						android:inputType="textMultiLine"
+						android:minLines="4" 
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/edittext_desc" />
+					<Button
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="record"
+						android:layout_gravity="right"
+						android:id="@+id/btn_record"/>
+				</LinearLayout>
 			</LinearLayout>
 			
 			<LinearLayout
