@@ -122,7 +122,7 @@ namespace Speech2TextApp.Droid.Pages
 
             var line = new View(this);
             line.SetBackgroundColor(TextColor);
-            var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 2);
+            var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
             line.LayoutParameters = lineParameter;
             layout.AddView(line);
 
@@ -179,7 +179,49 @@ namespace Speech2TextApp.Droid.Pages
             var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
             line.LayoutParameters = lineParameter;
             layout.AddView(line);
+
+            foreach (var item in MainActivity.dataCurrent.VisitDetail.Members)
+            {
+                var borderLayoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+                    ViewGroup.LayoutParams.WrapContent, 1.0f);
+                layoutParameter.SetMargins(20, 5, 0, 0);
+                var borderLayout = new LinearLayout(this)
+                {
+                    Orientation = Orientation.Vertical,
+                    WeightSum = 2,
+                    LayoutParameters = borderLayoutParameter
+                };
+                borderLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
+
+                var name = new TextView(this) { Text = item.Name };
+                name.SetBackgroundColor(TextColor);
+                borderLayout.AddView(name);
+
+                var memberTitle = new TextView(this) { Text = $"稱    謂   {item.Title}" };
+                memberTitle.SetBackgroundColor(TextColor);
+                borderLayout.AddView(memberTitle);
+
+                var liveTogether = new TextView(this) { Text = $"是否同住   {item.LiveTogether}" };
+                liveTogether.SetBackgroundColor(TextColor);
+                borderLayout.AddView(liveTogether);
+
+                var healthStatus = new TextView(this) { Text = $"健康狀況   {item.HealthStatus}" };
+                healthStatus.SetBackgroundColor(TextColor);
+                borderLayout.AddView(healthStatus);
+
+                var workStatus = new TextView(this) { Text = $"就業狀況   {item.WorkStatus}" };
+                workStatus.SetBackgroundColor(TextColor);
+                borderLayout.AddView(workStatus);
+
+                var isInNursingHome = new TextView(this) { Text = $"是否安置療養院所 {item.IsInNursingHome}" };
+                isInNursingHome.SetBackgroundColor(TextColor);
+                borderLayout.AddView(isInNursingHome);
+
+                layout.AddView(borderLayout);
+            }
+
             return layout;
+
         }
 
         private LinearLayout GetForthPage()
