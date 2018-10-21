@@ -67,6 +67,8 @@ namespace Speech2TextApp.Data
         /// 訪視次數
         /// </summary>
         public int VisitCount { get; set; }
+
+        public bool IsLast { get; set; }
     }
 
    

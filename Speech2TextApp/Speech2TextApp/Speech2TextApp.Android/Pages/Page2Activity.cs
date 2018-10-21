@@ -183,7 +183,14 @@ namespace Speech2TextApp.Droid.Pages
 
         public void NextButtonEvent(object sender, EventArgs e)
         {
-            StartActivity(typeof(Page3Activity));
+            if (MainActivity.dataCurrent.IsLast)
+            {
+                StartActivity(typeof(Page5Activity));
+            }
+            else
+            {
+                StartActivity(typeof(Page3Activity));
+            }
         }
     }
 }

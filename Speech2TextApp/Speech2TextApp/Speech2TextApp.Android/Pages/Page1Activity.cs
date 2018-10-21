@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page1Activity")]
-    public class Page1Activity :  Activity
+    public class Page1Activity : Activity
     {
         TextView times;
         TextView applyName;
@@ -32,7 +32,7 @@ namespace Speech2TextApp.Droid.Pages
         RadioButton radoiAtHomeN;
         LinearLayout descLayout;
         private readonly int VOICE = 10;
-        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -50,12 +50,12 @@ namespace Speech2TextApp.Droid.Pages
             phone.Text = MainActivity.dataCurrent.Phone;
             AddressType = MainActivity.dataCurrent.AddressType;
 
-            #region address
             addressLayout = (LinearLayout)FindViewById(Resource.Id.showAddress);
             address1 = FindViewById<Button>(Resource.Id.address1);
             address2 = FindViewById<Button>(Resource.Id.address2);
             address3 = FindViewById<Button>(Resource.Id.address3);
-            address1.Click += delegate {
+            address1.Click += delegate
+            {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
@@ -69,7 +69,8 @@ namespace Speech2TextApp.Droid.Pages
                 addressLayout.AddView(address);
             };
 
-            address2.Click += delegate {
+            address2.Click += delegate
+            {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
@@ -83,7 +84,8 @@ namespace Speech2TextApp.Droid.Pages
                 addressLayout.AddView(address);
             };
 
-            address3.Click += delegate {
+            address3.Click += delegate
+            {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
@@ -118,26 +120,9 @@ namespace Speech2TextApp.Droid.Pages
                 addressArea.Hint = "巷";
                 addressLayout.AddView(addressArea);
                 //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "弄";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "號";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "樓";
-                addressLayout.AddView(addressArea);
-                TextView address = new TextView(this);
-                address.Text = "之";
-                addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                AddressType = "其它";
-                addressLayout.AddView(addressArea);
+               
             };
-
-            #endregion
+            
 
             #region visit date
             Calendar myCalendar = Calendar.Instance;
@@ -235,7 +220,15 @@ namespace Speech2TextApp.Droid.Pages
             MainActivity.dataCurrent.VisitDetail.ApplyType = new List<string>() { "低收入戶", "中低收入戶" };
             MainActivity.dataCurrent.VisitDetail.ApplyReason = "負擔家計者失業";
 
-            StartActivity(typeof(Page2Activity));
+            if (MainActivity.dataCurrent.IsLast)
+            {
+                StartActivity(typeof(Page5Activity));
+            }
+            else
+            {
+                StartActivity(typeof(Page2Activity));
+            }
         }
     }
+    
 }

@@ -65,6 +65,8 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\BaseActivity.cs" />
+    <Compile Include="Pages\DetailActivity.cs" />
     <Compile Include="Pages\Page1Activity.cs" />
     <Compile Include="Pages\Page2Activity.cs" />
     <Compile Include="Pages\Page2LiveStatusDialog.cs" />
@@ -216,6 +218,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\edit_text_background_border.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\DetailActivity.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

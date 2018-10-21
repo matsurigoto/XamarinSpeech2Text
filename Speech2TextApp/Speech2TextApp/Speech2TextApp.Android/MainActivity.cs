@@ -139,8 +139,9 @@ namespace Speech2TextApp.Droid
                 mainLayout.AddView(firstLayout);
                 mainLayout.AddView(secondLayout);
                 mainLayout.Click += delegate
+
                 {
-                    var intent = new Intent(this, typeof(Page1Activity));
+                   
                     if (data.VisitDetail == null)
                     {
                         data.VisitDetail = new ApplyDetail()
@@ -149,8 +150,16 @@ namespace Speech2TextApp.Droid
                         };
                     }
                     dataCurrent = data;
+                    if (status == "N")
+                    {
+                        var intent = new Intent(this, typeof(Page1Activity));
+                        StartActivity(intent);
+                    }
+                    else if (status == "Y") {
+                        var intent = new Intent(this, typeof(DetailActivity));
+                        StartActivity(intent);
+                    }
                    
-                    StartActivity(intent);
                 };
                 mainLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
                 dataLayout.AddView(mainLayout);
