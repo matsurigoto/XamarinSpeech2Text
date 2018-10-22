@@ -16,7 +16,7 @@
 		android:id="@+id/circle_view01">
 		
 		<TextView
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:id="@+id/circle1"
 			android:background="@drawable/circle"
@@ -31,7 +31,7 @@
 			android:background="#4A90E2"/>
 
 		<TextView
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:id="@+id/circle3"
 			android:background="@drawable/circle"
@@ -48,7 +48,7 @@
 			android:background="#4A90E2"/>
 	
 		<TextView
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_marginLeft="10px"
 			android:id="@+id/circle3"
@@ -63,7 +63,7 @@
 			android:background="#4A90E2"/>
 
 		<TextView
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:id="@+id/circle4"
 			android:background="@drawable/circle"
@@ -78,7 +78,7 @@
 			android:background="#4A90E2"/>
 
 		<TextView
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:id="@+id/circle5"
 			android:background="@drawable/circle"
@@ -98,14 +98,14 @@
 			android:layout_marginRight="85px"
 			android:orientation="vertical">
 				<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 			<TextView
 				android:text="新增人口基本資料"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -114,14 +114,14 @@
 			
 			</LinearLayout>
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 			<TextView
 				android:text="稱謂"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -133,14 +133,14 @@
 				android:id="@+id/title" />
 			</LinearLayout>
 				<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 			<TextView
 				android:text="姓名"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -152,14 +152,14 @@
 				android:id="@+id/name" />
 			</LinearLayout>
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 			<TextView
 				android:text="是否同住"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -167,19 +167,19 @@
 				android:textColor="@color/form_color_blue"/>
 		
 			<RadioGroup
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="horizontal"
 				android:layout_centerHorizontal="true"
 				android:id="@+id/liveTogether">
 				<RadioButton
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:checked="true"
 					android:text="是"
 					android:id="@+id/liveTogetherY" />
 				<RadioButton
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="否"
 					android:id="@+id/liveTogetherN" />
@@ -188,14 +188,14 @@
 			</LinearLayout>
 	
 		<LinearLayout
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginBottom="13px"
 			android:orientation="vertical">
 			<TextView
 			android:text="身心健康狀況"
 			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="wrap_content"
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:minWidth="25px"
 			android:minHeight="25px"
@@ -203,28 +203,28 @@
 			android:textColor="@color/form_color_blue"
 			/>
 			<RadioGroup
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:id="@+id/healthStatus">
 				<RadioButton
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:checked="true"
 					android:text="無明顯異常"
 					android:id="@+id/healthStatusN" />
 				<RadioButton
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="長期患病"
 					android:id="@+id/healthStatusSick" />
 				<RadioButton
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="身心障礙(肢障)"
 					android:id="@+id/healthStatusSick2" />
 				<RadioButton
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="身心障礙(中度)"
 					android:id="@+id/healthStatusSick3" />
@@ -233,14 +233,14 @@
 		</LinearLayout>
 
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 				<TextView
 				android:text="就業狀況"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -248,28 +248,28 @@
 				android:textColor="@color/form_color_blue"
 				/>
 				<RadioGroup
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
 					android:id="@+id/workStatus">
 						<RadioButton
-							android:layout_width="wrap_content"
+							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
 							android:checked="true"
 							android:text="固定工作"
 							android:id="@+id/workStatusFix" />
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="臨時工作"
 						android:id="@+id/workStatusTemp" />
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="攤販"
 						android:id="@+id/workStatusStree" />
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="無工作"
 						android:id="@+id/workStatusNo" />
@@ -277,14 +277,14 @@
 				</RadioGroup>
 			</LinearLayout>
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 				<TextView
 				android:text="轉介就業服務"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -292,18 +292,18 @@
 				android:textColor="@color/form_color_blue"
 				/>
 				<RadioGroup
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
 					android:id="@+id/referrals">
 						
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="同意"
 						android:id="@+id/referralsY" />
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="不同意"
 						android:id="@+id/referralsN" />
@@ -311,14 +311,14 @@
 				</RadioGroup>
 			</LinearLayout>
 				<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="vertical">
 				<TextView
 				android:text="是否安置於療養院所"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
@@ -326,18 +326,18 @@
 				android:textColor="@color/form_color_blue"
 				/>
 				<RadioGroup
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
 					android:id="@+id/isInNursingHome">
 						
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="是"
 						android:id="@+id/isInNursingHomeY" />
 					<RadioButton
-						android:layout_width="wrap_content"
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="否"
 						android:id="@+id/isInNursingHomeN" />
@@ -352,12 +352,12 @@
 				android:orientation="horizontal">
 				<Button
 					android:text="取消"
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:id="@+id/btn_page_3_cancel"/>
 				<Button
 					android:text="確定"
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="match_parent"
 					android:id="@+id/btn_page_3_add"/>
 			</LinearLayout>

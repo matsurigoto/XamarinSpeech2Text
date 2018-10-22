@@ -16,6 +16,7 @@ namespace Speech2TextApp.Droid.Pages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page4Activity);
+            this.Title = "訪視紀錄";
             liveTogetherY = FindViewById<RadioButton>(Resource.Id.liveTogetherY);
             liveTogetherN = FindViewById<RadioButton>(Resource.Id.liveTogetherN);
             otherDesc = FindViewById<EditText>(Resource.Id.otherDesc);

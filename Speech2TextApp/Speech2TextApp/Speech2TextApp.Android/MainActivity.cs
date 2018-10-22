@@ -13,6 +13,7 @@ using Android.Graphics;
 using Speech2TextApp.Droid.Pages;
 using System.Text;
 using System.IO;
+using Android.Views;
 
 namespace Speech2TextApp.Droid
 {
@@ -33,15 +34,94 @@ namespace Speech2TextApp.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
-            var path = GetExternalFilesDir(null).AbsolutePath; 
+            var path = GetExternalFilesDir(null).AbsolutePath;
             dataService = new DataService();
             datas = dataService.GetDatas(path);
-            
-            if (datas.Count == 0) {
+
+            if (datas.Count == 0)
+            {
                 dataService.GenData(path);
                 datas = dataService.GetDatas(path);
             }
-    
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+           
+            
+            toolbar.Title = "台北市社會輔助訪視調查表";
+            toolbar.InflateMenu(Resource.Menu.main_menu);
+
+            toolbar.SetNavigationIcon(Resource.Mipmap.baseline_keyboard_arrow_left_black_18dp);
+            SetActionBar(toolbar);
+            toolbar.MenuItemClick += (sender, e2) => {
+                switch (e2.Item.TitleFormatted.ToString())
+                {
+                    case "Import":
+                        dataService = new DataService();
+                        datas = dataService.GetDatas(path);
+
+                        if (datas.Count == 0)
+                        {
+                            dataService.GenData(path);
+                            datas = dataService.GetDatas(path);
+                        }
+                        break;
+                    case "Export":
+                        string filePath = System.IO.Path.Combine(path, "doswData.csv");
+                        var csv = new StringBuilder();
+                        var titleLine = @"申請人,受訪者,申請者與受訪者關係,連絡電話,訪視地點,訪視時間,訪視概述,申請人是否實際居住本市,住宅狀況,申請項目,申請低收入主要原因,有無人口之外其他共同居住之人口";
+                        csv.AppendLine(titleLine);
+                        foreach (var v in datasInStatus)
+                        {
+                            string address = v.AddressType;
+                            if (v.AddressType == "戶籍地址")
+                            {
+                                address += " " + v.Address1;
+                            }
+                            else if (v.AddressType == "居住地址")
+                            {
+                                address += " " + v.Address2;
+                            }
+                            else
+                            {
+                                address += " " + v.Address3;
+                            }
+                            if (v.VisitDetail == null)
+                            {
+                                v.VisitDetail = new ApplyDetail()
+                                {
+                                    ApplyType = new List<string>(),
+                                    VisitDesc = string.Empty,
+                                    LiveCityStatus = string.Empty,
+                                    LiveStatus = string.Empty,
+                                    ApplyReason = string.Empty,
+                                    OtherDesc = string.Empty,
+                                    OtherPeople = string.Empty
+                                };
+                            }
+                            string date = string.Empty;
+                            if (v.VisitDetail.VisitDate != null)
+                            {
+                                date = v.VisitDetail.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
+                            }
+                            try
+                            {
+                                var newLine = $"{v.ApplyName},{v.VisitName},{v.Relatoinship},{v.Phone},{address},{date},{v.VisitDetail.VisitDesc ?? string.Empty},{v.VisitDetail.LiveCityStatus ?? string.Empty},{v.VisitDetail.LiveStatus ?? string.Empty},{string.Join(";", v.VisitDetail.ApplyType)},{v.VisitDetail.ApplyReason ?? string.Empty},{v.VisitDetail.OtherPeople ?? string.Empty},{v.VisitDetail.OtherDesc ?? string.Empty}";
+                                csv.AppendLine(newLine);
+                            }
+                            catch (Exception e) { }
+                        }
+                        try
+                        {
+                            File.WriteAllText(filePath, csv.ToString());
+                            Toast.MakeText(this, "匯出完畢", ToastLength.Long).Show();
+                        }
+                        catch (Exception e)
+                        {
+                            Toast.MakeText(this, "匯出失敗", ToastLength.Long).Show();
+                        }
+                        break;
+                }
+            };
+
             nonVisitedButton = FindViewById<Button>(Resource.Id.visit_status_n);
             visitedButton = FindViewById<Button>(Resource.Id.visit_status_Y);
             dataCount = FindViewById<TextView>(Resource.Id.data_count);
@@ -52,48 +132,49 @@ namespace Speech2TextApp.Droid
 
             nonVisitedButton.PerformClick();
 
-            var exportButton = FindViewById<Button>(Resource.Id.export);
-            exportButton.Click += delegate {
-                string filePath = System.IO.Path.Combine(path, "doswData.csv");
-                var csv = new StringBuilder();
-                var titleLine = @"申請人,受訪者,申請者與受訪者關係,連絡電話,訪視地點,訪視時間,訪視概述,申請人是否實際居住本市,住宅狀況,申請項目,申請低收入主要原因,有無人口之外其他共同居住之人口";
-                csv.AppendLine(titleLine);
-                foreach (var v in datasInStatus) {
-                    string address = v.AddressType;
-                    if (v.AddressType == "戶籍地址")
-                    {
-                        address += " "+ v.Address1;
-                    }
-                    else if (v.AddressType == "居住地址")
-                    {
-                        address += " " + v.Address2;
-                    }
-                    else
-                    {
-                        address += " " + v.Address3;
-                    }
-                    if (v.VisitDetail == null) {
-                        v.VisitDetail = new ApplyDetail() {
-                            ApplyType = new List<string>()
-                        };
-                    }
-                    string date = string.Empty;
-                    if (v.VisitDetail.VisitDate != null) {
-                        date = v.VisitDetail.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
-                    }
-                    var newLine = $"{v.ApplyName},{v.VisitName},{v.Relatoinship},{v.Phone},{address},{date},{v.VisitDetail.VisitDesc},{v.VisitDetail.LiveCityStatus},{v.VisitDetail.LiveStatus},{string.Join(";",v.VisitDetail.ApplyType)},{v.VisitDetail.ApplyReason},{v.VisitDetail.OtherPeople},{v.VisitDetail.OtherDesc}";
-                    csv.AppendLine(newLine);
-                }
-                try
-                {
-                    File.WriteAllText(filePath, csv.ToString());
-                    Toast.MakeText(this, "匯出完畢", ToastLength.Long).Show();
-                }
-                catch (Exception e) {
-                    Toast.MakeText(this, "匯出失敗", ToastLength.Long).Show();
-                }
-            };
+            //var exportButton = FindViewById<Button>(Resource.Id.export);
+            //exportButton.Click += delegate {
+            //    string filePath = System.IO.Path.Combine(path, "doswData.csv");
+            //    var csv = new StringBuilder();
+            //    var titleLine = @"申請人,受訪者,申請者與受訪者關係,連絡電話,訪視地點,訪視時間,訪視概述,申請人是否實際居住本市,住宅狀況,申請項目,申請低收入主要原因,有無人口之外其他共同居住之人口";
+            //    csv.AppendLine(titleLine);
+            //    foreach (var v in datasInStatus) {
+            //        string address = v.AddressType;
+            //        if (v.AddressType == "戶籍地址")
+            //        {
+            //            address += " "+ v.Address1;
+            //        }
+            //        else if (v.AddressType == "居住地址")
+            //        {
+            //            address += " " + v.Address2;
+            //        }
+            //        else
+            //        {
+            //            address += " " + v.Address3;
+            //        }
+            //        if (v.VisitDetail == null) {
+            //            v.VisitDetail = new ApplyDetail() {
+            //                ApplyType = new List<string>()
+            //            };
+            //        }
+            //        string date = string.Empty;
+            //        if (v.VisitDetail.VisitDate != null) {
+            //            date = v.VisitDetail.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
+            //        }
+            //        var newLine = $"{v.ApplyName},{v.VisitName},{v.Relatoinship},{v.Phone},{address},{date},{v.VisitDetail.VisitDesc ?? string.Empty},{v.VisitDetail.LiveCityStatus ?? string.Empty},{v.VisitDetail.LiveStatus ?? string.Empty},{string.Join(";",v.VisitDetail.ApplyType)},{v.VisitDetail.ApplyReason ?? string.Empty},{v.VisitDetail.OtherPeople ?? string.Empty},{v.VisitDetail.OtherDesc??string.Empty}";
+            //        csv.AppendLine(newLine);
+            //    }
+            //    try
+            //    {
+            //        File.WriteAllText(filePath, csv.ToString());
+            //        Toast.MakeText(this, "匯出完畢", ToastLength.Long).Show();
+            //    }
+            //    catch (Exception e) {
+            //        Toast.MakeText(this, "匯出失敗", ToastLength.Long).Show();
+            //    }
+            //};
         }
+        
 
         private void GetVisitData(object sender, EventArgs e)
         {
@@ -120,6 +201,11 @@ namespace Speech2TextApp.Droid
                 var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent,
                     Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f);
                 layoutParameter.SetMargins(20,5,0,0);
+
+
+               
+                
+
                 // first layout
                 var firstLayout = new LinearLayout(this)
                 {
@@ -205,7 +291,7 @@ namespace Speech2TextApp.Droid
                     }
                    
                 };
-                mainLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
+                mainLayout.SetBackgroundResource(Resource.Drawable.main_border);
                 dataLayout.AddView(mainLayout);
             }
         }

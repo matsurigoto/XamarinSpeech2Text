@@ -15,6 +15,7 @@ namespace Speech2TextApp.Droid.Pages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page3Activity);
+            this.Title = "訪視紀錄";
             memberCount = FindViewById<TextView>(Resource.Id.member_count);
             members = FindViewById<LinearLayout>(Resource.Id.members);
             if (MainActivity.dataCurrent.VisitDetail.Members == null) {

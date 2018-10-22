@@ -243,7 +243,7 @@ namespace Speech2TextApp.Droid.Pages
                 var borderLayoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
                     ViewGroup.LayoutParams.WrapContent, 1.0f);
                 layoutParameter.SetMargins(100, 0, 100, 0);
-                borderLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
+                borderLayout.SetBackgroundResource(Resource.Drawable.main_border);
 
                 var name = new TextView(this) { Text = item.Name };
                 name.SetTextColor(TextColor);

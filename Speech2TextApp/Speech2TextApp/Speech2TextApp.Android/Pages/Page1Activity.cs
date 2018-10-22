@@ -32,11 +32,12 @@ namespace Speech2TextApp.Droid.Pages
         RadioButton radoiAtHomeN;
         LinearLayout descLayout;
         private readonly int VOICE = 10;
-
+        EditText address;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page1Activity);
+            this.Title = "訪視紀錄";
             times = FindViewById<TextView>(Resource.Id.times);
             applyName = FindViewById<TextView>(Resource.Id.apply_name);
             visitName = FindViewById<TextView>(Resource.Id.visit_name);
@@ -54,6 +55,9 @@ namespace Speech2TextApp.Droid.Pages
             address1 = FindViewById<Button>(Resource.Id.address1);
             address2 = FindViewById<Button>(Resource.Id.address2);
             address3 = FindViewById<Button>(Resource.Id.address3);
+
+            
+
             address1.Click += delegate
             {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
@@ -94,36 +98,52 @@ namespace Speech2TextApp.Droid.Pages
 
 
                 addressLayout.RemoveAllViews();
-                EditText addressArea = new EditText(this);
-                addressArea.Hint = "區";
-                addressLayout.AddView(addressArea);
-                //TextView address = new TextView(this);
-                //address.Text = "\\";
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "里";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "鄰";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "路";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "段";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "巷";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-               
-            };
-            
+                //EditText addressArea = new EditText(this);
+                //addressArea.Hint = "區";
+                //addressLayout.AddView(addressArea);
 
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "里";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "鄰";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "路";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "段";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "巷";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                if (address == null)
+                {
+                    address = new EditText(this);
+                }
+                addressLayout.AddView(address);
+
+            };
+
+            if (AddressType == "戶籍地址")
+            {
+                address1.PerformClick();
+            }
+            else if (AddressType == "居住地址")
+            {
+                address2.PerformClick();
+            }
+            else if (AddressType == "其他")
+            {
+                address = new EditText(this);
+                address.Text = MainActivity.dataCurrent.Address3;
+                address3.PerformClick();
+            }
             #region visit date
             Calendar myCalendar = Calendar.Instance;
             visitDate = FindViewById<EditText>(Resource.Id.visitDate);
@@ -213,6 +233,9 @@ namespace Speech2TextApp.Droid.Pages
                 //MainActivity.dataCurrent.Address3 = 
             }
             //MainActivity.dataCurrent.VisitDetail.VisitDate = visitDate.Text;
+            if (address != null) { 
+            MainActivity.dataCurrent.Address3 = address.Text;
+            }
             MainActivity.dataCurrent.VisitDetail.VisitDesc = _description.Text;
 
             MainActivity.dataCurrent.VisitDetail.LiveCityStatus = "是";

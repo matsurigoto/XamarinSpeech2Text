@@ -21,6 +21,8 @@ namespace Speech2TextApp.Droid.Pages
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.DetailActivity);
             this.IsEdit = false;
+
+            this.Title = "已送出訪視資料";
             var _pageLayout = FindViewById<LinearLayout>(Resource.Id.detail_layout);
 
             _pageLayout.AddView(GetListPage());

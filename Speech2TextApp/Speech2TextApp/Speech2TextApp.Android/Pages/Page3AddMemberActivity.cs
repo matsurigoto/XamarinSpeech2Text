@@ -45,6 +45,7 @@ namespace Speech2TextApp.Droid.Pages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page3AddMemberActivity);
+            this.Title = "訪視紀錄";
             member = new MemberDetail();
             liveTogetherY = FindViewById<RadioButton>(Resource.Id.liveTogetherY);
             liveTogetherN = FindViewById<RadioButton>(Resource.Id.liveTogetherN);
@@ -104,6 +105,9 @@ namespace Speech2TextApp.Droid.Pages
             {
                 member.LiveTogether = rb.Text;
             };
+            if (rb.Text == member.LiveTogether) {
+                rb.PerformClick();
+            }
         }
 
         private void InitHealthStatus(RadioButton rb)
@@ -112,6 +116,10 @@ namespace Speech2TextApp.Droid.Pages
             {
                 member.HealthStatus = rb.Text;
             };
+            if (rb.Text == member.HealthStatus)
+            {
+                rb.PerformClick();
+            }
         }
 
         private void InitWorkStatus(RadioButton rb)
@@ -120,6 +128,10 @@ namespace Speech2TextApp.Droid.Pages
             {
                 member.WorkStatus = rb.Text;
             };
+            if (rb.Text == member.WorkStatus)
+            {
+                rb.PerformClick();
+            }
         }
 
         private void InitReferrals(RadioButton rb)
@@ -128,6 +140,10 @@ namespace Speech2TextApp.Droid.Pages
             {
                 member.Referrals = rb.Text;
             };
+            if (rb.Text == member.Referrals)
+            {
+                rb.PerformClick();
+            }
         }
 
         private void InitIsInNursingHome(RadioButton rb)
@@ -136,6 +152,10 @@ namespace Speech2TextApp.Droid.Pages
             {
                 member.IsInNursingHome = rb.Text;
             };
+            if (rb.Text == member.IsInNursingHome)
+            {
+                rb.PerformClick();
+            }
         }
 
         private void InitRadioButton(RadioButton rb, string defaultName)

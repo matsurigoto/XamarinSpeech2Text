@@ -1,13 +1,13 @@
 ﻿using Android.OS;
 using Android.Widget;
 using System;
-using Android.App;
+using Android.Support.V4.App;
 using System.Collections.Generic;
 
 namespace Speech2TextApp.Droid.Pages
 {
-    [Activity(Label = "Page2Activity")]
-    public class Page2Activity : Activity
+    [Android.App.Activity(Label = "Page2Activity")]
+    public class Page2Activity : FragmentActivity, Page2LiveStatusDialog.NoticeDialogListener
     {
         Button next;
 
@@ -44,6 +44,7 @@ namespace Speech2TextApp.Droid.Pages
             // Use this to return your custom view for this Fragment
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page2Activity);
+            this.Title = "訪視紀錄";
             #region live status
             liveStatusSelf = FindViewById<RadioButton>(Resource.Id.liveStatusSelf);
             liveStatusRant = FindViewById<RadioButton>(Resource.Id.liveStatusRant);
@@ -99,12 +100,15 @@ namespace Speech2TextApp.Droid.Pages
             next.Click += NextButtonEvent;
         }
 
-        public void OnDialogPositiveClick(Android.Support.V4.App.DialogFragment dialog)
+        public void OnDialogPositiveClick(DialogFragment dialog)
         {
             liveStatusRant.Text = string.Format("{0}({1}:{2})",
+                 "租賃",
                 (dialog as Page2LiveStatusDialog).LiveStatusType.Text,
                 (dialog as Page2LiveStatusDialog).LiveStatusMoney);
-           
+            dialog.Dismiss();
+
+
         }
 
         private void InitCheckbox(CheckBox rb, IEnumerable<string> defaultName)
@@ -165,6 +169,8 @@ namespace Speech2TextApp.Droid.Pages
             rb.Click += LiveStatusClick;
         }
 
+       
+
         private void LiveStatusClick(object sender, EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
@@ -173,7 +179,7 @@ namespace Speech2TextApp.Droid.Pages
                 // Create and show the dialog.
                 Page2LiveStatusDialog newFragment = Page2LiveStatusDialog.NewInstance(null);
                 //Add fragment
-                //newFragment.Show(this.FragmentManager, "dialog");
+                newFragment.Show(this.SupportFragmentManager, "dialog");
             }
             else
             {

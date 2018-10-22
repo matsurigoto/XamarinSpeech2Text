@@ -20,6 +20,7 @@ namespace Speech2TextApp.Droid.Pages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page5Activity);
+            this.Title = "訪視紀錄";
             MainActivity.dataCurrent.IsLast = true;
             this.IsEdit = true;
             var submit = FindViewById<Button>(Resource.Id.btn_page_5_next);
