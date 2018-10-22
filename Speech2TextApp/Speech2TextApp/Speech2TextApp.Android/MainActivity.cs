@@ -11,6 +11,8 @@ using System;
 using System.Linq;
 using Android.Graphics;
 using Speech2TextApp.Droid.Pages;
+using System.Text;
+using System.IO;
 
 namespace Speech2TextApp.Droid
 {
@@ -49,6 +51,48 @@ namespace Speech2TextApp.Droid
             visitedButton.Click += GetVisitData;
 
             nonVisitedButton.PerformClick();
+
+            var exportButton = FindViewById<Button>(Resource.Id.export);
+            exportButton.Click += delegate {
+                string filePath = System.IO.Path.Combine(path, "doswData.csv");
+                var csv = new StringBuilder();
+                var titleLine = @"申請人,受訪者,申請者與受訪者關係,連絡電話,訪視地點,訪視時間,訪視概述,申請人是否實際居住本市,住宅狀況,申請項目,申請低收入主要原因,有無人口之外其他共同居住之人口";
+                csv.AppendLine(titleLine);
+                foreach (var v in datasInStatus) {
+                    string address = v.AddressType;
+                    if (v.AddressType == "戶籍地址")
+                    {
+                        address += " "+ v.Address1;
+                    }
+                    else if (v.AddressType == "居住地址")
+                    {
+                        address += " " + v.Address2;
+                    }
+                    else
+                    {
+                        address += " " + v.Address3;
+                    }
+                    if (v.VisitDetail == null) {
+                        v.VisitDetail = new ApplyDetail() {
+                            ApplyType = new List<string>()
+                        };
+                    }
+                    string date = string.Empty;
+                    if (v.VisitDetail.VisitDate != null) {
+                        date = v.VisitDetail.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
+                    }
+                    var newLine = $"{v.ApplyName},{v.VisitName},{v.Relatoinship},{v.Phone},{address},{date},{v.VisitDetail.VisitDesc},{v.VisitDetail.LiveCityStatus},{v.VisitDetail.LiveStatus},{string.Join(";",v.VisitDetail.ApplyType)},{v.VisitDetail.ApplyReason},{v.VisitDetail.OtherPeople},{v.VisitDetail.OtherDesc}";
+                    csv.AppendLine(newLine);
+                }
+                try
+                {
+                    File.WriteAllText(filePath, csv.ToString());
+                    Toast.MakeText(this, "匯出完畢", ToastLength.Long).Show();
+                }
+                catch (Exception e) {
+                    Toast.MakeText(this, "匯出失敗", ToastLength.Long).Show();
+                }
+            };
         }
 
         private void GetVisitData(object sender, EventArgs e)

@@ -3078,6 +3078,9 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09005a
 			public const int expanded_menu = 2131296346;
 			
+			// aapt resource value: 0x7f090087
+			public const int export = 2131296391;
+			
 			// aapt resource value: 0x7f09003b
 			public const int fill = 2131296315;
 			
@@ -3218,9 +3221,6 @@ namespace Speech2TextApp.Droid
 			
 			// aapt resource value: 0x7f0900f6
 			public const int liveTogetherY = 2131296502;
-			
-			// aapt resource value: 0x7f090087
-			public const int mainLinearLayout3 = 2131296391;
 			
 			// aapt resource value: 0x7f090113
 			public const int masked = 2131296531;
