@@ -48,6 +48,7 @@ namespace Speech2TextApp.Service
         public void GenData(string descDocument)
         {
             ApplyResult result1 = new ApplyResult() {
+                Id = "000001",
                 ApplyName = "江玉榮",
                 VisitName = "江小明",
                 Relatoinship = "父子",
@@ -59,11 +60,12 @@ namespace Speech2TextApp.Service
                 VisitDetails = new List<ApplyDetail>()
             };
             string json = JsonConvert.SerializeObject(result1);
-            string destPath = Path.Combine(descDocument, "data1.json");
+            string destPath = Path.Combine(descDocument, $"{result1.Id}.json");
             File.WriteAllText(destPath, json);
 
             ApplyResult result2 = new ApplyResult()
             {
+                Id = "000002",
                 ApplyName = "陳鳳貴",
                 VisitName = "陳阿嬌",
                 Relatoinship = "母女",
@@ -102,12 +104,13 @@ namespace Speech2TextApp.Service
             result2.VisitDetails.Add(resultDetal2);
             result2.VisitDetail = resultDetal2;
             json = JsonConvert.SerializeObject(result2);
-            destPath = Path.Combine(descDocument, "data2.json");
+            destPath = Path.Combine(descDocument, $"{result2.Id}.json");
             File.WriteAllText(destPath, json);
 
 
             ApplyResult resule3 = new ApplyResult()
             {
+                Id = "000003",
                 ApplyName = "李淑貴",
                 VisitName = "李淑貴",
                 Relatoinship = "本人",
@@ -202,7 +205,7 @@ namespace Speech2TextApp.Service
             resule3.VisitDetails.Add(resultDetal34);
             resule3.VisitDetail = resultDetal34;
             json = JsonConvert.SerializeObject(resule3);
-            destPath = Path.Combine(descDocument, "data3.json");
+            destPath = Path.Combine(descDocument, $"{resule3.Id}.json");
             File.WriteAllText(destPath, json);
 
         }

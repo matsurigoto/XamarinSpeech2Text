@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
 	android:background="@android:color/white"
 	android:orientation="vertical">
-	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="65px"
@@ -380,12 +379,12 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
-					android:background="@drawable/edit_text_background_border">
+					>
 					<EditText
 						android:inputType="textMultiLine"
-						android:minLines="4" 
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
+						android:background="@drawable/edit_text_background_border"
 						android:id="@+id/edittext_desc" />
 					<Button
 						android:layout_width="wrap_content"
@@ -405,6 +404,8 @@
 					android:text="下一步"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
 					android:id="@+id/btn_page_1_next"/>
 			</LinearLayout>
 		</LinearLayout>

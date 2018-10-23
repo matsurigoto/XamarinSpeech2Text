@@ -110,6 +110,8 @@
 					android:text="確定送出"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
 					android:id="@+id/btn_page_5_next"/>
 			</LinearLayout>
 		</LinearLayout>

@@ -45,6 +45,8 @@ namespace Speech2TextApp.Droid.Pages
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page2Activity);
             this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+
             #region live status
             liveStatusSelf = FindViewById<RadioButton>(Resource.Id.liveStatusSelf);
             liveStatusRant = FindViewById<RadioButton>(Resource.Id.liveStatusRant);

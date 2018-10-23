@@ -21,6 +21,7 @@ namespace Speech2TextApp.Droid.Pages
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page5Activity);
             this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
             MainActivity.dataCurrent.IsLast = true;
             this.IsEdit = true;
             var submit = FindViewById<Button>(Resource.Id.btn_page_5_next);
@@ -41,7 +42,7 @@ namespace Speech2TextApp.Droid.Pages
             MainActivity.dataCurrent.Status = "Y";
             var descDocument = GetExternalFilesDir(null).AbsolutePath;
             string json = JsonConvert.SerializeObject(MainActivity.dataCurrent);
-            string destPath = Path.Combine(descDocument, "data4.json");
+            string destPath = Path.Combine(descDocument, MainActivity.dataCurrent.Id);
             File.WriteAllText(destPath, json);
             StartActivity(typeof(MainActivity));
         }

@@ -7,18 +7,43 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 
 namespace Speech2TextApp.Droid.Pages
 {
-    public abstract class BaseActivity : Activity
+    public abstract class BaseActivity :Activity
     {
         public Android.Graphics.Color TextColor = Android.Graphics.Color.ParseColor("#4A90E2");
         public float titleSize = 14f;
         public float dataSize = 16f;
 
         public bool IsEdit { get; set; }
+
+        
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater inflater = this.MenuInflater;
+            inflater.Inflate(Resource.Menu.record_menu, menu);
+            return true;
+        }
+
+        public override bool OnMenuItemSelected(int featureId, IMenuItem item)
+        {
+            switch (item.ItemId) {
+                case Resource.Id.menu_record:
+                    var intent = new Intent(this, typeof(MessageActivity));
+                    StartActivity(intent);
+                    break;
+                case Resource.Id.home:
+                    NavUtils.NavigateUpFromSameTask(this);
+                    break;
+            }
+            return true;
+        }
+
         protected LinearLayout GetFirstPage()
         {
             var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,

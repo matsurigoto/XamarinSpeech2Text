@@ -6,7 +6,7 @@ using Android.Widget;
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page4Activity")]
-    public class Page4Activity : Activity
+    public class Page4Activity : BaseActivity
     {
         RadioButton liveTogetherY;
         RadioButton liveTogetherN;
@@ -17,6 +17,7 @@ namespace Speech2TextApp.Droid.Pages
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page4Activity);
             this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
             liveTogetherY = FindViewById<RadioButton>(Resource.Id.liveTogetherY);
             liveTogetherN = FindViewById<RadioButton>(Resource.Id.liveTogetherN);
             otherDesc = FindViewById<EditText>(Resource.Id.otherDesc);

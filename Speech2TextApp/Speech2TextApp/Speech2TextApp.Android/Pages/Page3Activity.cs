@@ -7,7 +7,7 @@ using Android.Graphics;
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page3Activity")]
-    public class Page3Activity : Activity
+    public class Page3Activity : BaseActivity
     {
         TextView memberCount;
         LinearLayout members;
@@ -16,6 +16,8 @@ namespace Speech2TextApp.Droid.Pages
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page3Activity);
             this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+
             memberCount = FindViewById<TextView>(Resource.Id.member_count);
             members = FindViewById<LinearLayout>(Resource.Id.members);
             if (MainActivity.dataCurrent.VisitDetail.Members == null) {
@@ -25,7 +27,7 @@ namespace Speech2TextApp.Droid.Pages
 
             InitMembers();
 
-            var addMember = FindViewById<Button>(Resource.Id.addMember);
+            var addMember = FindViewById<TextView>(Resource.Id.addMember);
             addMember.Click += AddMemberEvent;
 
             var next = FindViewById<Button>(Resource.Id.btn_page_3_next);

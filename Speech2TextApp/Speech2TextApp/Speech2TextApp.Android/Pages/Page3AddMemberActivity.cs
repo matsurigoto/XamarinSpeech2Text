@@ -14,7 +14,7 @@ using Speech2TextApp.Data;
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page3AddMemberActivity")]
-    public class Page3AddMemberActivity : Activity
+    public class Page3AddMemberActivity : BaseActivity
     {
         EditText title;
         EditText name;
@@ -46,6 +46,7 @@ namespace Speech2TextApp.Droid.Pages
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page3AddMemberActivity);
             this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
             member = new MemberDetail();
             liveTogetherY = FindViewById<RadioButton>(Resource.Id.liveTogetherY);
             liveTogetherN = FindViewById<RadioButton>(Resource.Id.liveTogetherN);

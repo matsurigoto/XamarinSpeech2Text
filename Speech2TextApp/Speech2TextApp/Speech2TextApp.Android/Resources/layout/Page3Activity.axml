@@ -114,6 +114,7 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
 				android:orientation="horizontal">
+				
 				<TextView
 					android:text="共 1 筆  列表人口"
 					android:textAppearance="?android:attr/textAppearanceMedium"
@@ -124,15 +125,15 @@
 					android:textSize="14sp"
 					android:id="@+id/member_count"
 					android:textColor="@color/form_color_blue"/>
-				<Button
+				<TextView
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10px"
+				android:layout_height="match_parent"
 				android:id="@+id/addMember"
-				android:background="@drawable/circle_activity"
+				android:background="@drawable/circle_activity_24"
 				android:textColor="#FFFFFF"
 				android:gravity="center"
 				android:text="+"/>
+				
 			</LinearLayout>
 
 			<LinearLayout
@@ -151,6 +152,8 @@
 					android:text="下一步"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
 					android:id="@+id/btn_page_3_next"/>
 			</LinearLayout>
 	

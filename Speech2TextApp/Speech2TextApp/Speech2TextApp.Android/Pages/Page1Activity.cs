@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page1Activity")]
-    public class Page1Activity : Activity
+    public class Page1Activity : BaseActivity
     {
         TextView times;
         TextView applyName;
@@ -33,11 +33,16 @@ namespace Speech2TextApp.Droid.Pages
         LinearLayout descLayout;
         private readonly int VOICE = 10;
         EditText address;
+
+       
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page1Activity);
             this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            
             times = FindViewById<TextView>(Resource.Id.times);
             applyName = FindViewById<TextView>(Resource.Id.apply_name);
             visitName = FindViewById<TextView>(Resource.Id.visit_name);

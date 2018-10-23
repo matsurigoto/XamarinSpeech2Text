@@ -23,6 +23,7 @@ namespace Speech2TextApp.Droid.Pages
             this.IsEdit = false;
 
             this.Title = "已送出訪視資料";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
             var _pageLayout = FindViewById<LinearLayout>(Resource.Id.detail_layout);
 
             _pageLayout.AddView(GetListPage());

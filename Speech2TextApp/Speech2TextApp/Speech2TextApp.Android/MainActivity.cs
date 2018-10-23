@@ -18,7 +18,7 @@ using Android.Views;
 namespace Speech2TextApp.Droid
 {
     [Activity(Label = "Speech2TextApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : BaseActivity
     {
         private LinearLayout dataLayout;
         private IData dataService;
@@ -28,6 +28,13 @@ namespace Speech2TextApp.Droid
         public List<ApplyResult> datasInStatus { get; set; }
         public static ApplyResult dataCurrent { get; set; }
         TextView dataCount;
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater inflater = this.MenuInflater;
+            inflater.Inflate(Resource.Menu.main_menu, menu);
+            return true;
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -132,47 +139,7 @@ namespace Speech2TextApp.Droid
 
             nonVisitedButton.PerformClick();
 
-            //var exportButton = FindViewById<Button>(Resource.Id.export);
-            //exportButton.Click += delegate {
-            //    string filePath = System.IO.Path.Combine(path, "doswData.csv");
-            //    var csv = new StringBuilder();
-            //    var titleLine = @"申請人,受訪者,申請者與受訪者關係,連絡電話,訪視地點,訪視時間,訪視概述,申請人是否實際居住本市,住宅狀況,申請項目,申請低收入主要原因,有無人口之外其他共同居住之人口";
-            //    csv.AppendLine(titleLine);
-            //    foreach (var v in datasInStatus) {
-            //        string address = v.AddressType;
-            //        if (v.AddressType == "戶籍地址")
-            //        {
-            //            address += " "+ v.Address1;
-            //        }
-            //        else if (v.AddressType == "居住地址")
-            //        {
-            //            address += " " + v.Address2;
-            //        }
-            //        else
-            //        {
-            //            address += " " + v.Address3;
-            //        }
-            //        if (v.VisitDetail == null) {
-            //            v.VisitDetail = new ApplyDetail() {
-            //                ApplyType = new List<string>()
-            //            };
-            //        }
-            //        string date = string.Empty;
-            //        if (v.VisitDetail.VisitDate != null) {
-            //            date = v.VisitDetail.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
-            //        }
-            //        var newLine = $"{v.ApplyName},{v.VisitName},{v.Relatoinship},{v.Phone},{address},{date},{v.VisitDetail.VisitDesc ?? string.Empty},{v.VisitDetail.LiveCityStatus ?? string.Empty},{v.VisitDetail.LiveStatus ?? string.Empty},{string.Join(";",v.VisitDetail.ApplyType)},{v.VisitDetail.ApplyReason ?? string.Empty},{v.VisitDetail.OtherPeople ?? string.Empty},{v.VisitDetail.OtherDesc??string.Empty}";
-            //        csv.AppendLine(newLine);
-            //    }
-            //    try
-            //    {
-            //        File.WriteAllText(filePath, csv.ToString());
-            //        Toast.MakeText(this, "匯出完畢", ToastLength.Long).Show();
-            //    }
-            //    catch (Exception e) {
-            //        Toast.MakeText(this, "匯出失敗", ToastLength.Long).Show();
-            //    }
-            //};
+          
         }
         
 
@@ -198,19 +165,24 @@ namespace Speech2TextApp.Droid
             dataLayout.RemoveAllViews();
             foreach (var data in datasInStatus)
             {
-                var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent,
+                var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent,
                     Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f);
                 layoutParameter.SetMargins(20,5,0,0);
 
+                if (data.VisitDetail == null)
+                {
+                    data.VisitDetail = new ApplyDetail()
+                    {
+                        Status = "Y"
+                    };
+                }
 
-               
-                
+
 
                 // first layout
                 var firstLayout = new LinearLayout(this)
                 {
                     Orientation = Orientation.Horizontal,
-                    WeightSum = 2,
                     LayoutParameters = layoutParameter
                 };
 
@@ -218,8 +190,8 @@ namespace Speech2TextApp.Droid
                 {
                     Text = data.ApplyName,
                 };
-                name.SetTextColor(Color.ParseColor("#4A90E2"));
-                name.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
+                name.SetTextColor(TextColor);
+                name.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
                 var textViewTitleParams = new LinearLayout.LayoutParams(250, Android.Views.ViewGroup.LayoutParams.WrapContent);
                 name.LayoutParameters = textViewTitleParams;
 
@@ -228,8 +200,8 @@ namespace Speech2TextApp.Droid
                 {
                     Text = string.Format("探訪次數 : {0}次",data.VisitDetails.Count())
                 };
-                count.SetTextColor(Color.ParseColor("#4A90E2"));
-                count.SetTextSize(Android.Util.ComplexUnitType.Sp, 14);
+                count.SetTextColor(TextColor);
+                count.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
 
                 firstLayout.AddView(name);
                 firstLayout.AddView(count);
@@ -243,42 +215,48 @@ namespace Speech2TextApp.Droid
              
                 var dateTitle = new TextView(this)
                 {
-                    Text = "探訪時間"
+                    Text = "最後訪視"
                 };
-                dateTitle.SetTextColor(Color.ParseColor("#4A90E2"));
-                dateTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, 22);
+                dateTitle.SetTextColor(TextColor);
+                dateTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
                 dateTitle.LayoutParameters = textViewTitleParams;
-
-                var date = new TextView(this)
+                if (data.VisitDetail == null)
                 {
-                    Text = "2018 年 10月 12日 下午 1:30"
-                };
-                date.SetTextColor(Color.ParseColor("#4A90E2"));
-                date.SetTextSize(Android.Util.ComplexUnitType.Sp, 16);
+                    data.VisitDetail = new ApplyDetail()
+                    {
+                        Status = "Y"
+                    };
+                }
+                var lastVisit = data.VisitDetails.OrderByDescending(x => x.VisitDate).FirstOrDefault();
+                var date = new TextView(this);
+                date.Text = "-";
+                if (lastVisit != null && lastVisit.VisitDate != null)
+                {
+                    date.Text = lastVisit.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
+                }
+                date.SetTextColor(TextColor);
+                date.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
 
                 secondLayout.AddView(dateTitle);
                 secondLayout.AddView(date);
 
+                var layP = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent);
+                layP.Weight = 5f;
                 // main layout
                 var mainLayout = new LinearLayout(this)
                 {
                     Orientation = Orientation.Vertical,
-                    WeightSum = 2,
-                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent)
+
+                    LayoutParameters = layP
                 };
+                mainLayout.SetPadding(20, 20, 20, 20);
                 mainLayout.AddView(firstLayout);
                 mainLayout.AddView(secondLayout);
                 mainLayout.Click += delegate
 
                 {
                    
-                    if (data.VisitDetail == null)
-                    {
-                        data.VisitDetail = new ApplyDetail()
-                        {
-                            Status = "Y"
-                        };
-                    }
+                  
                     dataCurrent = data;
                     if (status == "N")
                     {
@@ -291,8 +269,34 @@ namespace Speech2TextApp.Droid
                     }
                    
                 };
-                mainLayout.SetBackgroundResource(Resource.Drawable.main_border);
-                dataLayout.AddView(mainLayout);
+                
+
+                var preDataLayout = new LinearLayout(this)
+                {
+                    Orientation = Orientation.Horizontal,
+                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent)
+                };
+                preDataLayout.SetBackgroundResource(Resource.Drawable.main_border);
+                preDataLayout.AddView(mainLayout);
+
+                if (status == "N") {
+                    ImageButton record = new ImageButton(this);
+                    layP.Weight = 1f;
+                    record.LayoutParameters =layP;
+                    record.SetImageResource(Resource.Drawable.baseline_record_voice_over_24);
+                    //record.SetBackgroundResource(Resource.Mipmap.baseline_archive_black_18dp);
+                    record.Click += delegate {
+                        
+                        dataCurrent = data;
+                        var intent = new Intent(this, typeof(MessageActivity));
+                        StartActivity(intent);
+                       
+                    };
+                    preDataLayout.AddView(record);
+                }
+
+
+                dataLayout.AddView(preDataLayout);
             }
         }
     }

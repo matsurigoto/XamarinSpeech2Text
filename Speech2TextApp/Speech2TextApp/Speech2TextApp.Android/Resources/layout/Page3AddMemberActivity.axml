@@ -5,6 +5,7 @@
 	android:background="@android:color/white"
 	android:orientation="vertical">
 	
+	
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="65px"
@@ -12,11 +13,10 @@
 		android:layout_marginRight="85px"
 		android:layout_marginTop="29px"
 		android:orientation="horizontal"
-		android:background="#FFFFFF"
 		android:id="@+id/circle_view01">
 		
 		<TextView
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/circle1"
 			android:background="@drawable/circle"
@@ -31,7 +31,7 @@
 			android:background="#4A90E2"/>
 
 		<TextView
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/circle3"
 			android:background="@drawable/circle"
@@ -48,7 +48,7 @@
 			android:background="#4A90E2"/>
 	
 		<TextView
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:layout_marginLeft="10px"
 			android:id="@+id/circle3"
@@ -63,7 +63,7 @@
 			android:background="#4A90E2"/>
 
 		<TextView
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/circle4"
 			android:background="@drawable/circle"
@@ -78,7 +78,7 @@
 			android:background="#4A90E2"/>
 
 		<TextView
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="match_parent"
 			android:id="@+id/circle5"
 			android:background="@drawable/circle"
@@ -352,13 +352,17 @@
 				android:orientation="horizontal">
 				<Button
 					android:text="取消"
-					android:layout_width="match_parent"
+					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
 					android:id="@+id/btn_page_3_cancel"/>
 				<Button
 					android:text="確定"
-					android:layout_width="match_parent"
+					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
 					android:id="@+id/btn_page_3_add"/>
 			</LinearLayout>
 		</LinearLayout>
