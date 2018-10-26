@@ -14,6 +14,8 @@ using Speech2TextApp.Droid.Pages;
 using System.Text;
 using System.IO;
 using Android.Views;
+using Android.Graphics.Drawables;
+using Android.Support.V4.Graphics.Drawable;
 
 namespace Speech2TextApp.Droid
 {
@@ -165,8 +167,8 @@ namespace Speech2TextApp.Droid
             dataLayout.RemoveAllViews();
             foreach (var data in datasInStatus)
             {
-                var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent,
-                    Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f);
+                var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent,
+                    Android.Views.ViewGroup.LayoutParams.MatchParent, 1.0f);
                 layoutParameter.SetMargins(20,5,0,0);
 
                 if (data.VisitDetail == null)
@@ -175,6 +177,9 @@ namespace Speech2TextApp.Droid
                     {
                         Status = "Y"
                     };
+                }
+                if (data.Message == null) {
+                    data.Message = new List<string>();
                 }
 
 
@@ -212,7 +217,7 @@ namespace Speech2TextApp.Droid
                     Orientation = Orientation.Horizontal,
                     LayoutParameters = layoutParameter
                 };
-             
+                secondLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
                 var dateTitle = new TextView(this)
                 {
                     Text = "最後訪視"
@@ -240,8 +245,8 @@ namespace Speech2TextApp.Droid
                 secondLayout.AddView(dateTitle);
                 secondLayout.AddView(date);
 
-                var layP = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent);
-                layP.Weight = 5f;
+                var layP = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.MatchParent);
+                layP.SetMargins(20, 0, 20, 50);
                 // main layout
                 var mainLayout = new LinearLayout(this)
                 {
@@ -249,14 +254,15 @@ namespace Speech2TextApp.Droid
 
                     LayoutParameters = layP
                 };
-                mainLayout.SetPadding(20, 20, 20, 20);
+                //mainLayout.SetPadding(20, 20, 20, 20);
+                
                 mainLayout.AddView(firstLayout);
                 mainLayout.AddView(secondLayout);
                 mainLayout.Click += delegate
 
                 {
-                   
-                  
+
+                    data.IsLast = false;  
                     dataCurrent = data;
                     if (status == "N")
                     {
@@ -271,19 +277,30 @@ namespace Speech2TextApp.Droid
                 };
                 
 
-                var preDataLayout = new LinearLayout(this)
+                if (status == "N")
                 {
-                    Orientation = Orientation.Horizontal,
-                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.WrapContent, Android.Views.ViewGroup.LayoutParams.WrapContent)
-                };
-                preDataLayout.SetBackgroundResource(Resource.Drawable.main_border);
-                preDataLayout.AddView(mainLayout);
-
-                if (status == "N") {
-                    ImageButton record = new ImageButton(this);
-                    layP.Weight = 1f;
-                    record.LayoutParameters =layP;
-                    record.SetImageResource(Resource.Drawable.baseline_record_voice_over_24);
+                    layoutParameter.Gravity = GravityFlags.Center;
+                    var record = new LinearLayout(this)
+                    {
+                        Orientation = Orientation.Horizontal,
+                        LayoutParameters = layoutParameter
+                    };
+                    ImageView imageView = new ImageView(this);
+                    imageView.SetColorFilter(TextColor);
+                    imageView.SetImageResource(Resource.Drawable.baseline_event_note_24);
+                    record.AddView(imageView);
+                    TextView tv = new TextView(this);
+                    tv.SetTextColor(TextColor);
+                    tv.Text = "語音備忘錄";
+                    record.AddView(tv);
+                   
+                    if (data.Message.Count() > 0) { 
+                        Button ig = new Button(this);
+                       
+                        ig.SetBackgroundResource(Resource.Drawable.circle_activity_48);
+                        ig.Text = data.Message.Count().ToString();
+                        record.AddView(ig);
+                    }
                     //record.SetBackgroundResource(Resource.Mipmap.baseline_archive_black_18dp);
                     record.Click += delegate {
                         
@@ -292,11 +309,12 @@ namespace Speech2TextApp.Droid
                         StartActivity(intent);
                        
                     };
-                    preDataLayout.AddView(record);
+                    mainLayout.AddView(record);
+                    //preDataLayout.AddView(record);
                 }
+                mainLayout.SetBackgroundResource(Resource.Drawable.main_border);
 
-
-                dataLayout.AddView(preDataLayout);
+                dataLayout.AddView(mainLayout);
             }
         }
     }

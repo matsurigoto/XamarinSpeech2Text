@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Speech;
@@ -16,7 +17,7 @@ namespace Speech2TextApp.Droid.Pages
     {
         TextView times;
         TextView applyName;
-        TextView visitName;
+        EditText visitName;
         TextView relatoinship;
         TextView phone;
         LinearLayout addressLayout;
@@ -45,7 +46,7 @@ namespace Speech2TextApp.Droid.Pages
             
             times = FindViewById<TextView>(Resource.Id.times);
             applyName = FindViewById<TextView>(Resource.Id.apply_name);
-            visitName = FindViewById<TextView>(Resource.Id.visit_name);
+            visitName = FindViewById<EditText>(Resource.Id.visit_name);
             relatoinship = FindViewById<TextView>(Resource.Id.relatoinship);
             phone = FindViewById<TextView>(Resource.Id.phone);
 
@@ -66,11 +67,14 @@ namespace Speech2TextApp.Droid.Pages
             address1.Click += delegate
             {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
+                address1.SetTextColor(TextColor);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
+                address2.SetTextColor(TextColor);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
+                address3.SetTextColor(TextColor);
 
                 address1.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-
+                address1.SetTextColor(Color.White);
                 addressLayout.RemoveAllViews();
                 TextView address = new TextView(this);
                 address.Text = MainActivity.dataCurrent.Address1;
@@ -81,11 +85,14 @@ namespace Speech2TextApp.Droid.Pages
             address2.Click += delegate
             {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
+                address1.SetTextColor(TextColor);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
+                address2.SetTextColor(TextColor);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
+                address3.SetTextColor(TextColor);
 
                 address2.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-
+                address2.SetTextColor(Color.White);
                 addressLayout.RemoveAllViews();
                 TextView address = new TextView(this);
                 address.Text = MainActivity.dataCurrent.Address2;
@@ -96,11 +103,14 @@ namespace Speech2TextApp.Droid.Pages
             address3.Click += delegate
             {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
+                address1.SetTextColor(TextColor);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
+                address2.SetTextColor(TextColor);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
+                address3.SetTextColor(TextColor);
 
                 address3.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-
+                address3.SetTextColor(Color.White);
 
                 addressLayout.RemoveAllViews();
                 //EditText addressArea = new EditText(this);
@@ -152,7 +162,28 @@ namespace Speech2TextApp.Droid.Pages
             #region visit date
             Calendar myCalendar = Calendar.Instance;
             visitDate = FindViewById<EditText>(Resource.Id.visitDate);
+            visitDate.Click += delegate {
+                
+                View dialogView = View.Inflate(this, Resource.Layout.date_time_picker, null);
+                AlertDialog alertDialog = new AlertDialog.Builder(this).Create();
 
+                var buttonSubmit = dialogView.FindViewById<Button>(Resource.Id.date_time_set);
+                buttonSubmit.Click += delegate {
+                    DatePicker datePicker = (DatePicker)dialogView.FindViewById(Resource.Id.date_picker);
+                    TimePicker timePicker = (TimePicker)dialogView.FindViewById(Resource.Id.time_picker);
+
+                    Calendar calendar = new GregorianCalendar(datePicker.Year,
+                                       datePicker.Month,
+                                       datePicker.DayOfMonth,
+                                       timePicker.Hour,
+                                       timePicker.Minute);
+
+                    visitDate.Text = $"{datePicker.Year}/{datePicker.Month}/{datePicker.DayOfMonth} {timePicker.Hour}:{timePicker.Minute}";
+                    alertDialog.Dismiss();
+                };
+                alertDialog.SetView(dialogView);
+                alertDialog.Show();
+         };
             #endregion
 
             #region RadioButton

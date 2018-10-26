@@ -5,7 +5,7 @@
   <!--Update strings and icons-->
   <item android:id="@+id/menu_record"
 	      android:title="Record"
-	      android:icon="@drawable/baseline_record_voice_over_24"
+	      android:icon="@drawable/baseline_mic_24"
 	      android:showAsAction="ifRoom"/>
 
 
