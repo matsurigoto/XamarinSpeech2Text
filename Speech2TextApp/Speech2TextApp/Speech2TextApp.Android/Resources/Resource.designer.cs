@@ -2213,26 +2213,26 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020132
-			public const int avd_hide_password_1 = 2130837810;
-			
 			// aapt resource value: 0x7f020133
-			public const int avd_hide_password_2 = 2130837811;
+			public const int avd_hide_password_1 = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int avd_hide_password_3 = 2130837812;
+			public const int avd_hide_password_2 = 2130837812;
+			
+			// aapt resource value: 0x7f020135
+			public const int avd_hide_password_3 = 2130837813;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020135
-			public const int avd_show_password_1 = 2130837813;
-			
 			// aapt resource value: 0x7f020136
-			public const int avd_show_password_2 = 2130837814;
+			public const int avd_show_password_1 = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int avd_show_password_3 = 2130837815;
+			public const int avd_show_password_2 = 2130837815;
+			
+			// aapt resource value: 0x7f020138
+			public const int avd_show_password_3 = 2130837816;
 			
 			// aapt resource value: 0x7f020055
 			public const int baseline_assignment_24 = 2130837589;
@@ -2799,103 +2799,106 @@ namespace Speech2TextApp.Droid
 			public const int main_bottom_border = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int mr_button_connected_dark = 2130837777;
+			public const int main_top_border = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int mr_button_connected_light = 2130837778;
+			public const int mr_button_connected_dark = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int mr_button_connecting_dark = 2130837779;
+			public const int mr_button_connected_light = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int mr_button_connecting_light = 2130837780;
+			public const int mr_button_connecting_dark = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int mr_button_dark = 2130837781;
+			public const int mr_button_connecting_light = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int mr_button_light = 2130837782;
+			public const int mr_button_dark = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int mr_dialog_close_dark = 2130837783;
+			public const int mr_button_light = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int mr_dialog_close_light = 2130837784;
+			public const int mr_dialog_close_dark = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int mr_dialog_material_background_dark = 2130837785;
+			public const int mr_dialog_close_light = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int mr_dialog_material_background_light = 2130837786;
+			public const int mr_dialog_material_background_dark = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int mr_group_collapse = 2130837787;
+			public const int mr_dialog_material_background_light = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int mr_group_expand = 2130837788;
+			public const int mr_group_collapse = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int mr_media_pause_dark = 2130837789;
+			public const int mr_group_expand = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int mr_media_pause_light = 2130837790;
+			public const int mr_media_pause_dark = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int mr_media_play_dark = 2130837791;
+			public const int mr_media_pause_light = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int mr_media_play_light = 2130837792;
+			public const int mr_media_play_dark = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int mr_media_stop_dark = 2130837793;
+			public const int mr_media_play_light = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int mr_media_stop_light = 2130837794;
+			public const int mr_media_stop_dark = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int mr_vol_type_audiotrack_dark = 2130837795;
+			public const int mr_media_stop_light = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int mr_vol_type_audiotrack_light = 2130837796;
+			public const int mr_vol_type_audiotrack_dark = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int navigation_empty_icon = 2130837797;
+			public const int mr_vol_type_audiotrack_light = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int notification_action_background = 2130837798;
+			public const int navigation_empty_icon = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int notification_bg = 2130837799;
+			public const int notification_action_background = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int notification_bg_low = 2130837800;
+			public const int notification_bg = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int notification_bg_low_normal = 2130837801;
+			public const int notification_bg_low = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int notification_bg_low_pressed = 2130837802;
+			public const int notification_bg_low_normal = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int notification_bg_normal = 2130837803;
+			public const int notification_bg_low_pressed = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int notification_bg_normal_pressed = 2130837804;
+			public const int notification_bg_normal = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int notification_icon_background = 2130837805;
-			
-			// aapt resource value: 0x7f020130
-			public const int notification_template_icon_bg = 2130837808;
-			
-			// aapt resource value: 0x7f020131
-			public const int notification_template_icon_low_bg = 2130837809;
+			public const int notification_bg_normal_pressed = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int notification_tile_bg = 2130837806;
+			public const int notification_icon_background = 2130837806;
+			
+			// aapt resource value: 0x7f020131
+			public const int notification_template_icon_bg = 2130837809;
+			
+			// aapt resource value: 0x7f020132
+			public const int notification_template_icon_low_bg = 2130837810;
 			
 			// aapt resource value: 0x7f02012f
-			public const int notify_panel_notification_icon_bg = 2130837807;
+			public const int notification_tile_bg = 2130837807;
+			
+			// aapt resource value: 0x7f020130
+			public const int notify_panel_notification_icon_bg = 2130837808;
 			
 			static Drawable()
 			{
@@ -2910,8 +2913,8 @@ namespace Speech2TextApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0900ad
-			public const int action0 = 2131296429;
+			// aapt resource value: 0x7f0900aa
+			public const int action0 = 2131296426;
 			
 			// aapt resource value: 0x7f090064
 			public const int action_bar = 2131296356;
@@ -2934,17 +2937,17 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090041
 			public const int action_bar_title = 2131296321;
 			
-			// aapt resource value: 0x7f0900aa
-			public const int action_container = 2131296426;
+			// aapt resource value: 0x7f0900a7
+			public const int action_container = 2131296423;
 			
 			// aapt resource value: 0x7f090065
 			public const int action_context_bar = 2131296357;
 			
-			// aapt resource value: 0x7f0900b1
-			public const int action_divider = 2131296433;
+			// aapt resource value: 0x7f0900ae
+			public const int action_divider = 2131296430;
 			
-			// aapt resource value: 0x7f0900ab
-			public const int action_image = 2131296427;
+			// aapt resource value: 0x7f0900a8
+			public const int action_image = 2131296424;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -2961,11 +2964,11 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090043
 			public const int action_mode_close_button = 2131296323;
 			
-			// aapt resource value: 0x7f0900ac
-			public const int action_text = 2131296428;
+			// aapt resource value: 0x7f0900a9
+			public const int action_text = 2131296425;
 			
-			// aapt resource value: 0x7f0900ba
-			public const int actions = 2131296442;
+			// aapt resource value: 0x7f0900b7
+			public const int actions = 2131296439;
 			
 			// aapt resource value: 0x7f090044
 			public const int activity_chooser_view_content = 2131296324;
@@ -2973,17 +2976,17 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09001e
 			public const int add = 2131296286;
 			
-			// aapt resource value: 0x7f0900f8
-			public const int addMember = 2131296504;
+			// aapt resource value: 0x7f0900f6
+			public const int addMember = 2131296502;
 			
-			// aapt resource value: 0x7f0900cc
-			public const int address1 = 2131296460;
+			// aapt resource value: 0x7f0900c9
+			public const int address1 = 2131296457;
 			
-			// aapt resource value: 0x7f0900cd
-			public const int address2 = 2131296461;
+			// aapt resource value: 0x7f0900ca
+			public const int address2 = 2131296458;
 			
-			// aapt resource value: 0x7f0900ce
-			public const int address3 = 2131296462;
+			// aapt resource value: 0x7f0900cb
+			public const int address3 = 2131296459;
 			
 			// aapt resource value: 0x7f090058
 			public const int alertTitle = 2131296344;
@@ -2994,11 +2997,11 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090023
 			public const int always = 2131296291;
 			
-			// aapt resource value: 0x7f0900c8
-			public const int apply_name = 2131296456;
+			// aapt resource value: 0x7f0900c5
+			public const int apply_name = 2131296453;
 			
-			// aapt resource value: 0x7f0900d4
-			public const int areaDesc = 2131296468;
+			// aapt resource value: 0x7f0900d1
+			public const int areaDesc = 2131296465;
 			
 			// aapt resource value: 0x7f09002f
 			public const int auto = 2131296303;
@@ -3009,47 +3012,38 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090028
 			public const int bottom = 2131296296;
 			
-			// aapt resource value: 0x7f0900d6
-			public const int btnRecord = 2131296470;
-			
-			// aapt resource value: 0x7f09008f
-			public const int btn_back = 2131296399;
-			
 			// aapt resource value: 0x7f090085
 			public const int btn_detail = 2131296389;
 			
-			// aapt resource value: 0x7f0900d5
-			public const int btn_page_1_next = 2131296469;
+			// aapt resource value: 0x7f0900d3
+			public const int btn_page_1_next = 2131296467;
 			
-			// aapt resource value: 0x7f0900ef
-			public const int btn_page_2_next = 2131296495;
+			// aapt resource value: 0x7f0900ec
+			public const int btn_page_2_next = 2131296492;
+			
+			// aapt resource value: 0x7f09010e
+			public const int btn_page_3_add = 2131296526;
+			
+			// aapt resource value: 0x7f09010d
+			public const int btn_page_3_cancel = 2131296525;
+			
+			// aapt resource value: 0x7f0900f8
+			public const int btn_page_3_next = 2131296504;
 			
 			// aapt resource value: 0x7f090110
-			public const int btn_page_3_add = 2131296528;
-			
-			// aapt resource value: 0x7f09010f
-			public const int btn_page_3_cancel = 2131296527;
-			
-			// aapt resource value: 0x7f0900fa
-			public const int btn_page_3_next = 2131296506;
+			public const int btn_page_4_next = 2131296528;
 			
 			// aapt resource value: 0x7f090112
-			public const int btn_page_4_next = 2131296530;
+			public const int btn_page_5_next = 2131296530;
 			
-			// aapt resource value: 0x7f090114
-			public const int btn_page_5_next = 2131296532;
-			
-			// aapt resource value: 0x7f09008d
-			public const int btn_record = 2131296397;
-			
-			// aapt resource value: 0x7f09008e
-			public const int btn_submit = 2131296398;
+			// aapt resource value: 0x7f09008c
+			public const int btn_record = 2131296396;
 			
 			// aapt resource value: 0x7f09004b
 			public const int buttonPanel = 2131296331;
 			
-			// aapt resource value: 0x7f0900ae
-			public const int cancel_action = 2131296430;
+			// aapt resource value: 0x7f0900ab
+			public const int cancel_action = 2131296427;
 			
 			// aapt resource value: 0x7f090030
 			public const int center = 2131296304;
@@ -3063,26 +3057,26 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09005b
 			public const int checkbox = 2131296347;
 			
-			// aapt resource value: 0x7f0900b6
-			public const int chronometer = 2131296438;
+			// aapt resource value: 0x7f0900b3
+			public const int chronometer = 2131296435;
 			
-			// aapt resource value: 0x7f0900c2
-			public const int circle1 = 2131296450;
+			// aapt resource value: 0x7f0900bf
+			public const int circle1 = 2131296447;
 			
-			// aapt resource value: 0x7f0900c3
-			public const int circle2 = 2131296451;
-			
-			// aapt resource value: 0x7f0900c4
-			public const int circle3 = 2131296452;
-			
-			// aapt resource value: 0x7f0900c5
-			public const int circle4 = 2131296453;
-			
-			// aapt resource value: 0x7f0900c6
-			public const int circle5 = 2131296454;
+			// aapt resource value: 0x7f0900c0
+			public const int circle2 = 2131296448;
 			
 			// aapt resource value: 0x7f0900c1
-			public const int circle_view01 = 2131296449;
+			public const int circle3 = 2131296449;
+			
+			// aapt resource value: 0x7f0900c2
+			public const int circle4 = 2131296450;
+			
+			// aapt resource value: 0x7f0900c3
+			public const int circle5 = 2131296451;
+			
+			// aapt resource value: 0x7f0900be
+			public const int circle_view01 = 2131296446;
 			
 			// aapt resource value: 0x7f090039
 			public const int clip_horizontal = 2131296313;
@@ -3095,6 +3089,9 @@ namespace Speech2TextApp.Droid
 			
 			// aapt resource value: 0x7f090078
 			public const int container = 2131296376;
+			
+			// aapt resource value: 0x7f0900f4
+			public const int content = 2131296500;
 			
 			// aapt resource value: 0x7f09004e
 			public const int contentPanel = 2131296334;
@@ -3150,14 +3147,14 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090066
 			public const int edit_query = 2131296358;
 			
-			// aapt resource value: 0x7f09008c
-			public const int edittext_desc = 2131296396;
+			// aapt resource value: 0x7f0900d2
+			public const int edittext_desc = 2131296466;
 			
 			// aapt resource value: 0x7f090021
 			public const int end = 2131296289;
 			
-			// aapt resource value: 0x7f0900c0
-			public const int end_padder = 2131296448;
+			// aapt resource value: 0x7f0900bd
+			public const int end_padder = 2131296445;
 			
 			// aapt resource value: 0x7f09002a
 			public const int enterAlways = 2131296298;
@@ -3186,20 +3183,20 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09003f
 			public const int @fixed = 2131296319;
 			
+			// aapt resource value: 0x7f0900fd
+			public const int healthStatus = 2131296509;
+			
+			// aapt resource value: 0x7f0900fe
+			public const int healthStatusN = 2131296510;
+			
 			// aapt resource value: 0x7f0900ff
-			public const int healthStatus = 2131296511;
+			public const int healthStatusSick = 2131296511;
 			
 			// aapt resource value: 0x7f090100
-			public const int healthStatusN = 2131296512;
+			public const int healthStatusSick2 = 2131296512;
 			
 			// aapt resource value: 0x7f090101
-			public const int healthStatusSick = 2131296513;
-			
-			// aapt resource value: 0x7f090102
-			public const int healthStatusSick2 = 2131296514;
-			
-			// aapt resource value: 0x7f090103
-			public const int healthStatusSick3 = 2131296515;
+			public const int healthStatusSick3 = 2131296513;
 			
 			// aapt resource value: 0x7f090005
 			public const int home = 2131296261;
@@ -3210,8 +3207,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090049
 			public const int icon = 2131296329;
 			
-			// aapt resource value: 0x7f0900bb
-			public const int icon_group = 2131296443;
+			// aapt resource value: 0x7f0900b8
+			public const int icon_group = 2131296440;
 			
 			// aapt resource value: 0x7f090025
 			public const int ifRoom = 2131296293;
@@ -3219,17 +3216,17 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090046
 			public const int image = 2131296326;
 			
-			// aapt resource value: 0x7f0900b7
-			public const int info = 2131296439;
+			// aapt resource value: 0x7f0900b4
+			public const int info = 2131296436;
+			
+			// aapt resource value: 0x7f09010a
+			public const int isInNursingHome = 2131296522;
 			
 			// aapt resource value: 0x7f09010c
-			public const int isInNursingHome = 2131296524;
+			public const int isInNursingHomeN = 2131296524;
 			
-			// aapt resource value: 0x7f09010e
-			public const int isInNursingHomeN = 2131296526;
-			
-			// aapt resource value: 0x7f09010d
-			public const int isInNursingHomeY = 2131296525;
+			// aapt resource value: 0x7f09010b
+			public const int isInNursingHomeY = 2131296523;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
@@ -3240,11 +3237,11 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090034
 			public const int left = 2131296308;
 			
-			// aapt resource value: 0x7f0900bc
-			public const int line1 = 2131296444;
+			// aapt resource value: 0x7f0900b9
+			public const int line1 = 2131296441;
 			
-			// aapt resource value: 0x7f0900be
-			public const int line3 = 2131296446;
+			// aapt resource value: 0x7f0900bb
+			public const int line3 = 2131296443;
 			
 			// aapt resource value: 0x7f09000f
 			public const int listMode = 2131296271;
@@ -3252,89 +3249,89 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090048
 			public const int list_item = 2131296328;
 			
+			// aapt resource value: 0x7f0900d4
+			public const int liveCity = 2131296468;
+			
 			// aapt resource value: 0x7f0900d7
-			public const int liveCity = 2131296471;
+			public const int liveCityE = 2131296471;
 			
-			// aapt resource value: 0x7f0900da
-			public const int liveCityE = 2131296474;
+			// aapt resource value: 0x7f0900d6
+			public const int liveCityN = 2131296470;
 			
-			// aapt resource value: 0x7f0900d9
-			public const int liveCityN = 2131296473;
+			// aapt resource value: 0x7f0900d5
+			public const int liveCityY = 2131296469;
 			
 			// aapt resource value: 0x7f0900d8
-			public const int liveCityY = 2131296472;
+			public const int liveStatus = 2131296472;
 			
 			// aapt resource value: 0x7f0900db
-			public const int liveStatus = 2131296475;
-			
-			// aapt resource value: 0x7f0900de
-			public const int liveStatusAssign = 2131296478;
-			
-			// aapt resource value: 0x7f0900df
-			public const int liveStatusBorrow = 2131296479;
-			
-			// aapt resource value: 0x7f0900e1
-			public const int liveStatusE = 2131296481;
-			
-			// aapt resource value: 0x7f0900f6
-			public const int liveStatusOK = 2131296502;
-			
-			// aapt resource value: 0x7f0900e0
-			public const int liveStatusOrg = 2131296480;
-			
-			// aapt resource value: 0x7f0900dd
-			public const int liveStatusRant = 2131296477;
-			
-			// aapt resource value: 0x7f0900f1
-			public const int liveStatusRant1 = 2131296497;
-			
-			// aapt resource value: 0x7f0900f2
-			public const int liveStatusRant2 = 2131296498;
-			
-			// aapt resource value: 0x7f0900f3
-			public const int liveStatusRant3 = 2131296499;
-			
-			// aapt resource value: 0x7f0900f4
-			public const int liveStatusRant4 = 2131296500;
-			
-			// aapt resource value: 0x7f0900f5
-			public const int liveStatusRantCost = 2131296501;
-			
-			// aapt resource value: 0x7f0900f0
-			public const int liveStatusRantType = 2131296496;
+			public const int liveStatusAssign = 2131296475;
 			
 			// aapt resource value: 0x7f0900dc
-			public const int liveStatusSelf = 2131296476;
+			public const int liveStatusBorrow = 2131296476;
+			
+			// aapt resource value: 0x7f0900de
+			public const int liveStatusE = 2131296478;
+			
+			// aapt resource value: 0x7f0900f3
+			public const int liveStatusOK = 2131296499;
+			
+			// aapt resource value: 0x7f0900dd
+			public const int liveStatusOrg = 2131296477;
+			
+			// aapt resource value: 0x7f0900da
+			public const int liveStatusRant = 2131296474;
+			
+			// aapt resource value: 0x7f0900ee
+			public const int liveStatusRant1 = 2131296494;
+			
+			// aapt resource value: 0x7f0900ef
+			public const int liveStatusRant2 = 2131296495;
+			
+			// aapt resource value: 0x7f0900f0
+			public const int liveStatusRant3 = 2131296496;
+			
+			// aapt resource value: 0x7f0900f1
+			public const int liveStatusRant4 = 2131296497;
+			
+			// aapt resource value: 0x7f0900f2
+			public const int liveStatusRantCost = 2131296498;
+			
+			// aapt resource value: 0x7f0900ed
+			public const int liveStatusRantType = 2131296493;
+			
+			// aapt resource value: 0x7f0900d9
+			public const int liveStatusSelf = 2131296473;
+			
+			// aapt resource value: 0x7f0900fa
+			public const int liveTogether = 2131296506;
 			
 			// aapt resource value: 0x7f0900fc
-			public const int liveTogether = 2131296508;
+			public const int liveTogetherN = 2131296508;
 			
-			// aapt resource value: 0x7f0900fe
-			public const int liveTogetherN = 2131296510;
+			// aapt resource value: 0x7f0900fb
+			public const int liveTogetherY = 2131296507;
 			
-			// aapt resource value: 0x7f0900fd
-			public const int liveTogetherY = 2131296509;
+			// aapt resource value: 0x7f090118
+			public const int masked = 2131296536;
 			
-			// aapt resource value: 0x7f090119
-			public const int masked = 2131296537;
+			// aapt resource value: 0x7f0900ad
+			public const int media_actions = 2131296429;
 			
-			// aapt resource value: 0x7f0900b0
-			public const int media_actions = 2131296432;
+			// aapt resource value: 0x7f0900f5
+			public const int member_count = 2131296501;
 			
 			// aapt resource value: 0x7f0900f7
-			public const int member_count = 2131296503;
-			
-			// aapt resource value: 0x7f0900f9
-			public const int members = 2131296505;
-			
-			// aapt resource value: 0x7f09011b
-			public const int menu_export = 2131296539;
+			public const int members = 2131296503;
 			
 			// aapt resource value: 0x7f09011a
-			public const int menu_import = 2131296538;
+			public const int menu_export = 2131296538;
 			
-			// aapt resource value: 0x7f09011c
-			public const int menu_record = 2131296540;
+			// aapt resource value: 0x7f090119
+			public const int menu_import = 2131296537;
+			
+			// aapt resource value: 0x7f09011b
+			public const int menu_record = 2131296539;
 			
 			// aapt resource value: 0x7f09008b
 			public const int message_layout = 2131296395;
@@ -3345,86 +3342,86 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09003e
 			public const int mini = 2131296318;
 			
-			// aapt resource value: 0x7f09009c
-			public const int mr_art = 2131296412;
+			// aapt resource value: 0x7f090099
+			public const int mr_art = 2131296409;
+			
+			// aapt resource value: 0x7f09008e
+			public const int mr_chooser_list = 2131296398;
 			
 			// aapt resource value: 0x7f090091
-			public const int mr_chooser_list = 2131296401;
+			public const int mr_chooser_route_desc = 2131296401;
 			
-			// aapt resource value: 0x7f090094
-			public const int mr_chooser_route_desc = 2131296404;
-			
-			// aapt resource value: 0x7f090092
-			public const int mr_chooser_route_icon = 2131296402;
-			
-			// aapt resource value: 0x7f090093
-			public const int mr_chooser_route_name = 2131296403;
+			// aapt resource value: 0x7f09008f
+			public const int mr_chooser_route_icon = 2131296399;
 			
 			// aapt resource value: 0x7f090090
-			public const int mr_chooser_title = 2131296400;
+			public const int mr_chooser_route_name = 2131296400;
 			
-			// aapt resource value: 0x7f090099
-			public const int mr_close = 2131296409;
-			
-			// aapt resource value: 0x7f09009f
-			public const int mr_control_divider = 2131296415;
-			
-			// aapt resource value: 0x7f0900a5
-			public const int mr_control_playback_ctrl = 2131296421;
-			
-			// aapt resource value: 0x7f0900a8
-			public const int mr_control_subtitle = 2131296424;
-			
-			// aapt resource value: 0x7f0900a7
-			public const int mr_control_title = 2131296423;
-			
-			// aapt resource value: 0x7f0900a6
-			public const int mr_control_title_container = 2131296422;
-			
-			// aapt resource value: 0x7f09009a
-			public const int mr_custom_control = 2131296410;
-			
-			// aapt resource value: 0x7f09009b
-			public const int mr_default_control = 2131296411;
+			// aapt resource value: 0x7f09008d
+			public const int mr_chooser_title = 2131296397;
 			
 			// aapt resource value: 0x7f090096
-			public const int mr_dialog_area = 2131296406;
+			public const int mr_close = 2131296406;
 			
-			// aapt resource value: 0x7f090095
-			public const int mr_expandable_area = 2131296405;
+			// aapt resource value: 0x7f09009c
+			public const int mr_control_divider = 2131296412;
 			
-			// aapt resource value: 0x7f0900a9
-			public const int mr_group_expand_collapse = 2131296425;
+			// aapt resource value: 0x7f0900a2
+			public const int mr_control_playback_ctrl = 2131296418;
 			
-			// aapt resource value: 0x7f09009d
-			public const int mr_media_main_control = 2131296413;
-			
-			// aapt resource value: 0x7f090098
-			public const int mr_name = 2131296408;
-			
-			// aapt resource value: 0x7f09009e
-			public const int mr_playback_control = 2131296414;
-			
-			// aapt resource value: 0x7f090097
-			public const int mr_title_bar = 2131296407;
-			
-			// aapt resource value: 0x7f0900a0
-			public const int mr_volume_control = 2131296416;
-			
-			// aapt resource value: 0x7f0900a1
-			public const int mr_volume_group_list = 2131296417;
-			
-			// aapt resource value: 0x7f0900a3
-			public const int mr_volume_item_icon = 2131296419;
+			// aapt resource value: 0x7f0900a5
+			public const int mr_control_subtitle = 2131296421;
 			
 			// aapt resource value: 0x7f0900a4
-			public const int mr_volume_slider = 2131296420;
+			public const int mr_control_title = 2131296420;
+			
+			// aapt resource value: 0x7f0900a3
+			public const int mr_control_title_container = 2131296419;
+			
+			// aapt resource value: 0x7f090097
+			public const int mr_custom_control = 2131296407;
+			
+			// aapt resource value: 0x7f090098
+			public const int mr_default_control = 2131296408;
+			
+			// aapt resource value: 0x7f090093
+			public const int mr_dialog_area = 2131296403;
+			
+			// aapt resource value: 0x7f090092
+			public const int mr_expandable_area = 2131296402;
+			
+			// aapt resource value: 0x7f0900a6
+			public const int mr_group_expand_collapse = 2131296422;
+			
+			// aapt resource value: 0x7f09009a
+			public const int mr_media_main_control = 2131296410;
+			
+			// aapt resource value: 0x7f090095
+			public const int mr_name = 2131296405;
+			
+			// aapt resource value: 0x7f09009b
+			public const int mr_playback_control = 2131296411;
+			
+			// aapt resource value: 0x7f090094
+			public const int mr_title_bar = 2131296404;
+			
+			// aapt resource value: 0x7f09009d
+			public const int mr_volume_control = 2131296413;
+			
+			// aapt resource value: 0x7f09009e
+			public const int mr_volume_group_list = 2131296414;
+			
+			// aapt resource value: 0x7f0900a0
+			public const int mr_volume_item_icon = 2131296416;
+			
+			// aapt resource value: 0x7f0900a1
+			public const int mr_volume_slider = 2131296417;
 			
 			// aapt resource value: 0x7f090019
 			public const int multiply = 2131296281;
 			
-			// aapt resource value: 0x7f0900fb
-			public const int name = 2131296507;
+			// aapt resource value: 0x7f0900f9
+			public const int name = 2131296505;
 			
 			// aapt resource value: 0x7f09007e
 			public const int navigation_header_container = 2131296382;
@@ -3432,8 +3429,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int never = 2131296294;
 			
-			// aapt resource value: 0x7f090116
-			public const int next = 2131296534;
+			// aapt resource value: 0x7f090115
+			public const int next = 2131296533;
 			
 			// aapt resource value: 0x7f090014
 			public const int none = 2131296276;
@@ -3441,20 +3438,20 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090010
 			public const int normal = 2131296272;
 			
-			// aapt resource value: 0x7f0900b9
-			public const int notification_background = 2131296441;
+			// aapt resource value: 0x7f0900b6
+			public const int notification_background = 2131296438;
 			
-			// aapt resource value: 0x7f0900b3
-			public const int notification_main_column = 2131296435;
+			// aapt resource value: 0x7f0900b0
+			public const int notification_main_column = 2131296432;
 			
-			// aapt resource value: 0x7f0900b2
-			public const int notification_main_column_container = 2131296434;
+			// aapt resource value: 0x7f0900af
+			public const int notification_main_column_container = 2131296431;
+			
+			// aapt resource value: 0x7f09010f
+			public const int otherDesc = 2131296527;
 			
 			// aapt resource value: 0x7f090111
-			public const int otherDesc = 2131296529;
-			
-			// aapt resource value: 0x7f090113
-			public const int page_5_layout = 2131296531;
+			public const int page_5_layout = 2131296529;
 			
 			// aapt resource value: 0x7f090037
 			public const int parallax = 2131296311;
@@ -3462,8 +3459,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09004d
 			public const int parentPanel = 2131296333;
 			
-			// aapt resource value: 0x7f0900cb
-			public const int phone = 2131296459;
+			// aapt resource value: 0x7f0900c8
+			public const int phone = 2131296456;
 			
 			// aapt resource value: 0x7f090038
 			public const int pin = 2131296312;
@@ -3477,62 +3474,65 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09005d
 			public const int radio = 2131296349;
 			
-			// aapt resource value: 0x7f0900d0
-			public const int radioGroup1 = 2131296464;
+			// aapt resource value: 0x7f0900cd
+			public const int radioGroup1 = 2131296461;
 			
-			// aapt resource value: 0x7f0900d2
-			public const int radoiAtHomeN = 2131296466;
+			// aapt resource value: 0x7f0900cf
+			public const int radoiAtHomeN = 2131296463;
 			
-			// aapt resource value: 0x7f0900d1
-			public const int radoiAtHomeY = 2131296465;
+			// aapt resource value: 0x7f0900ce
+			public const int radoiAtHomeY = 2131296462;
 			
-			// aapt resource value: 0x7f0900e6
-			public const int reason = 2131296486;
+			// aapt resource value: 0x7f0900e3
+			public const int reason = 2131296483;
 			
-			// aapt resource value: 0x7f0900e8
-			public const int reasonDie = 2131296488;
-			
-			// aapt resource value: 0x7f0900ea
-			public const int reasonDivorce = 2131296490;
-			
-			// aapt resource value: 0x7f0900ee
-			public const int reasonE = 2131296494;
-			
-			// aapt resource value: 0x7f0900e9
-			public const int reasonJail = 2131296489;
-			
-			// aapt resource value: 0x7f0900eb
-			public const int reasonMuch = 2131296491;
+			// aapt resource value: 0x7f0900e5
+			public const int reasonDie = 2131296485;
 			
 			// aapt resource value: 0x7f0900e7
-			public const int reasonNoWork = 2131296487;
+			public const int reasonDivorce = 2131296487;
 			
-			// aapt resource value: 0x7f0900ec
-			public const int reasonSick = 2131296492;
+			// aapt resource value: 0x7f0900eb
+			public const int reasonE = 2131296491;
 			
-			// aapt resource value: 0x7f0900ed
-			public const int reasonSick2 = 2131296493;
+			// aapt resource value: 0x7f0900e6
+			public const int reasonJail = 2131296486;
+			
+			// aapt resource value: 0x7f0900e8
+			public const int reasonMuch = 2131296488;
+			
+			// aapt resource value: 0x7f0900e4
+			public const int reasonNoWork = 2131296484;
+			
+			// aapt resource value: 0x7f0900e9
+			public const int reasonSick = 2131296489;
+			
+			// aapt resource value: 0x7f0900ea
+			public const int reasonSick2 = 2131296490;
+			
+			// aapt resource value: 0x7f090107
+			public const int referrals = 2131296519;
 			
 			// aapt resource value: 0x7f090109
-			public const int referrals = 2131296521;
+			public const int referralsN = 2131296521;
 			
-			// aapt resource value: 0x7f09010b
-			public const int referralsN = 2131296523;
+			// aapt resource value: 0x7f090108
+			public const int referralsY = 2131296520;
 			
-			// aapt resource value: 0x7f09010a
-			public const int referralsY = 2131296522;
-			
-			// aapt resource value: 0x7f0900ca
-			public const int relatoinship = 2131296458;
+			// aapt resource value: 0x7f0900c7
+			public const int relatoinship = 2131296455;
 			
 			// aapt resource value: 0x7f090035
 			public const int right = 2131296309;
 			
-			// aapt resource value: 0x7f0900b8
-			public const int right_icon = 2131296440;
+			// aapt resource value: 0x7f0900b5
+			public const int right_icon = 2131296437;
 			
-			// aapt resource value: 0x7f0900b4
-			public const int right_side = 2131296436;
+			// aapt resource value: 0x7f0900b1
+			public const int right_side = 2131296433;
+			
+			// aapt resource value: 0x7f090113
+			public const int save_record = 2131296531;
 			
 			// aapt resource value: 0x7f09001a
 			public const int screen = 2131296282;
@@ -3588,8 +3588,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09005c
 			public const int shortcut = 2131296348;
 			
-			// aapt resource value: 0x7f0900cf
-			public const int showAddress = 2131296463;
+			// aapt resource value: 0x7f0900cc
+			public const int showAddress = 2131296460;
 			
 			// aapt resource value: 0x7f090015
 			public const int showCustom = 2131296277;
@@ -3600,8 +3600,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090017
 			public const int showTitle = 2131296279;
 			
-			// aapt resource value: 0x7f090117
-			public const int sliding_tabs = 2131296535;
+			// aapt resource value: 0x7f090116
+			public const int sliding_tabs = 2131296534;
 			
 			// aapt resource value: 0x7f090076
 			public const int smallLabel = 2131296374;
@@ -3633,8 +3633,8 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090036
 			public const int start = 2131296310;
 			
-			// aapt resource value: 0x7f0900af
-			public const int status_bar_latest_event_content = 2131296431;
+			// aapt resource value: 0x7f0900ac
+			public const int status_bar_latest_event_content = 2131296428;
 			
 			// aapt resource value: 0x7f09005e
 			public const int submenuarrow = 2131296350;
@@ -3642,17 +3642,17 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f090115
-			public const int swipeFormViewPager = 2131296533;
+			// aapt resource value: 0x7f090114
+			public const int swipeFormViewPager = 2131296532;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
 			
-			// aapt resource value: 0x7f0900bf
-			public const int text = 2131296447;
+			// aapt resource value: 0x7f0900bc
+			public const int text = 2131296444;
 			
-			// aapt resource value: 0x7f0900bd
-			public const int text2 = 2131296445;
+			// aapt resource value: 0x7f0900ba
+			public const int text2 = 2131296442;
 			
 			// aapt resource value: 0x7f090052
 			public const int textSpacerNoButtons = 2131296338;
@@ -3669,14 +3669,14 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000d
 			public const int textinput_error = 2131296269;
 			
-			// aapt resource value: 0x7f0900b5
-			public const int time = 2131296437;
+			// aapt resource value: 0x7f0900b2
+			public const int time = 2131296434;
 			
 			// aapt resource value: 0x7f090074
 			public const int time_picker = 2131296372;
 			
-			// aapt resource value: 0x7f0900c7
-			public const int times = 2131296455;
+			// aapt resource value: 0x7f0900c4
+			public const int times = 2131296452;
 			
 			// aapt resource value: 0x7f09004a
 			public const int title = 2131296330;
@@ -3705,17 +3705,17 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000b
 			public const int transition_scene_layoutid_cache = 2131296267;
 			
+			// aapt resource value: 0x7f0900df
+			public const int type1 = 2131296479;
+			
+			// aapt resource value: 0x7f0900e0
+			public const int type2 = 2131296480;
+			
+			// aapt resource value: 0x7f0900e1
+			public const int type3 = 2131296481;
+			
 			// aapt resource value: 0x7f0900e2
-			public const int type1 = 2131296482;
-			
-			// aapt resource value: 0x7f0900e3
-			public const int type2 = 2131296483;
-			
-			// aapt resource value: 0x7f0900e4
-			public const int type3 = 2131296484;
-			
-			// aapt resource value: 0x7f0900e5
-			public const int type4 = 2131296485;
+			public const int type4 = 2131296482;
 			
 			// aapt resource value: 0x7f090009
 			public const int up = 2131296265;
@@ -3726,14 +3726,14 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f090118
-			public const int visible = 2131296536;
+			// aapt resource value: 0x7f090117
+			public const int visible = 2131296535;
 			
-			// aapt resource value: 0x7f0900d3
-			public const int visitDate = 2131296467;
+			// aapt resource value: 0x7f0900d0
+			public const int visitDate = 2131296464;
 			
-			// aapt resource value: 0x7f0900c9
-			public const int visit_name = 2131296457;
+			// aapt resource value: 0x7f0900c6
+			public const int visit_name = 2131296454;
 			
 			// aapt resource value: 0x7f090088
 			public const int visit_status_Y = 2131296392;
@@ -3741,26 +3741,26 @@ namespace Speech2TextApp.Droid
 			// aapt resource value: 0x7f090087
 			public const int visit_status_n = 2131296391;
 			
-			// aapt resource value: 0x7f0900a2
-			public const int volume_item_container = 2131296418;
+			// aapt resource value: 0x7f09009f
+			public const int volume_item_container = 2131296415;
 			
 			// aapt resource value: 0x7f090027
 			public const int withText = 2131296295;
 			
-			// aapt resource value: 0x7f090104
-			public const int workStatus = 2131296516;
+			// aapt resource value: 0x7f090102
+			public const int workStatus = 2131296514;
 			
-			// aapt resource value: 0x7f090105
-			public const int workStatusFix = 2131296517;
-			
-			// aapt resource value: 0x7f090108
-			public const int workStatusNo = 2131296520;
-			
-			// aapt resource value: 0x7f090107
-			public const int workStatusStree = 2131296519;
+			// aapt resource value: 0x7f090103
+			public const int workStatusFix = 2131296515;
 			
 			// aapt resource value: 0x7f090106
-			public const int workStatusTemp = 2131296518;
+			public const int workStatusNo = 2131296518;
+			
+			// aapt resource value: 0x7f090105
+			public const int workStatusStree = 2131296517;
+			
+			// aapt resource value: 0x7f090104
+			public const int workStatusTemp = 2131296516;
 			
 			// aapt resource value: 0x7f09001f
 			public const int wrap_content = 2131296287;
@@ -4066,25 +4066,28 @@ namespace Speech2TextApp.Droid
 			public const int Page5Activity = 2130968648;
 			
 			// aapt resource value: 0x7f040049
-			public const int select_dialog_item_material = 2130968649;
+			public const int RecordDialog = 2130968649;
 			
 			// aapt resource value: 0x7f04004a
-			public const int select_dialog_multichoice_material = 2130968650;
+			public const int select_dialog_item_material = 2130968650;
 			
 			// aapt resource value: 0x7f04004b
-			public const int select_dialog_singlechoice_material = 2130968651;
+			public const int select_dialog_multichoice_material = 2130968651;
 			
 			// aapt resource value: 0x7f04004c
-			public const int support_simple_spinner_dropdown_item = 2130968652;
+			public const int select_dialog_singlechoice_material = 2130968652;
 			
 			// aapt resource value: 0x7f04004d
-			public const int SwipeFormActivity = 2130968653;
+			public const int support_simple_spinner_dropdown_item = 2130968653;
 			
 			// aapt resource value: 0x7f04004e
-			public const int Tabbar = 2130968654;
+			public const int SwipeFormActivity = 2130968654;
 			
 			// aapt resource value: 0x7f04004f
-			public const int Toolbar = 2130968655;
+			public const int Tabbar = 2130968655;
+			
+			// aapt resource value: 0x7f040050
+			public const int Toolbar = 2130968656;
 			
 			static Layout()
 			{

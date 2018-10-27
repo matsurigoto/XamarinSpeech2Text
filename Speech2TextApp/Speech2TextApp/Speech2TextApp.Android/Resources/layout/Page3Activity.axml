@@ -4,8 +4,13 @@
     android:layout_height="wrap_content"
 	android:background="@android:color/white"
 	android:orientation="vertical">
-	
 	<LinearLayout
+	android:id="@+id/content"
+	android:layout_width="fill_parent"
+	android:layout_height="0dp" 
+	android:layout_weight="1" 
+	android:orientation="vertical">
+ 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="65px"
 		android:layout_marginLeft="85px"
@@ -87,7 +92,7 @@
 	</LinearLayout>
 	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		 android:layout_height="wrap_content">
 		<LinearLayout 
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -95,7 +100,7 @@
 			android:layout_marginRight="85px"
 			android:orientation="vertical">
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="21px"
 				android:orientation="vertical">
@@ -127,35 +132,39 @@
 					android:textColor="@color/form_color_blue"/>
 				<TextView
 				android:layout_width="wrap_content"
-				android:layout_height="match_parent"
+				android:layout_height="wrap_content"
 				android:id="@+id/addMember"
 				android:background="@drawable/circle_activity_24"
 				android:textColor="#FFFFFF"
 				android:gravity="center"
+				android:layout_gravity="right"
 				android:text="+"/>
-			</LinearLayout>
-
-			<LinearLayout
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
-				android:id="@+id/members"
-				android:orientation="vertical">
 			</LinearLayout>
 
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-				<Button
-					android:text="下一步"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:textColor="@android:color/white"
-					android:background="@drawable/blue_button_activity"
-					android:id="@+id/btn_page_3_next"/>
+				android:id="@+id/members"
+				android:orientation="vertical">
 			</LinearLayout>
+
+			
 	
 		</LinearLayout>
 	</ScrollView>
+</LinearLayout>
+	<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="bottom"
+	android:orientation="vertical">
+	<Button
+		android:text="下一步"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		android:textColor="@android:color/white"
+		android:background="@drawable/blue_button_activity"
+		android:id="@+id/btn_page_3_next"/>
+		</LinearLayout>
 </LinearLayout>

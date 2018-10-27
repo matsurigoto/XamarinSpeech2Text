@@ -7,7 +7,6 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 
@@ -37,8 +36,8 @@ namespace Speech2TextApp.Droid.Pages
                     var intent = new Intent(this, typeof(MessageActivity));
                     StartActivity(intent);
                     break;
-                case Resource.Id.home:
-                    NavUtils.NavigateUpFromSameTask(this);
+                default:
+                    OnBackPressed();
                     break;
             }
             return true;
@@ -68,6 +67,9 @@ namespace Speech2TextApp.Droid.Pages
             if (IsEdit) {
                 var button = new TextView(this) { Text = "編輯" };
                 button.SetTextColor(TextColor);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent);
+                lp.Gravity = GravityFlags.Right;
+                button.LayoutParameters = lp;
                 button.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
                
                 button.Click += delegate {
@@ -158,6 +160,9 @@ namespace Speech2TextApp.Droid.Pages
             {
                 var button = new TextView(this) { Text = "編輯" };
                 button.SetTextColor(TextColor);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent);
+                lp.Gravity = GravityFlags.Right;
+                button.LayoutParameters = lp;
                 button.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
 
                 button.Click += delegate {
@@ -240,6 +245,9 @@ namespace Speech2TextApp.Droid.Pages
             if (IsEdit)
             {
                 var button = new TextView(this) { Text = "編輯" };
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent);
+                lp.Gravity = GravityFlags.Right;
+                button.LayoutParameters = lp;
                 button.SetTextColor(TextColor);
                 button.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
 
@@ -326,17 +334,21 @@ namespace Speech2TextApp.Droid.Pages
             };
             var title = new TextView(this) { Text = "4" };
             title.SetTextColor(TextColor);
+           
             title.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
             layoutTitle.AddView(title);
 
             if (IsEdit)
             {
                 var button = new TextView(this) { Text = "編輯" };
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent, ViewGroup.LayoutParams.WrapContent);
+                lp.Gravity = GravityFlags.Right;
+                button.LayoutParameters = lp;
                 button.SetTextColor(TextColor);
                 button.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
 
                 button.Click += delegate {
-                    var intent = new Intent(this, typeof(Page1Activity));
+                    var intent = new Intent(this, typeof(Page4Activity));
                     StartActivity(intent);
                 };
                 layoutTitle.AddView(button);

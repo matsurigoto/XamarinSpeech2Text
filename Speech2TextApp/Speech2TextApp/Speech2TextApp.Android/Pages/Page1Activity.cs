@@ -18,7 +18,7 @@ namespace Speech2TextApp.Droid.Pages
         TextView times;
         TextView applyName;
         EditText visitName;
-        TextView relatoinship;
+        EditText relatoinship;
         TextView phone;
         LinearLayout addressLayout;
         public string AddressType { get; set; }
@@ -26,7 +26,7 @@ namespace Speech2TextApp.Droid.Pages
         Button address2;
         Button address3;
         Button next;
-        Button record;
+        //Button record;
         EditText visitDate;
         EditText _description;
         RadioButton radoiAtHomeY;
@@ -47,7 +47,7 @@ namespace Speech2TextApp.Droid.Pages
             times = FindViewById<TextView>(Resource.Id.times);
             applyName = FindViewById<TextView>(Resource.Id.apply_name);
             visitName = FindViewById<EditText>(Resource.Id.visit_name);
-            relatoinship = FindViewById<TextView>(Resource.Id.relatoinship);
+            relatoinship = FindViewById<EditText>(Resource.Id.relatoinship);
             phone = FindViewById<TextView>(Resource.Id.phone);
 
             times.Text = MainActivity.dataCurrent.VisitDetails.Count.ToString();
@@ -162,6 +162,10 @@ namespace Speech2TextApp.Droid.Pages
             #region visit date
             Calendar myCalendar = Calendar.Instance;
             visitDate = FindViewById<EditText>(Resource.Id.visitDate);
+            if (MainActivity.dataCurrent.VisitDetail.VisitDate == null) {
+                MainActivity.dataCurrent.VisitDetail.VisitDate = new DateTime();
+            }
+            visitDate.Text = MainActivity.dataCurrent.VisitDetail.VisitDate.GetValueOrDefault().ToString("yyyy/MM/dd HH:mm");
             visitDate.Click += delegate {
                 
                 View dialogView = View.Inflate(this, Resource.Layout.date_time_picker, null);
@@ -190,25 +194,28 @@ namespace Speech2TextApp.Droid.Pages
             radoiAtHomeY = FindViewById<RadioButton>(Resource.Id.radoiAtHomeY);
             radoiAtHomeN = FindViewById<RadioButton>(Resource.Id.radoiAtHomeN);
             descLayout = FindViewById<LinearLayout>(Resource.Id.areaDesc);
+            radoiAtHomeY.Click += VisitStatusClick;
+            radoiAtHomeN.Click += VisitStatusClick;
             if (MainActivity.dataCurrent.VisitDetail.Status == "N")
             {
                 radoiAtHomeN.Checked = true;
+                radoiAtHomeN.PerformClick();
             }
             else
             {
                 radoiAtHomeY.Checked = true;
+                radoiAtHomeY.PerformClick();
             }
-            radoiAtHomeY.Click += VisitStatusClick;
-            radoiAtHomeN.Click += VisitStatusClick;
+          
             #endregion
 
 
             var next = FindViewById<Button>(Resource.Id.btn_page_1_next);
             next.Click += NextButtonEvent;
 
-            var record = FindViewById<Button>(Resource.Id.btn_record);
+            //var record = FindViewById<Button>(Resource.Id.btn_record);
             _description = FindViewById<EditText>(Resource.Id.edittext_desc);
-            record.Click += RecordEvent;
+            //record.Click += RecordEvent;
         }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultVal, Intent data)

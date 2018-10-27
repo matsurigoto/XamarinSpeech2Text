@@ -35,7 +35,7 @@ namespace Speech2TextApp.Data
         /// <summary>
         /// 訪視時間
         /// </summary>
-        public DateTime VisitDate { get; set; }
+        public DateTime? VisitDate { get; set; }
 
         /// <summary>
         /// 訪視概述
@@ -52,7 +52,11 @@ namespace Speech2TextApp.Data
         /// 住宅狀況
         /// </summary>
         public string LiveStatus { get; set; }
-        
+
+        public string LiveRentStatus { get; set; }
+
+        public string LiveRentMoney { get; set; }
+
         /// <summary>
         /// 申請項目
         /// </summary>

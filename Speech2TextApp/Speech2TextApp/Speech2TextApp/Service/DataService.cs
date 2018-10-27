@@ -57,8 +57,44 @@ namespace Speech2TextApp.Service
                 Address1 = "台北市中山區新生里",
                 Address2 = "台北市中山區新生里",
                 Status = "N",
-                VisitDetails = new List<ApplyDetail>()
+                VisitDetails = new List<ApplyDetail>(),
+                VisitDetail = new ApplyDetail() {
+                    Members = new List<MemberDetail>(),
+                    Status = "Y",
+                    VisitDesc = string.Empty,
+                    ApplyReason = string.Empty,
+                    ApplyType = new List<string>(),
+                    LiveCityStatus = string.Empty,
+                    LiveRentMoney = string.Empty,
+                    LiveRentStatus = string.Empty,
+                    LiveStatus = string.Empty,
+                    OtherDesc = string.Empty,
+                    OtherPeople = string.Empty
+                }
             };
+            MemberDetail memberDetail11 = new MemberDetail()
+            {
+                Title = "母女",
+                Name = "江裕如",
+                LiveTogether = "是",
+                HealthStatus = "長期患病",
+                WorkStatus = "臨時工作",
+                Referrals = "不同意",
+                IsInNursingHome = "否"
+            };
+
+            MemberDetail memberDetail12 = new MemberDetail()
+            {
+                Title = "母女",
+                Name = "江小花",
+                LiveTogether = "是",
+                HealthStatus = "身心障礙(肢障)",
+                WorkStatus = "臨時工作",
+                Referrals = "不同意",
+                IsInNursingHome = "否"
+            };
+            result1.VisitDetail.Members.Add(memberDetail11);
+            result1.VisitDetail.Members.Add(memberDetail12);
             string json = JsonConvert.SerializeObject(result1);
             string destPath = Path.Combine(descDocument, $"{result1.Id}.json");
             File.WriteAllText(destPath, json);
@@ -75,7 +111,21 @@ namespace Speech2TextApp.Service
                 Address2 = "台北市中山區新生里",
                 Address3 = "",
                 Status = "N",
-                VisitDetails = new List<ApplyDetail>()
+                VisitDetails = new List<ApplyDetail>(),
+                 VisitDetail = new ApplyDetail()
+                 {
+                     Members = new List<MemberDetail>(),
+                     Status = "Y",
+                     VisitDesc = string.Empty,
+                     ApplyReason = string.Empty,
+                     ApplyType = new List<string>(),
+                     LiveCityStatus = string.Empty,
+                     LiveRentMoney = string.Empty,
+                     LiveRentStatus = string.Empty,
+                     LiveStatus = string.Empty,
+                     OtherDesc = string.Empty,
+                     OtherPeople = string.Empty
+                 }
             };
             ApplyDetail resultDetal1 = new ApplyDetail()
             {
@@ -167,11 +217,14 @@ namespace Speech2TextApp.Service
                 VisitDate = new DateTime(2018, 7, 10, 18, 23, 33),
                 Status = "是",
                 LiveCityStatus = "是",
-                LiveStatus = "租賃(一般租屋 3000元/月)",
+                LiveStatus = "租賃",
                 ApplyType = new List<string>() { "低收入戶", "中低收入戶" },
                 ApplyReason = "負擔家計者失業",
                 OtherPeople = "是",
                 OtherDesc = "此案件居住環境不佳，屋況老舊且有隨時坍塌的可能，且住的人口眾多，母親中風長期臥病在床",
+                VisitDesc = string.Empty,
+                LiveRentMoney = "3000",
+                LiveRentStatus = "一般租屋",
                 Members = new List<MemberDetail>()
             };
 

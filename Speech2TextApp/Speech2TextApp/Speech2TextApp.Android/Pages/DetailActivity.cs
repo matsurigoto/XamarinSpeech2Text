@@ -62,7 +62,7 @@ namespace Speech2TextApp.Droid.Pages
                 };
                 _pageLayout.SetBackgroundResource(Resource.Drawable.main_border);
                 AddTextView(string.Format("第{0}次訪視", MainActivity.dataCurrent.VisitDetails.IndexOf(visitList)), _pageLayout);
-                AddTextView(visitList.VisitDate.ToString("yyyy/MM/dd HH:MM:ss"), _pageLayout);
+                AddTextView(visitList.VisitDate.GetValueOrDefault().ToString("yyyy/MM/dd HH:MM:ss"), _pageLayout);
                 AddTextView("訪視地點", _pageLayout);
                 AddTextView(visitList.AddressType, _pageLayout);
                 if (visitList.AddressType == "戶籍地址")

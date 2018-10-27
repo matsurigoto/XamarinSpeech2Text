@@ -16,6 +16,7 @@ using System.IO;
 using Android.Views;
 using Android.Graphics.Drawables;
 using Android.Support.V4.Graphics.Drawable;
+using Android.Util;
 
 namespace Speech2TextApp.Droid
 {
@@ -109,7 +110,7 @@ namespace Speech2TextApp.Droid
                             string date = string.Empty;
                             if (v.VisitDetail.VisitDate != null)
                             {
-                                date = v.VisitDetail.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
+                                date = v.VisitDetail.VisitDate.GetValueOrDefault().ToString("yyyy/MM/dd HH:mm:ss");
                             }
                             try
                             {
@@ -151,14 +152,18 @@ namespace Speech2TextApp.Droid
             var status = (rb.Id == Resource.Id.visit_status_Y) ? "Y" : "N";
 
             nonVisitedButton.SetBackgroundResource(Resource.Drawable.blue_button);
+            nonVisitedButton.SetTextColor(TextColor);
             visitedButton.SetBackgroundResource(Resource.Drawable.blue_button);
+            visitedButton.SetTextColor(TextColor);
             if (status == "Y")
             {
                 visitedButton.SetBackgroundResource(Resource.Drawable.blue_button_activity);
+                visitedButton.SetTextColor(Color.White);
             }
             else
             {
                 nonVisitedButton.SetBackgroundResource(Resource.Drawable.blue_button_activity);
+                nonVisitedButton.SetTextColor(Color.White);
             }
 
             var countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
@@ -217,7 +222,7 @@ namespace Speech2TextApp.Droid
                     Orientation = Orientation.Horizontal,
                     LayoutParameters = layoutParameter
                 };
-                secondLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
+                
                 var dateTitle = new TextView(this)
                 {
                     Text = "最後訪視"
@@ -237,7 +242,7 @@ namespace Speech2TextApp.Droid
                 date.Text = "-";
                 if (lastVisit != null && lastVisit.VisitDate != null)
                 {
-                    date.Text = lastVisit.VisitDate.ToString("yyyy/MM/dd HH:mm:ss");
+                    date.Text = lastVisit.VisitDate.Value.ToString("yyyy/MM/dd HH:mm:ss");
                 }
                 date.SetTextColor(TextColor);
                 date.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
@@ -257,6 +262,11 @@ namespace Speech2TextApp.Droid
                 //mainLayout.SetPadding(20, 20, 20, 20);
                 
                 mainLayout.AddView(firstLayout);
+                if (status == "N")
+                {
+
+                    secondLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
+                }
                 mainLayout.AddView(secondLayout);
                 mainLayout.Click += delegate
 
@@ -280,28 +290,34 @@ namespace Speech2TextApp.Droid
                 if (status == "N")
                 {
                     layoutParameter.Gravity = GravityFlags.Center;
+                    layoutParameter.SetMargins(layoutParameter.LeftMargin, 30, layoutParameter.RightMargin, 30);
                     var record = new LinearLayout(this)
                     {
                         Orientation = Orientation.Horizontal,
                         LayoutParameters = layoutParameter
                     };
+                    
+
                     ImageView imageView = new ImageView(this);
                     imageView.SetColorFilter(TextColor);
                     imageView.SetImageResource(Resource.Drawable.baseline_event_note_24);
                     record.AddView(imageView);
+
+                    
                     TextView tv = new TextView(this);
                     tv.SetTextColor(TextColor);
                     tv.Text = "語音備忘錄";
                     record.AddView(tv);
                    
-                    if (data.Message.Count() > 0) { 
-                        Button ig = new Button(this);
-                       
-                        ig.SetBackgroundResource(Resource.Drawable.circle_activity_48);
+                    if (data.Message.Count() > 0) {
+                        TextView ig = new TextView(this);
+                        ig.SetTextColor(Color.White);
+                        ig.LayoutParameters = layoutParameter;
+                        ig.SetBackgroundResource(Resource.Drawable.circle_activity);
                         ig.Text = data.Message.Count().ToString();
+                        ig.Gravity = GravityFlags.Center;
                         record.AddView(ig);
                     }
-                    //record.SetBackgroundResource(Resource.Mipmap.baseline_archive_black_18dp);
                     record.Click += delegate {
                         
                         dataCurrent = data;
@@ -313,9 +329,17 @@ namespace Speech2TextApp.Droid
                     //preDataLayout.AddView(record);
                 }
                 mainLayout.SetBackgroundResource(Resource.Drawable.main_border);
-
+                mainLayout.SetPadding(30, 50, 30, 50);
                 dataLayout.AddView(mainLayout);
             }
         }
+
+        private int ConvertDp2Px(int dp)
+        {
+            int pixel = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, dp, Resources.DisplayMetrics);
+            return pixel;
+        }
+
+      
     }
 }

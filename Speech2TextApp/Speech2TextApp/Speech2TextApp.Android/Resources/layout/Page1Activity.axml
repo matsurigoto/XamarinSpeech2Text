@@ -118,9 +118,9 @@
 					android:minWidth="25px"
 					android:minHeight="25px"
 					android:id="@+id/times"/>
-				<ImageButton
+				<ImageView
 						android:src="@drawable/baseline_assignment_24"
-						android:textColor="@color/form_color_blue"
+						android:tint="@color/form_color_blue"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content" />
 				<TextView
@@ -201,7 +201,7 @@
 					android:textSize="14sp"
 					android:textColor="@color/form_color_blue"
 					/>
-				<TextView
+				<EditText
 					android:text="母女"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
@@ -217,9 +217,9 @@
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
-				<ImageButton
+				<ImageView
 						android:src="@drawable/baseline_call_24"
-						android:textColor="@color/form_color_blue"
+						android:tint="@color/form_color_blue"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content" />
 				<TextView
@@ -266,7 +266,7 @@
 					android:textSize="14sp"
 					android:textColor="@color/form_color_blue"
 					/>
-			</LinearLayout>C:\Users\inalai\XamarinSpeech2Text\Speech2TextApp\Speech2TextApp\Speech2TextApp.Android\bin\
+			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -363,10 +363,12 @@
 				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<EditText
-					android:layout_width="wrap_content"
-					android:layout_height="match_parent"
-					android:clickable="true"
-					android:editable="false"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
 					android:id="@+id/visitDate" />	
 				
 
@@ -379,7 +381,7 @@
 			    android:visibility="visible"
 				android:orientation="vertical">
 				<TextView
-					android:text="訪視概述"
+					android:text="未訪原因"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -395,13 +397,11 @@
 						android:inputType="textMultiLine"
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
+						android:minLines="5"
+						android:scrollbars="vertical"
+						android:gravity="top"
+						android:background="@drawable/main_border"
 						android:id="@+id/edittext_desc" />
-					<Button
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:text="record"
-						android:layout_gravity="right"
-						android:id="@+id/btn_record"/>
 					
 				</LinearLayout>
 			</LinearLayout>
@@ -413,19 +413,12 @@
 				android:orientation="horizontal">
 				<Button
 					android:text="下一步"
-					android:layout_width="wrap_content"
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:textColor="@android:color/white"
 					android:background="@drawable/blue_button_activity"
 					android:layout_gravity="center"
 					android:id="@+id/btn_page_1_next"/>
-				<ImageButton
-						android:background="@drawable/circle_activity_36"
-						android:src="@drawable/baseline_record_voice_over_24"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="right"
-						android:id="@+id/btnRecord" />
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>

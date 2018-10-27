@@ -125,11 +125,14 @@
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:textSize="14sp"
-				android:textColor="@color/form_color_blue"/>
+				android:textSize="14sp"/>
 			  <EditText
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
 				android:id="@+id/title" />
 			</LinearLayout>
 				<LinearLayout
@@ -144,11 +147,15 @@
 				android:layout_height="wrap_content"
 				android:minWidth="25px"
 				android:minHeight="25px"
-				android:textSize="14sp"
-				android:textColor="@color/form_color_blue"/>
+				android:textSize="14sp"/>
 			  <EditText
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
+				
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
 				android:id="@+id/name" />
 			</LinearLayout>
 			<LinearLayout
@@ -177,11 +184,13 @@
 					android:layout_height="wrap_content"
 					android:checked="true"
 					android:text="是"
+						android:textColor="@color/form_color_blue"
 					android:id="@+id/liveTogetherY" />
 				<RadioButton
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="否"
+						android:textColor="@color/form_color_blue"
 					android:id="@+id/liveTogetherN" />
 			
 			</RadioGroup>
@@ -212,21 +221,25 @@
 					android:layout_height="wrap_content"
 					android:checked="true"
 					android:text="無明顯異常"
+						android:textColor="@color/form_color_blue"
 					android:id="@+id/healthStatusN" />
 				<RadioButton
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="長期患病"
+						android:textColor="@color/form_color_blue"
 					android:id="@+id/healthStatusSick" />
 				<RadioButton
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="身心障礙(肢障)"
+						android:textColor="@color/form_color_blue"
 					android:id="@+id/healthStatusSick2" />
 				<RadioButton
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:text="身心障礙(中度)"
+						android:textColor="@color/form_color_blue"
 					android:id="@+id/healthStatusSick3" />
 				
 			</RadioGroup>
@@ -257,21 +270,25 @@
 							android:layout_height="wrap_content"
 							android:checked="true"
 							android:text="固定工作"
+						android:textColor="@color/form_color_blue"
 							android:id="@+id/workStatusFix" />
 					<RadioButton
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="臨時工作"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/workStatusTemp" />
 					<RadioButton
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="攤販"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/workStatusStree" />
 					<RadioButton
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="無工作"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/workStatusNo" />
 					
 				</RadioGroup>
@@ -301,11 +318,13 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="同意"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/referralsY" />
 					<RadioButton
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="不同意"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/referralsN" />
 					
 				</RadioGroup>
@@ -335,11 +354,13 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="是"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/isInNursingHomeY" />
 					<RadioButton
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:text="否"
+						android:textColor="@color/form_color_blue"
 						android:id="@+id/isInNursingHomeN" />
 					
 				</RadioGroup>
@@ -352,6 +373,7 @@
 				android:orientation="horizontal">
 				<Button
 					android:text="取消"
+					android:layout_weight="1"
 					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
 					android:textColor="@android:color/white"
@@ -359,6 +381,7 @@
 					android:id="@+id/btn_page_3_cancel"/>
 				<Button
 					android:text="確定"
+					android:layout_weight="1"
 					android:layout_width="wrap_content"
 					android:layout_height="match_parent"
 					android:textColor="@android:color/white"

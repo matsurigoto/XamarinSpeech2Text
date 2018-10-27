@@ -16,6 +16,7 @@ namespace Speech2TextApp.Droid.Pages
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page4Activity);
+            
             this.Title = "訪視紀錄";
             ActionBar.SetDisplayHomeAsUpEnabled(true);
             liveTogetherY = FindViewById<RadioButton>(Resource.Id.liveTogetherY);
@@ -41,6 +42,9 @@ namespace Speech2TextApp.Droid.Pages
         }
 
         private void InitOtherDesc() {
+            if (string.IsNullOrEmpty(MainActivity.dataCurrent.VisitDetail.OtherDesc)) {
+                MainActivity.dataCurrent.VisitDetail.OtherDesc = string.Join(@"。", MainActivity.dataCurrent.Message);
+            }
             otherDesc.Text = MainActivity.dataCurrent.VisitDetail.OtherDesc;
         }
 

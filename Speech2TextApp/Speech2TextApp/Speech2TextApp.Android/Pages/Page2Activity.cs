@@ -1,13 +1,14 @@
 ﻿using Android.OS;
 using Android.Widget;
 using System;
-using Android.Support.V4.App;
+using Android.App;
 using System.Collections.Generic;
+using Speech2TextApp.Droid.Dialog;
 
 namespace Speech2TextApp.Droid.Pages
 {
     [Android.App.Activity(Label = "Page2Activity")]
-    public class Page2Activity : FragmentActivity, Page2LiveStatusDialog.NoticeDialogListener
+    public class Page2Activity : BaseActivity, NoticeDialogListener
     {
         Button next;
 
@@ -178,10 +179,9 @@ namespace Speech2TextApp.Droid.Pages
             RadioButton rb = (RadioButton)sender;
             if (rb.Id == Resource.Id.liveStatusRant)
             {
-                // Create and show the dialog.
-                Page2LiveStatusDialog newFragment = Page2LiveStatusDialog.NewInstance(null);
-                //Add fragment
-                newFragment.Show(this.SupportFragmentManager, "dialog");
+                FragmentTransaction transcation = FragmentManager.BeginTransaction();
+                Page2LiveStatusDialog dialog = new Page2LiveStatusDialog();
+                dialog.Show(transcation, "Dialog Fragment");
             }
             else
             {

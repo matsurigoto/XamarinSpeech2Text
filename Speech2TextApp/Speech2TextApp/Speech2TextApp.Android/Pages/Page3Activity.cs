@@ -38,23 +38,22 @@ namespace Speech2TextApp.Droid.Pages
             members.RemoveAllViews();
             foreach (var member in MainActivity.dataCurrent.VisitDetail.Members) {
                 var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent,
-                  Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f);
-                layoutParameter.SetMargins(20, 5, 0, 0);
+                  Android.Views.ViewGroup.LayoutParams.WrapContent);
+                
                 // first layout
                 var firstLayout = new LinearLayout(this)
                 {
                     Orientation = Orientation.Vertical,
-                    WeightSum = 2,
                     LayoutParameters = layoutParameter
                 };
-
+                firstLayout.SetPadding(30, 50, 30, 50);
                 var name = new TextView(this)
                 {
                     Text = member.Name,
                 };
                 name.SetTextColor(Color.ParseColor("#4A90E2"));
                 name.SetTextSize(Android.Util.ComplexUnitType.Sp, 20);
-                var textViewTitleParams = new LinearLayout.LayoutParams(250, Android.Views.ViewGroup.LayoutParams.WrapContent);
+                var textViewTitleParams = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent);
                 name.LayoutParameters = textViewTitleParams;
                 firstLayout.AddView(name);
 
@@ -98,7 +97,7 @@ namespace Speech2TextApp.Droid.Pages
                 isInNursingHome.SetTextColor(Color.ParseColor("#4A90E2"));
                 isInNursingHome.SetTextSize(Android.Util.ComplexUnitType.Sp, 14);
                 firstLayout.AddView(isInNursingHome);
-
+                firstLayout.SetBackgroundResource(Resource.Drawable.main_border);
                 members.AddView(firstLayout);
             }
         }

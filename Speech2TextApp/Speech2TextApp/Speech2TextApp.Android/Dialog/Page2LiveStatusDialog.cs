@@ -3,25 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Android.Support.V4.App;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-namespace Speech2TextApp.Droid.Pages
+namespace Speech2TextApp.Droid.Dialog
 {
     public class Page2LiveStatusDialog : DialogFragment
     {
-        public interface NoticeDialogListener
-        {
-            void OnDialogPositiveClick(DialogFragment dialog);
-        }
-
-        // Use this instance of the interface to deliver action events
         NoticeDialogListener mListener;
-
         public override void OnAttach(Context context)
         {
             base.OnAttach(context);
@@ -65,17 +58,21 @@ namespace Speech2TextApp.Droid.Pages
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View view = inflater.Inflate(Resource.Layout.Page2LiveStatusDialog, container, false);
-
+            Dialog.SetTitle("住宅狀況:租賃");
             liveStatusRant1 = view.FindViewById<RadioButton>(Resource.Id.liveStatusRant1);
             liveStatusRant2 = view.FindViewById<RadioButton>(Resource.Id.liveStatusRant2);
             liveStatusRant3 = view.FindViewById<RadioButton>(Resource.Id.liveStatusRant3);
             liveStatusRant4 = view.FindViewById<RadioButton>(Resource.Id.liveStatusRant4);
-            liveStatusRant1.Click += LiveStatusClick;
-            liveStatusRant2.Click += LiveStatusClick;
-            liveStatusRant3.Click += LiveStatusClick;
-            liveStatusRant4.Click += LiveStatusClick;
-
+            if (string.IsNullOrEmpty(MainActivity.dataCurrent.VisitDetail.LiveRentStatus)) {
+                MainActivity.dataCurrent.VisitDetail.LiveRentStatus = "一般租屋";
+            }
+            InirLiveStatus(liveStatusRant1,MainActivity.dataCurrent.VisitDetail.LiveRentStatus);
+            InirLiveStatus(liveStatusRant2, MainActivity.dataCurrent.VisitDetail.LiveRentStatus);
+            InirLiveStatus(liveStatusRant3, MainActivity.dataCurrent.VisitDetail.LiveRentStatus);
+            InirLiveStatus(liveStatusRant4, MainActivity.dataCurrent.VisitDetail.LiveRentStatus);
+          
             liveStatusRantCost = view.FindViewById<EditText>(Resource.Id.liveStatusRantCost);
+            liveStatusRantCost.Text = MainActivity.dataCurrent.VisitDetail.LiveRentMoney ?? string.Empty;
             Button button = view.FindViewById<Button>(Resource.Id.liveStatusOK);
             button.Click += delegate
             {
@@ -84,6 +81,15 @@ namespace Speech2TextApp.Droid.Pages
 
             };
             return view;
+        }
+
+        private void InirLiveStatus(RadioButton rb,string value)
+        {
+            rb.Click += LiveStatusClick;
+            if (rb.Text == value) {
+                rb.PerformClick();
+            }
+           
         }
 
         private void LiveStatusClick(object sender, EventArgs e)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<EditText
+		android:inputType="textMultiLine"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/edittext_desc" 
+		android:minLines="5"
+		android:scrollbars="vertical"
+		android:gravity="top"
+		android:background="@drawable/main_border" />
+	<Button
+			android:text="儲存此筆錄音"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/white"
+			android:background="@drawable/blue_button_activity"
+			android:layout_gravity="center"
+			android:id="@+id/save_record"/>
+</LinearLayout>
