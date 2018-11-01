@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:background="@android:color/white">
+	<LinearLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<include android:id="@+id/step" layout="@layout/step" />
+
+
+		<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="47px"
+			android:layout_marginRight="85px"
+			android:orientation="vertical">
+			<LinearLayout 
+				android:id="@+id/page_5_layout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<Button
+					android:text="確定送出"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:id="@+id/btn_page_5_next"/>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+
+	</LinearLayout>
+</RelativeLayout>

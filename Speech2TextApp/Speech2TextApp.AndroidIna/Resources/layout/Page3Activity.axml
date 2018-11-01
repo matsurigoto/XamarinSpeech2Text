@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout  
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@android:color/white">
+	<LinearLayout
+		android:id="@+id/content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" 
+		android:orientation="vertical">
+		<include android:id="@+id/step" layout="@layout/step" />
+		<ScrollView
+			android:layout_width="match_parent"
+			 android:layout_height="0dp"
+			android:layout_weight="1">
+			<LinearLayout 
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="10dp"
+					android:paddingLeft="20dp"
+					android:orientation="vertical">
+					<TextView
+						android:textAppearance="?android:attr/textAppearanceMedium"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:minWidth="25px"
+						android:minHeight="25px"
+						android:text="列計人口基本資料"
+						android:textColor="@color/form_color_blue"/>	
+				</LinearLayout>
+	
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="10dp"
+					android:paddingLeft="20dp"
+					android:background="@drawable/main_bottom_border"
+					android:orientation="horizontal">
+				
+					<TextView
+						android:text="共 1 筆  列表人口"
+						android:textAppearance="?android:attr/textAppearanceMedium"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:textSize="16sp"
+						android:id="@+id/member_count"
+						android:textColor="@color/form_color_blue"/>
+					
+				</LinearLayout>
+					<android.support.v7.widget.RecyclerView
+				android:id="@+id/members"
+				android:scrollbars="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+				
+			</LinearLayout>
+		</ScrollView>
+		<Button
+					android:text="下一步"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="bottom"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:id="@+id/btn_page_3_next"/>
+	
+	</LinearLayout>
+	<android.support.design.widget.FloatingActionButton
+        android:id="@+id/addMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        app:layout_anchor="@id/members"
+        app:layout_anchorGravity="top|right|end"
+		android:src="@drawable/baseline_add_black_18"
+        android:layout_margin="16dp" />
+	<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:layout_anchor="@id/content"
+        app:layout_anchorGravity="bottom|right|end"
+		android:src="@drawable/baseline_mic_black_18"
+        android:layout_margin="16dp" />
+</android.support.design.widget.CoordinatorLayout>

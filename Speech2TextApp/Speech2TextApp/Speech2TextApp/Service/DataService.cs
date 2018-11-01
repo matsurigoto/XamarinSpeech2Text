@@ -9,6 +9,8 @@ namespace Speech2TextApp.Service
 {
     public class DataService : IData
     {
+        public static ApplyResult dataCurrent { get; set; }
+
         public void ExportData(ApplyResult result)
         {
             throw new NotImplementedException();

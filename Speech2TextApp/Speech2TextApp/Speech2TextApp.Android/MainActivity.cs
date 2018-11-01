@@ -58,8 +58,7 @@ namespace Speech2TextApp.Droid
             
             toolbar.Title = "台北市社會輔助訪視調查表";
             toolbar.InflateMenu(Resource.Menu.main_menu);
-
-            toolbar.SetNavigationIcon(Resource.Mipmap.baseline_keyboard_arrow_left_black_18dp);
+            
             SetActionBar(toolbar);
             toolbar.MenuItemClick += (sender, e2) => {
                 switch (e2.Item.TitleFormatted.ToString())
@@ -144,7 +143,6 @@ namespace Speech2TextApp.Droid
 
           
         }
-        
 
         private void GetVisitData(object sender, EventArgs e)
         {
@@ -152,18 +150,14 @@ namespace Speech2TextApp.Droid
             var status = (rb.Id == Resource.Id.visit_status_Y) ? "Y" : "N";
 
             nonVisitedButton.SetBackgroundResource(Resource.Drawable.blue_button);
-            nonVisitedButton.SetTextColor(TextColor);
             visitedButton.SetBackgroundResource(Resource.Drawable.blue_button);
-            visitedButton.SetTextColor(TextColor);
             if (status == "Y")
             {
                 visitedButton.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-                visitedButton.SetTextColor(Color.White);
             }
             else
             {
                 nonVisitedButton.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-                nonVisitedButton.SetTextColor(Color.White);
             }
 
             var countDesc = (rb.Id == Resource.Id.visit_status_Y) ? "送出資料" : "訪視資料";
@@ -173,8 +167,8 @@ namespace Speech2TextApp.Droid
             foreach (var data in datasInStatus)
             {
                 var layoutParameter = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent,
-                    Android.Views.ViewGroup.LayoutParams.MatchParent, 1.0f);
-                layoutParameter.SetMargins(20,5,0,0);
+                    Android.Views.ViewGroup.LayoutParams.WrapContent, 1.0f);
+                layoutParameter.SetMargins(20, 5, 0, 0);
 
                 if (data.VisitDetail == null)
                 {
@@ -182,9 +176,6 @@ namespace Speech2TextApp.Droid
                     {
                         Status = "Y"
                     };
-                }
-                if (data.Message == null) {
-                    data.Message = new List<string>();
                 }
 
 
@@ -208,7 +199,7 @@ namespace Speech2TextApp.Droid
 
                 var count = new TextView(this)
                 {
-                    Text = string.Format("探訪次數 : {0}次",data.VisitDetails.Count())
+                    Text = string.Format("探訪次數 : {0}次", data.VisitDetails.Count())
                 };
                 count.SetTextColor(TextColor);
                 count.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
@@ -222,7 +213,7 @@ namespace Speech2TextApp.Droid
                     Orientation = Orientation.Horizontal,
                     LayoutParameters = layoutParameter
                 };
-                
+
                 var dateTitle = new TextView(this)
                 {
                     Text = "最後訪視"
@@ -242,7 +233,7 @@ namespace Speech2TextApp.Droid
                 date.Text = "-";
                 if (lastVisit != null && lastVisit.VisitDate != null)
                 {
-                    date.Text = lastVisit.VisitDate.Value.ToString("yyyy/MM/dd HH:mm:ss");
+                    date.Text = lastVisit.VisitDate.GetValueOrDefault().ToString("yyyy/MM/dd HH:mm:ss");
                 }
                 date.SetTextColor(TextColor);
                 date.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
@@ -250,8 +241,8 @@ namespace Speech2TextApp.Droid
                 secondLayout.AddView(dateTitle);
                 secondLayout.AddView(date);
 
-                var layP = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.MatchParent);
-                layP.SetMargins(20, 0, 20, 50);
+                var layP = new LinearLayout.LayoutParams(0, Android.Views.ViewGroup.LayoutParams.WrapContent);
+                layP.Weight = 1f;
                 // main layout
                 var mainLayout = new LinearLayout(this)
                 {
@@ -259,78 +250,59 @@ namespace Speech2TextApp.Droid
 
                     LayoutParameters = layP
                 };
-                //mainLayout.SetPadding(20, 20, 20, 20);
-                
+                mainLayout.SetPadding(20, 20, 20, 20);
                 mainLayout.AddView(firstLayout);
-                if (status == "N")
-                {
-
-                    secondLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
-                }
                 mainLayout.AddView(secondLayout);
                 mainLayout.Click += delegate
 
                 {
 
-                    data.IsLast = false;  
+
                     dataCurrent = data;
                     if (status == "N")
                     {
                         var intent = new Intent(this, typeof(Page1Activity));
                         StartActivity(intent);
                     }
-                    else if (status == "Y") {
+                    else if (status == "Y")
+                    {
                         var intent = new Intent(this, typeof(DetailActivity));
                         StartActivity(intent);
                     }
-                   
+
                 };
-                
+
+
+                var preDataLayout = new LinearLayout(this)
+                {
+                    Orientation = Orientation.Horizontal,
+                    LayoutParameters = new LinearLayout.LayoutParams(Android.Views.ViewGroup.LayoutParams.MatchParent, Android.Views.ViewGroup.LayoutParams.WrapContent)
+                };
+                preDataLayout.SetBackgroundResource(Resource.Drawable.main_border);
+  
+                preDataLayout.AddView(mainLayout);
 
                 if (status == "N")
                 {
-                    layoutParameter.Gravity = GravityFlags.Center;
-                    layoutParameter.SetMargins(layoutParameter.LeftMargin, 30, layoutParameter.RightMargin, 30);
-                    var record = new LinearLayout(this)
-                    {
-                        Orientation = Orientation.Horizontal,
-                        LayoutParameters = layoutParameter
-                    };
-                    
-
-                    ImageView imageView = new ImageView(this);
-                    imageView.SetColorFilter(TextColor);
-                    imageView.SetImageResource(Resource.Drawable.baseline_event_note_24);
-                    record.AddView(imageView);
-
-                    
-                    TextView tv = new TextView(this);
-                    tv.SetTextColor(TextColor);
-                    tv.Text = "語音備忘錄";
-                    record.AddView(tv);
-                   
-                    if (data.Message.Count() > 0) {
-                        TextView ig = new TextView(this);
-                        ig.SetTextColor(Color.White);
-                        ig.LayoutParameters = layoutParameter;
-                        ig.SetBackgroundResource(Resource.Drawable.circle_activity);
-                        ig.Text = data.Message.Count().ToString();
-                        ig.Gravity = GravityFlags.Center;
-                        record.AddView(ig);
-                    }
+                    ImageButton record = new ImageButton(this);
+                    layP.Width = Android.Views.ViewGroup.LayoutParams.WrapContent;
+                    layP.Height = Android.Views.ViewGroup.LayoutParams.WrapContent;
+                    //layP.Gravity = GravityFlags.Center;
+                    record.LayoutParameters = layP;
+                    record.SetImageResource(Resource.Drawable.baseline_record_voice_over_24);
+                    record.SetBackgroundResource(Resource.Drawable.circle_activity_36);
                     record.Click += delegate {
-                        
+
                         dataCurrent = data;
                         var intent = new Intent(this, typeof(MessageActivity));
                         StartActivity(intent);
-                       
+
                     };
-                    mainLayout.AddView(record);
-                    //preDataLayout.AddView(record);
+                    preDataLayout.AddView(record);
                 }
-                mainLayout.SetBackgroundResource(Resource.Drawable.main_border);
-                mainLayout.SetPadding(30, 50, 30, 50);
-                dataLayout.AddView(mainLayout);
+
+
+                dataLayout.AddView(preDataLayout);
             }
         }
 
