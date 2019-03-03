@@ -15,6 +15,9 @@ using Speech2TextApp.Service;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 第三頁:家戶人口資料
+    /// </summary>
     [Activity(Label = "Page3AddMemberActivity")]
     public class Page3AddMemberActivity : BaseActivity
     {
@@ -115,6 +118,10 @@ namespace Speech2TextApp.AndroidIna
             };
         }
 
+        /// <summary>
+        /// 初始化是否同住
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitLiveTogether(RadioButton rb) {
             rb.Click += delegate
             {
@@ -125,6 +132,10 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化健康狀態
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitHealthStatus(RadioButton rb)
         {
             rb.Click += delegate
@@ -137,6 +148,10 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化工作狀態
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitWorkStatus(RadioButton rb)
         {
             rb.Click += delegate
@@ -149,6 +164,10 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化轉介就業服務
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitReferrals(RadioButton rb)
         {
             rb.Click += delegate
@@ -161,6 +180,10 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化是否安置於療養院所
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitIsInNursingHome(RadioButton rb)
         {
             rb.Click += delegate
@@ -173,6 +196,11 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化Radio
+        /// </summary>
+        /// <param name="rb">選擇選單</param>
+        /// <param name="defaultName">預設選單</param>
         private void InitRadioButton(RadioButton rb, string defaultName)
         {
             if (rb.Text == defaultName)

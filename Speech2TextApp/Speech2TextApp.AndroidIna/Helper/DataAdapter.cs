@@ -21,11 +21,13 @@ namespace Speech2TextApp.AndroidIna.Helper
         public TextView applyName { get; set; }
         public TextView applyDate { get; set; }
         public TextView applyCount { get; set; }
+        public TextView sendDate { get; set; }
         public ImageButton record { get; set; }
         
         public DataViewHolder(View itemView) : base(itemView ) {
             applyName = itemView.FindViewById<TextView>(Resource.Id.apply_name);
             applyDate = itemView.FindViewById<TextView>(Resource.Id.apply_date);
+            sendDate = itemView.FindViewById<TextView>(Resource.Id.send_date);
             applyCount = itemView.FindViewById<TextView>(Resource.Id.apply_times);
             record = itemView.FindViewById<ImageButton>(Resource.Id.record);
             layout = itemView.FindViewById<LinearLayout>(Resource.Id.data);
@@ -69,9 +71,22 @@ namespace Speech2TextApp.AndroidIna.Helper
                     datas[position].Message = new List<string>();
                 }
                 DataService.dataCurrent = datas[position];
-                var intent = new Intent(mContent, typeof(Page1Activity));
-                mContent.StartActivity(intent);
+                if (datas[position].Status == "N")
+                {
+                    var intent = new Intent(mContent, typeof(Page1Activity));
+                    mContent.StartActivity(intent);
+                }
+                else {
+                    var intent = new Intent(mContent, typeof(VisitOKActivity));
+                    mContent.StartActivity(intent);
+                }
+               
             };
+
+
+            if (viewHolder.sendDate != null) {
+                viewHolder.sendDate.Text = datas[position].SendDate.GetValueOrDefault().ToString("yyyy/MM/dd HH:mm");
+            }
 
             if (viewHolder.record != null) {
                 viewHolder.record.Click += delegate {

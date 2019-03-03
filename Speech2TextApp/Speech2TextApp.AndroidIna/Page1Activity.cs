@@ -18,7 +18,9 @@ using Speech2TextApp.Service;
 
 namespace Speech2TextApp.AndroidIna
 {
-   
+    /// <summary>
+    /// 第一頁:基本資料
+    /// </summary>
     [Activity(Label = "Page1Activity")]
     public class Page1Activity : BaseActivity
     {
@@ -130,30 +132,6 @@ namespace Speech2TextApp.AndroidIna
                 address3.SetTextColor(Color.White);
 
                 addressLayout.RemoveAllViews();
-                //EditText addressArea = new EditText(this);
-                //addressArea.Hint = "區";
-                //addressLayout.AddView(addressArea);
-
-                //addressArea = new EditText(this);
-                //addressArea.Hint = "里";
-                //addressLayout.AddView(addressArea);
-                ////addressLayout.AddView(address);
-                //addressArea = new EditText(this);
-                //addressArea.Hint = "鄰";
-                //addressLayout.AddView(addressArea);
-                ////addressLayout.AddView(address);
-                //addressArea = new EditText(this);
-                //addressArea.Hint = "路";
-                //addressLayout.AddView(addressArea);
-                ////addressLayout.AddView(address);
-                //addressArea = new EditText(this);
-                //addressArea.Hint = "段";
-                //addressLayout.AddView(addressArea);
-                ////addressLayout.AddView(address);
-                //addressArea = new EditText(this);
-                //addressArea.Hint = "巷";
-                //addressLayout.AddView(addressArea);
-                ////addressLayout.AddView(address);
                 TextInputLayout til = new TextInputLayout(this);
                 til.SetHintTextAppearance(Resource.Style.TextInputHint);
                 til.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
@@ -236,10 +214,8 @@ namespace Speech2TextApp.AndroidIna
 
             var next = FindViewById<Button>(Resource.Id.btn_page_1_next);
             next.Click += NextButtonEvent;
-
-            //var record = FindViewById<Button>(Resource.Id.btn_record);
+            
             _description = FindViewById<EditText>(Resource.Id.edittext_desc);
-            //record.Click += RecordEvent;
         }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultVal, Intent data)
@@ -260,6 +236,11 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 改變受訪狀態
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VisitStatusClick(object sender, EventArgs e)
         {
             var rb = (RadioButton)sender;
@@ -277,21 +258,12 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
-        public void RecordEvent(object sender, EventArgs e)
-        {
-            //var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
-
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, Android.App.Application.Context.GetString(Resource.String.messageSpeakNow));
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
-
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
-            //StartActivityForResult(voiceIntent, VOICE);
-        }
-
+       
+        /// <summary>
+        /// 下一頁
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NextButtonEvent(object sender, EventArgs e)
         {
             DataService.dataCurrent.AddressType = AddressType;

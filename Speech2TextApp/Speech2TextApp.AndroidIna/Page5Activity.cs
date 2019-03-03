@@ -11,6 +11,9 @@ using Android.Graphics;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 第五頁:送出資料檢視
+    /// </summary>
     [Activity(Label = "Page5Activity")]
     public class Page5Activity : BaseActivity
     {
@@ -47,6 +50,11 @@ namespace Speech2TextApp.AndroidIna
             _pageLayout.AddView(GetForthPage());
         }
 
+        /// <summary>
+        /// 下一頁
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NextButtonEvent(object sender, EventArgs e)
         {
             DataService.dataCurrent.VisitDetails.Add(DataService.dataCurrent.VisitDetail);
@@ -58,207 +66,5 @@ namespace Speech2TextApp.AndroidIna
             StartActivity(typeof(VisitListActivity));
         }
 
-        //private LinearLayout GetFirstPage()
-        //{
-        //    var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,                
-        //        ViewGroup.LayoutParams.WrapContent, 1.0f);
-        //    layoutParameter.SetMargins(20, 5, 0, 0);
-        //    var layout = new LinearLayout(this)
-        //    {
-        //        Orientation = Orientation.Vertical,
-        //        WeightSum = 2,
-        //        LayoutParameters = layoutParameter
-        //    };
-
-        //    var title = new TextView(this) { Text = "1" };
-        //    layout.AddView(title);
-
-        //    var line = new View(this);
-        //    line.SetBackgroundColor(TextColor);
-        //    var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
-        //    line.LayoutParameters = lineParameter;
-        //    layout.AddView(line);
-
-        //    var visitedCount = new TextView(this) {Text = $"訪視次數  {DataService.dataCurrent.VisitCount}"};
-        //    visitedCount.SetTextColor(TextColor);
-        //    layout.AddView(visitedCount);
-
-        //    var applyName = new TextView(this) { Text = $"申請人  {DataService.dataCurrent.ApplyName}"};
-        //    applyName.SetTextColor(TextColor);
-        //    layout.AddView(applyName);
-
-        //    var visitName = new TextView(this) { Text = $"受訪人  {DataService.dataCurrent.VisitName}" };
-        //    visitName.SetTextColor(TextColor);
-        //    layout.AddView(visitName);
-
-        //    var relatoinship = new TextView(this) {Text = $"申請人與受訪人關係  {DataService.dataCurrent.Relatoinship}"};
-        //    relatoinship.SetTextColor(TextColor);
-        //    layout.AddView(relatoinship);
-
-        //    var phone = new TextView(this) { Text = $"連絡電話  {DataService.dataCurrent.Phone}" };
-        //    phone.SetTextColor(TextColor);
-        //    layout.AddView(phone);
-
-        //    var addressTitle = new TextView(this) { Text = "訪視地址" };
-        //    addressTitle.SetTextColor(TextColor);
-        //    layout.AddView(addressTitle);
-        //    var addressType = new TextView(this) { Text = $"{DataService.dataCurrent.AddressType}" };
-        //    phone.SetTextColor(TextColor);
-        //    layout.AddView(addressType);
-        //    var address = new TextView(this) { Text = $"{DataService.dataCurrent.Address1}{DataService.dataCurrent.Address2}{DataService.dataCurrent.Address3}" };
-        //    address.SetTextColor(TextColor);
-        //    layout.AddView(address);
-
-        //    var visitTimeTitle = new TextView(this) { Text = "訪視時間" };
-        //    visitTimeTitle.SetTextColor(TextColor);
-        //    layout.AddView(visitTimeTitle);
-        //    //var visitTime = new TextView(this) {   };
-        //    //visitTime.SetTextColor(TextColor);
-        //    //layout.AddView(visitTime);
-
-        //    return layout;
-        //}
-
-        //private LinearLayout GetSecondPage()
-        //{
-        //    var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
-        //        ViewGroup.LayoutParams.WrapContent, 1.0f);
-        //    layoutParameter.SetMargins(20, 5, 0, 0);
-        //    var layout = new LinearLayout(this)
-        //    {
-        //        Orientation = Orientation.Vertical,
-        //        WeightSum = 2,
-        //        LayoutParameters = layoutParameter
-        //    };
-
-        //    var title = new TextView(this) { Text = "2" };
-        //    layout.AddView(title);
-
-        //    var line = new View(this);
-        //    line.SetBackgroundColor(TextColor);
-        //    var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
-        //    line.LayoutParameters = lineParameter;
-        //    layout.AddView(line);
-
-        //    var liveStatus = new TextView(this) { Text = $"✔ {DataService.dataCurrent.VisitDetail.LiveStatus}" }; 
-        //    liveStatus.SetBackgroundColor(TextColor);
-        //    layout.AddView(liveStatus);
-
-        //    var liveCityStatusTitle = new TextView(this) { Text = "申請人是否實際居住本市" };
-        //    liveCityStatusTitle.SetBackgroundColor(TextColor);
-        //    layout.AddView(liveCityStatusTitle);
-
-        //    var liveCityStatusText = DataService.dataCurrent.VisitDetail.LiveStatus == "Y" ? "是" : "否";
-        //    var liveCityStatus = new TextView(this) { Text = $"✔ {liveCityStatusText}" };
-        //    liveCityStatus.SetBackgroundColor(TextColor);
-        //    layout.AddView(liveCityStatus);
-
-        //    var applyTypeTitle = new TextView(this) { Text = "申請項目" };
-        //    applyTypeTitle.SetBackgroundColor(TextColor);
-        //    layout.AddView(applyTypeTitle);
-        //    foreach (var item in DataService.dataCurrent.VisitDetail.ApplyType)
-        //    {
-        //        var applyType = new TextView(this) { Text = $"✔ {item}" };
-        //        applyType.SetBackgroundColor(TextColor);
-        //        layout.AddView(applyType);
-        //    }
-
-        //    var applyReasonTitle = new TextView(this) { Text = "申請低收入主要原因" };
-        //    applyReasonTitle.SetBackgroundColor(TextColor);
-        //    layout.AddView(applyReasonTitle);
-
-        //    var applyReason = new TextView(this) { Text = $"✔ {DataService.dataCurrent.VisitDetail.ApplyReason}"  };
-        //    applyReason.SetBackgroundColor(TextColor);
-        //    layout.AddView(applyReason);
-        //    return layout;
-        //}
-
-        //private LinearLayout GetThirdPage()
-        //{
-        //    var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
-        //        ViewGroup.LayoutParams.WrapContent, 1.0f);
-        //    layoutParameter.SetMargins(20, 5, 0, 0);
-        //    var layout = new LinearLayout(this)
-        //    {
-        //        Orientation = Orientation.Vertical,
-        //        WeightSum = 2,
-        //        LayoutParameters = layoutParameter
-        //    };
-
-        //    var title = new TextView(this) { Text = "3" };
-        //    layout.AddView(title);
-
-        //    var line = new View(this);
-        //    line.SetBackgroundColor(TextColor);
-        //    var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
-        //    line.LayoutParameters = lineParameter;
-        //    layout.AddView(line);
-
-        //    foreach (var item in DataService.dataCurrent.VisitDetail.Members)
-        //    {
-        //        var borderLayoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
-        //            ViewGroup.LayoutParams.WrapContent, 1.0f);
-        //        layoutParameter.SetMargins(20, 5, 0, 0);
-        //        var borderLayout = new LinearLayout(this)
-        //        {
-        //            Orientation = Orientation.Vertical,
-        //            WeightSum = 2,
-        //            LayoutParameters = borderLayoutParameter
-        //        };
-        //        borderLayout.SetBackgroundResource(Resource.Drawable.main_bottom_border);
-
-        //        var name = new TextView(this) { Text = item.Name };
-        //        name.SetBackgroundColor(TextColor);
-        //        borderLayout.AddView(name);
-
-        //        var memberTitle = new TextView(this) { Text = $"稱    謂   {item.Title}" };
-        //        memberTitle.SetBackgroundColor(TextColor);
-        //        borderLayout.AddView(memberTitle);
-
-        //        var liveTogether = new TextView(this) { Text = $"是否同住   {item.LiveTogether}" };
-        //        liveTogether.SetBackgroundColor(TextColor);
-        //        borderLayout.AddView(liveTogether);
-
-        //        var healthStatus = new TextView(this) { Text = $"健康狀況   {item.HealthStatus}" };
-        //        healthStatus.SetBackgroundColor(TextColor);
-        //        borderLayout.AddView(healthStatus);
-
-        //        var workStatus = new TextView(this) { Text = $"就業狀況   {item.WorkStatus}" };
-        //        workStatus.SetBackgroundColor(TextColor);
-        //        borderLayout.AddView(workStatus);
-
-        //        var isInNursingHome = new TextView(this) { Text = $"是否安置療養院所 {item.IsInNursingHome}" };
-        //        isInNursingHome.SetBackgroundColor(TextColor);
-        //        borderLayout.AddView(isInNursingHome);
-
-        //        layout.AddView(borderLayout);
-        //    }
-
-        //    return layout;
-
-        //}
-
-        //private LinearLayout GetForthPage()
-        //{
-        //    var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
-        //        ViewGroup.LayoutParams.WrapContent, 1.0f);
-        //    layoutParameter.SetMargins(20, 5, 0, 0);
-        //    var layout = new LinearLayout(this)
-        //    {
-        //        Orientation = Orientation.Vertical,
-        //        WeightSum = 2,
-        //        LayoutParameters = layoutParameter
-        //    };
-
-        //    var title = new TextView(this) { Text = "4" };
-        //    layout.AddView(title);
-
-        //    var line = new View(this);
-        //    line.SetBackgroundColor(TextColor);
-        //    var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
-        //    line.LayoutParameters = lineParameter;
-        //    layout.AddView(line);
-        //    return layout;
-        //}
     }
 }

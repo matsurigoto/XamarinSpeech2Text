@@ -15,14 +15,25 @@ using Speech2TextApp.Service;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 共通頁面
+    /// </summary>
     public abstract class BaseActivity : AppCompatActivity
     {
         public Android.Graphics.Color TextColor = Android.Graphics.Color.ParseColor("#4A90E2");
+        public Android.Graphics.Color BlackColor = Android.Graphics.Color.ParseColor("#000000");
+        public Android.Graphics.Color WhiteColor = Android.Graphics.Color.ParseColor("#FFFFFF");
         public float titleSize = 14f;
         public float dataSize = 16f;
 
+        /// <summary>
+        /// 能否編輯註記
+        /// </summary>
         public bool IsEdit { get; set; }
 
+        /// <summary>
+        /// 語音備忘錄起始按鈕
+        /// </summary>
         protected void InitRecordButton() {
             var button = FindViewById<FloatingActionButton>(Resource.Id.fab);
             button.Click += delegate {
@@ -31,19 +42,25 @@ namespace Speech2TextApp.AndroidIna
             };
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <returns></returns>
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             this.MenuInflater.Inflate(Resource.Menu.bar, menu);
             return base.OnCreateOptionsMenu(menu);
         }
         
-
-        public override bool OnContextItemSelected(IMenuItem item)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId) {
                 case Resource.Id.action_record:
+                    StartActivity(typeof(HistoryActivity));
                     break;
                 case Resource.Id.action_delete:
+                    StartActivity(typeof(VisitListActivity));
                     break;
                 default:
                     OnBackPressed();
@@ -52,11 +69,49 @@ namespace Speech2TextApp.AndroidIna
             return true;
         }
 
+        /// <summary>
+        /// 設定資料
+        /// </summary>
+        /// <param name="title">標題</param>
+        /// <param name="data">資料</param>
+        /// <param name="layout">設計</param>
+        private void SetData(string title, string data, LinearLayout layout) {
+           var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
+               ViewGroup.LayoutParams.WrapContent, 1.0f);
+            layoutParameter.SetMargins(0, 0, 0, 8);
+            LinearLayout h = new LinearLayout(this) {
+                Orientation = Orientation.Horizontal,
+                LayoutParameters = layoutParameter
+            };
+            h.Orientation = Orientation.Horizontal;
+
+            var visitedCount = new TextView(this) { Text = title };
+            visitedCount.TextAlignment = TextAlignment.Center;
+            visitedCount.SetTextColor(WhiteColor);
+            visitedCount.SetHeight(100);
+            visitedCount.SetWidth(500);
+            visitedCount.SetBackgroundColor(TextColor);
+            visitedCount.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
+            h.AddView(visitedCount);
+
+            var dataInput = new TextView(this) { Text = data };
+            dataInput.TextAlignment = TextAlignment.Center;
+            dataInput.SetTextColor(TextColor);
+            dataInput.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
+            h.AddView(dataInput);
+
+            layout.AddView(h);
+        }
+
+        /// <summary>
+        /// 第一頁:基本資料
+        /// </summary>
+        /// <returns></returns>
         protected LinearLayout GetFirstPage()
         {
             var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
                 ViewGroup.LayoutParams.WrapContent, 1.0f);
-            layoutParameter.SetMargins(100, 0, 100, 100);
+            //layoutParameter.SetMargins(100, 0, 100, 100);
             var layout = new LinearLayout(this)
             {
                 Orientation = Orientation.Vertical,
@@ -94,60 +149,24 @@ namespace Speech2TextApp.AndroidIna
             var lineParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
             line.LayoutParameters = lineParameter;
             layout.AddView(line);
-
-            var visitedCount = new TextView(this) { Text = $"訪視次數  {DataService.dataCurrent.VisitDetails.Count}" };
-            visitedCount.SetTextColor(TextColor);
-            visitedCount.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            layout.AddView(visitedCount);
-
-            var applyName = new TextView(this) { Text = $"申請人  {DataService.dataCurrent.ApplyName}" };
-            applyName.SetTextColor(TextColor);
-            applyName.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            layout.AddView(applyName);
-
-            var visitName = new TextView(this) { Text = $"受訪人  {DataService.dataCurrent.VisitName}" };
-            visitName.SetTextColor(TextColor);
-            visitName.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            layout.AddView(visitName);
-
-            var relatoinship = new TextView(this) { Text = $"申請人與受訪人關係  {DataService.dataCurrent.Relatoinship}" };
-            relatoinship.SetTextColor(TextColor);
-            relatoinship.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            layout.AddView(relatoinship);
-
-            var phone = new TextView(this) { Text = $"連絡電話  {DataService.dataCurrent.Phone}" };
-            phone.SetTextColor(TextColor);
-            phone.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            layout.AddView(phone);
-
-            var addressTitle = new TextView(this) { Text = "訪視地址" };
-            addressTitle.SetTextColor(TextColor);
-            addressTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            layout.AddView(addressTitle);
-            var addressType = new TextView(this) { Text = $"{DataService.dataCurrent.AddressType}" };
-            addressType.SetTextColor(TextColor);
-            addressType.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            layout.AddView(addressType);
-            var address = new TextView(this) { Text = $"{DataService.dataCurrent.Address1}{DataService.dataCurrent.Address2}{DataService.dataCurrent.Address3}" };
-            address.SetTextColor(TextColor);
-            address.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            layout.AddView(address);
-
-            var visitTimeTitle = new TextView(this) { Text = "訪視時間" };
-            visitTimeTitle.SetTextColor(TextColor);
-            layout.AddView(visitTimeTitle);
-            //var visitTime = new TextView(this) {   };
-            //visitTime.SetTextColor(TextColor);
-            //layout.AddView(visitTime);
-
+            SetData("訪視次數", DataService.dataCurrent.VisitDetails.Count.ToString(), layout);
+            SetData("申請人", DataService.dataCurrent.ApplyName, layout);
+            SetData("受訪人", DataService.dataCurrent.VisitName, layout);
+            SetData("申請人與受訪人關係", DataService.dataCurrent.Relatoinship, layout);
+            SetData("連絡電話", DataService.dataCurrent.Phone, layout);
+            SetData("訪視地址", DataService.dataCurrent.Address1, layout);
             return layout;
         }
 
+        /// <summary>
+        /// 第二頁:申請資料
+        /// </summary>
+        /// <returns></returns>
         protected LinearLayout GetSecondPage()
         {
             var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
                 ViewGroup.LayoutParams.WrapContent, 1.0f);
-            layoutParameter.SetMargins(100, 0, 100, 100);
+            //layoutParameter.SetMargins(100, 0, 100, 100);
             var layout = new LinearLayout(this)
             {
                 Orientation = Orientation.Vertical,
@@ -189,51 +208,22 @@ namespace Speech2TextApp.AndroidIna
             line.LayoutParameters = lineParameter;
             layout.AddView(line);
 
-            var liveStatus = new TextView(this) { Text = $"✔ {DataService.dataCurrent.VisitDetail.LiveStatus}" };
-            liveStatus.SetTextColor(TextColor);
-            liveStatus.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            layout.AddView(liveStatus);
-
-            var liveCityStatusTitle = new TextView(this) { Text = "申請人是否實際居住本市" };
-            liveCityStatusTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            liveCityStatusTitle.SetTextColor(TextColor);
-            layout.AddView(liveCityStatusTitle);
-
-            var liveCityStatusText = DataService.dataCurrent.VisitDetail.LiveStatus == "Y" ? "是" : "否";
-            var liveCityStatus = new TextView(this) { Text = $"✔ {liveCityStatusText}" };
-            liveCityStatus.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            liveCityStatus.SetTextColor(TextColor);
-            layout.AddView(liveCityStatus);
-
-            var applyTypeTitle = new TextView(this) { Text = "申請項目" };
-            applyTypeTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            applyTypeTitle.SetTextColor(TextColor);
-            layout.AddView(applyTypeTitle);
-            foreach (var item in DataService.dataCurrent.VisitDetail.ApplyType)
-            {
-                var applyType = new TextView(this) { Text = $"✔ {item}" };
-                applyType.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-                applyType.SetTextColor(TextColor);
-                layout.AddView(applyType);
-            }
-
-            var applyReasonTitle = new TextView(this) { Text = "申請低收入主要原因" };
-            applyReasonTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            applyReasonTitle.SetTextColor(TextColor);
-            layout.AddView(applyReasonTitle);
-
-            var applyReason = new TextView(this) { Text = $"✔ {DataService.dataCurrent.VisitDetail.ApplyReason}" };
-            applyReason.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            applyReason.SetTextColor(TextColor);
-            layout.AddView(applyReason);
+            SetData("住宅狀況", DataService.dataCurrent.VisitDetail.LiveStatus, layout);
+            SetData("申請人是否實際居住本市", DataService.dataCurrent.VisitDetail.LiveStatus == "Y" ? "是" : "否", layout);
+            SetData("申請項目", string.Join(",", DataService.dataCurrent.VisitDetail.ApplyType), layout);
+            SetData("申請低收入主要原因", DataService.dataCurrent.VisitDetail.ApplyReason, layout);
             return layout;
         }
 
+        /// <summary>
+        /// 第三頁:家戶人口資料
+        /// </summary>
+        /// <returns></returns>
         protected LinearLayout GetThirdPage()
         {
             var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
                 ViewGroup.LayoutParams.WrapContent, 1.0f);
-            layoutParameter.SetMargins(100, 0, 100, 100);
+            //layoutParameter.SetMargins(100, 0, 100, 100);
             var layout = new LinearLayout(this)
             {
                 Orientation = Orientation.Vertical,
@@ -284,7 +274,7 @@ namespace Speech2TextApp.AndroidIna
                 };
                 var borderLayoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
                     ViewGroup.LayoutParams.WrapContent, 1.0f);
-                layoutParameter.SetMargins(100, 0, 100, 0);
+                //layoutParameter.SetMargins(100, 0, 100, 0);
                 borderLayout.SetBackgroundResource(Resource.Drawable.main_border);
 
                 var name = new TextView(this) { Text = item.Name };
@@ -292,31 +282,11 @@ namespace Speech2TextApp.AndroidIna
                 name.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
                 borderLayout.AddView(name);
 
-                var memberTitle = new TextView(this) { Text = $"稱    謂   {item.Title}" };
-                memberTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-                memberTitle.SetTextColor(TextColor);
-                borderLayout.AddView(memberTitle);
-
-                var liveTogether = new TextView(this) { Text = $"是否同住   {item.LiveTogether}" };
-                liveTogether.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-                liveTogether.SetTextColor(TextColor);
-                borderLayout.AddView(liveTogether);
-
-                var healthStatus = new TextView(this) { Text = $"健康狀況   {item.HealthStatus}" };
-                healthStatus.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-                healthStatus.SetTextColor(TextColor);
-                borderLayout.AddView(healthStatus);
-
-                var workStatus = new TextView(this) { Text = $"就業狀況   {item.WorkStatus}" };
-                workStatus.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-                workStatus.SetTextColor(TextColor);
-                borderLayout.AddView(workStatus);
-
-                var isInNursingHome = new TextView(this) { Text = $"是否安置療養院所 {item.IsInNursingHome}" };
-                isInNursingHome.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-                isInNursingHome.SetTextColor(TextColor);
-                borderLayout.AddView(isInNursingHome);
-
+                SetData("稱    謂", item.Title, borderLayout);
+                SetData("是否同住", item.LiveTogether, borderLayout);
+                SetData("健康狀況", item.HealthStatus, borderLayout);
+                SetData("就業狀況", item.WorkStatus, borderLayout);
+                SetData("是否安置療養院所", item.IsInNursingHome, borderLayout);
                 layout.AddView(borderLayout);
             }
 
@@ -324,11 +294,15 @@ namespace Speech2TextApp.AndroidIna
 
         }
 
+        /// <summary>
+        /// 第四頁:備註資料
+        /// </summary>
+        /// <returns></returns>
         protected LinearLayout GetForthPage()
         {
             var layoutParameter = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent,
                 ViewGroup.LayoutParams.WrapContent, 1.0f);
-            layoutParameter.SetMargins(100, 0, 100, 100);
+            //layoutParameter.SetMargins(100, 0, 100, 100);
             var layout = new LinearLayout(this)
             {
                 Orientation = Orientation.Vertical,
@@ -370,27 +344,9 @@ namespace Speech2TextApp.AndroidIna
             line.LayoutParameters = lineParameter;
             layout.AddView(line);
 
-            var otherPeopleTitle = new TextView(this) { Text = "有無人口之外其他共同居住人口" };
-            otherPeopleTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            otherPeopleTitle.SetTextColor(TextColor);
-            layout.AddView(otherPeopleTitle);
-
-            var otherPeopleText = DataService.dataCurrent.VisitDetail.OtherPeople;
-            var liveCityStatus = new TextView(this) { Text = $"✔ {otherPeopleText}" };
-            liveCityStatus.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            liveCityStatus.SetTextColor(TextColor);
-            layout.AddView(liveCityStatus);
-
-            var otherDescTitle = new TextView(this) { Text = "其他家戶概述" };
-            otherDescTitle.SetTextSize(Android.Util.ComplexUnitType.Sp, titleSize);
-            otherDescTitle.SetTextColor(TextColor);
-            layout.AddView(otherDescTitle);
-
-            var otherDescText = DataService.dataCurrent.VisitDetail.OtherDesc;
-            var otherDesc = new TextView(this) { Text = $"{otherDescText}" };
-            otherDesc.SetTextSize(Android.Util.ComplexUnitType.Sp, dataSize);
-            otherDesc.SetTextColor(TextColor);
-            layout.AddView(otherDesc);
+            SetData("有無人口之外其他共同居住人口", DataService.dataCurrent.VisitDetail.OtherPeople, layout);
+            SetData("其他家戶概述", DataService.dataCurrent.VisitDetail.OtherDesc, layout);
+            
             return layout;
         }
     }

@@ -77,6 +77,11 @@ namespace Speech2TextApp.Data
         /// 錄音內容
         /// </summary>
         public List<string> Message { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? SendDate { get; set; }
     }
 
    

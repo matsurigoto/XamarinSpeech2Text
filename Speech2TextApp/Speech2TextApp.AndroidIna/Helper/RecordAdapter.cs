@@ -18,11 +18,12 @@ namespace Speech2TextApp.AndroidIna.Helper
     {
         public TextView count { get; set; }
         public TextView message { get; set; }
-
+        public ImageButton delete { get; set; }
         public RecordViewHolder(View itemView) : base(itemView)
         {
             count = itemView.FindViewById<TextView>(Resource.Id.count);
             message = itemView.FindViewById<TextView>(Resource.Id.message);
+            delete = itemView.FindViewById<ImageButton>(Resource.Id.delete);
         }
     }
 
@@ -51,6 +52,9 @@ namespace Speech2TextApp.AndroidIna.Helper
             RecordViewHolder viewHolder = holder as RecordViewHolder;
             viewHolder.count.Text = (position+1).ToString();
             viewHolder.message.Text = datas[position];
+            viewHolder.delete.Click += delegate {
+                datas.RemoveRange(position, 1);
+            };
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

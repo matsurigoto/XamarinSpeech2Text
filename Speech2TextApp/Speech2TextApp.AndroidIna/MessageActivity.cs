@@ -21,6 +21,9 @@ using Speech2TextApp.Service;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 語音備忘錄
+    /// </summary>
     [Activity(Label = "MessageActivity")]
     public class MessageActivity : BaseActivity, NoticeDialogListener
     {
@@ -28,6 +31,7 @@ namespace Speech2TextApp.AndroidIna
         private RecyclerView.LayoutManager layoutManager;
         private RecyclerView recycleView;
 
+        RecordDialog recordDialog = new RecordDialog();
         private readonly int VOICE = 10;
         EditText _description;
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -56,16 +60,16 @@ namespace Speech2TextApp.AndroidIna
 
 
             var record = FindViewById<FloatingActionButton>(Resource.Id.btn_record);
+
+            
             _description = FindViewById<EditText>(Resource.Id.edittext_desc);
             record.Click += RecordEvent;
-
-            //var submit = FindViewById<Button>(Resource.Id.btn_submit);
-            //submit.Click += AddMessage;
-
-            //var back = FindViewById<Button>(Resource.Id.btn_back);
-            //back.Click += SaveMessageAndBack;
+            
         }
 
+        /// <summary>
+        /// 帶入已儲存訊息
+        /// </summary>
         private void InitMessages()
         {
             recycleView.RemoveAllViews();
@@ -87,57 +91,31 @@ namespace Speech2TextApp.AndroidIna
                 var textInput = _description.Text + matches[0];
                 if (textInput.Length > 500)
                     textInput = textInput.Substring(0, 500);
-                _description.Text = textInput;
+                recordDialog.edittext_desc = textInput;
             }
             else
             {
-                _description.Text = "No speech was recognized";
+                recordDialog.edittext_desc = "No speech was recognized";
             }
         }
 
+        /// <summary>
+        /// 開啟語音錄製工具
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void RecordEvent(object sender, EventArgs e)
         {
             FragmentTransaction transcation = FragmentManager.BeginTransaction();
-            RecordDialog recordDialog = new RecordDialog();
             recordDialog.SetStyle(DialogFragmentStyle.NoTitle,0);
             recordDialog.Show(transcation, "Dialog Fragment");
-            
-            //var voiceIntent = new Intent(RecognizerIntent.ActionRecognizeSpeech);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraLanguageModel, RecognizerIntent.LanguageModelFreeForm);
-
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraPrompt, Android.App.Application.Context.GetString(Resource.String.messageSpeakNow));
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputCompleteSilenceLengthMillis, 1500);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputPossiblyCompleteSilenceLengthMillis, 1500);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraSpeechInputMinimumLengthMillis, 15000);
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraMaxResults, 1);
-
-            //voiceIntent.PutExtra(RecognizerIntent.ExtraLanguage, Java.Util.Locale.Default);
-            //StartActivityForResult(voiceIntent, VOICE);
         }
 
-        //public void AddMessage(object sender, EventArgs e)
-        //{
-        //    if (!string.IsNullOrEmpty(_description.Text))
-        //    {
-        //        DataService.dataCurrent.Message.Add(_description.Text);
-        //        InitMessages();
-        //    }
-        //    else {
-        //        Toast.MakeText(this, "請輸入備註", ToastLength.Long).Show();
-        //    }
-        //}
-
-
-        //public void SaveMessageAndBack(object sender, EventArgs e)
-        //{
-        //    var descDocument = GetExternalFilesDir(null).AbsolutePath;
-        //    string json = JsonConvert.SerializeObject(DataService.dataCurrent);
-        //    string destPath = Path.Combine(descDocument, $"{ DataService.dataCurrent.Id}.json");
-        //    File.WriteAllText(destPath, json);
-        //    var intent = new Intent(this, typeof(MainActivity));
-        //    StartActivity(intent);
-        //}
-
+        /// <summary>
+        /// 點選確認
+        /// 將新的語音資料存入json
+        /// </summary>
+        /// <param name="dialog"></param>
         public void OnDialogPositiveClick(DialogFragment dialog)
         {
             var recordDialog = dialog as RecordDialog;
@@ -148,6 +126,7 @@ namespace Speech2TextApp.AndroidIna
             string destPath = Path.Combine(descDocument, $"{ DataService.dataCurrent.Id}.json");
             File.WriteAllText(destPath, json);
             recordDialog.Dismiss();
+           
         }
     }
 }

@@ -4,58 +4,59 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:paddingTop="10dp"
-	android:paddingBottom="10dp"
+	android:paddingTop="16dp"
+	android:paddingBottom="16dp"
+	android:paddingLeft="16dp"
 	android:background="@drawable/main_bottom_border"
 	android:id="@+id/data">
 	<LinearLayout 
 			android:orientation="horizontal"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="28dp"
+			android:layout_width="match_parent">
 			<TextView
 				android:id="@+id/apply_name"
-				android:textSize="18sp"
-				android:layout_width="match_parent"
+				android:textSize="16sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 			<TextView
 				android:text="訪視次數"
-				android:textSize="16sp"
-				android:layout_width="match_parent"
+				android:textSize="12sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 			<TextView
 				android:id="@+id/apply_times"
-				android:textSize="16sp"
-				android:layout_width="match_parent"
+				android:textSize="12sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 		</LinearLayout>
-		<LinearLayout 
+	<LinearLayout 
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="20dp">
 			<TextView
 				android:text="最後訪視"
-				android:textSize="16sp"
-				android:layout_width="match_parent"
+				android:textSize="12sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 			<TextView
 				android:id="@+id/apply_date"
-				android:textSize="16sp"
-				android:layout_width="match_parent"
+				android:textSize="12sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 		</LinearLayout>
-		<LinearLayout 
+	<LinearLayout 
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="20dp">
 			<TextView
 				android:text="資料送出"
-				android:textSize="16sp"
-				android:layout_width="match_parent"
+				android:textSize="12sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 			<TextView
 				android:id="@+id/send_date"
-				android:textSize="16sp"
-				android:layout_width="match_parent"
+				android:textSize="12sp"
+				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 		</LinearLayout>
 </LinearLayout>

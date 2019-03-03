@@ -19,6 +19,9 @@ using Speech2TextApp.Service;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 待訪視資料列表
+    /// </summary>
     [Activity(Label = "VisitListActivity", Theme = "@style/AppTheme", MainLauncher = true)]
     public class VisitListActivity : AppCompatActivity
     {
@@ -88,6 +91,11 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化待訪問清單
+        /// </summary>
+        /// <param name="datas"></param>
+        /// <param name="layoutResource"></param>
         private void InitVisitList(List<ApplyResult> datas, int layoutResource)
         {
             

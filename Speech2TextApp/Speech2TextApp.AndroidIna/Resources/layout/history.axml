@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingTop="16dp"
+	android:paddingBottom="16dp"
+	android:paddingLeft="16dp"
+	android:background="@drawable/main_bottom_border">
+	<TextView
+			android:id="@+id/history_visit_count"
+			android:textSize="12sp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	<TextView
+		android:id="@+id/history_visit_time"
+		android:textSize="16sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="10dp"/>
+	<TextView
+		android:text="訪視地點"
+		android:textSize="12sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+	<TextView
+		android:id="@+id/history_visit_place"
+		android:textSize="16sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="10dp"/>
+	<TextView
+		android:text="訪視概述"
+		android:textSize="12sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+	<TextView
+		android:id="@+id/history_visit_desc"
+		android:textSize="16sp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+</LinearLayout>

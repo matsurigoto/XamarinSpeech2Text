@@ -4,23 +4,25 @@
 	android:orientation="horizontal"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:paddingTop="10dp"
-	android:paddingBottom="10dp"
+	android:paddingTop="16dp"
+	android:paddingBottom="16dp"
+	android:paddingLeft="16dp"
+	
 	android:background="@drawable/main_bottom_border"
-	android:id="@+id/data">
+	>
 	<LinearLayout 
 	android:orientation="vertical"
 	android:layout_width="0dp"
 	android:layout_weight="1"
-	android:layout_marginLeft="20dp"
+	android:id="@+id/data"
 	android:layout_height="wrap_content">
 		<LinearLayout 
 			android:orientation="horizontal"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="28dp"
+			android:layout_width="match_parent">
 			<TextView
 				android:id="@+id/apply_name"
-				android:textSize="18sp"
+				android:textSize="16sp"
 				android:layout_width="100dp"
 				android:layout_height="wrap_content" />
 			<TextView
@@ -37,7 +39,7 @@
 		<LinearLayout 
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="20dp">
 			<TextView
 				android:text="最後訪視"
 				android:textSize="12sp"
@@ -50,14 +52,26 @@
 				android:layout_height="wrap_content" />
 		</LinearLayout>
 	</LinearLayout>
-	<ImageButton 
+	<LinearLayout 
+			android:orientation="vertical"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="16dp"
+			android:layout_gravity="center"
+			android:layout_width="wrap_content">
+		<ImageButton 
 		android:id="@+id/record"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
-		android:layout_marginRight="20dp"
-		android:src="@drawable/baseline_mic_black_18"
-		android:background="@drawable/circle_activity_48"
+		android:background="#FFFFFFFF"
+		android:src="@drawable/baseline_mic_black_24"
+		
 	/>
+		<TextView
+				android:text="語音備忘錄"
+				android:textSize="12sp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+	</LinearLayout>
 
 </LinearLayout>

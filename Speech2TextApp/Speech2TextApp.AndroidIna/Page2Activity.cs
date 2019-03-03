@@ -9,6 +9,9 @@ using Android.Graphics;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 第二頁:申請資料
+    /// </summary>
     [Android.App.Activity(Label = "Page2Activity")]
     public class Page2Activity : BaseActivity, NoticeDialogListener
     {
@@ -114,6 +117,10 @@ namespace Speech2TextApp.AndroidIna
             next.Click += NextButtonEvent;
         }
 
+        /// <summary>
+        /// 住宅狀況第二層選單點選事件
+        /// </summary>
+        /// <param name="dialog"></param>
         public void OnDialogPositiveClick(DialogFragment dialog)
         {
             liveStatusRant.Text = string.Format("{0}({1}:{2})",
@@ -125,6 +132,11 @@ namespace Speech2TextApp.AndroidIna
 
         }
 
+        /// <summary>
+        /// 初始化checkbox 
+        /// </summary>
+        /// <param name="rb">選擇選單</param>
+        /// <param name="defaultName">預設選單</param>
         private void InitCheckbox(CheckBox rb, IEnumerable<string> defaultName)
         {
             foreach (var val in defaultName)
@@ -151,6 +163,11 @@ namespace Speech2TextApp.AndroidIna
             };
         }
 
+        /// <summary>
+        /// 初始化Radio
+        /// </summary>
+        /// <param name="rb">選擇選單</param>
+        /// <param name="defaultName">預設選單</param>
         private void InitRadioButton(RadioButton rb, string defaultName)
         {
             if (rb.Text == defaultName)
@@ -159,6 +176,10 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 初始化申請原因
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitApplyReason(RadioButton rb)
         {
             InitRadioButton(rb, DataService.dataCurrent.VisitDetail.ApplyReason);
@@ -168,6 +189,10 @@ namespace Speech2TextApp.AndroidIna
             };
         }
 
+        /// <summary>
+        /// 初始化居住城市
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitLiveCity(RadioButton rb)
         {
             InitRadioButton(rb, DataService.dataCurrent.VisitDetail.LiveCityStatus);
@@ -177,6 +202,10 @@ namespace Speech2TextApp.AndroidIna
             };
         }
 
+        /// <summary>
+        /// 初始化居住狀態
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitLiveStatus(RadioButton rb)
         {
             InitRadioButton(rb, DataService.dataCurrent.VisitDetail.LiveCityStatus);
@@ -184,7 +213,12 @@ namespace Speech2TextApp.AndroidIna
         }
 
        
-
+        /// <summary>
+        /// 居住狀態點選事件
+        /// 跳出第二層選單
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LiveStatusClick(object sender, EventArgs e)
         {
             RadioButton rb = (RadioButton)sender;
@@ -200,6 +234,11 @@ namespace Speech2TextApp.AndroidIna
             }
         }
 
+        /// <summary>
+        /// 下一頁
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NextButtonEvent(object sender, EventArgs e)
         {
             if (DataService.dataCurrent.IsLast)

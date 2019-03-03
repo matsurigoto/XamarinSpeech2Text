@@ -172,7 +172,8 @@ namespace Speech2TextApp.Service
                 Address2 = "新平路165號",
                 Address3 = "",
                 Status = "Y",
-                VisitDetails = new List<ApplyDetail>()
+                VisitDetails = new List<ApplyDetail>(),
+                SendDate = new DateTime(2018, 7, 10, 18, 23, 33)
             };
             ApplyDetail resultDetal31 = new ApplyDetail()
             {

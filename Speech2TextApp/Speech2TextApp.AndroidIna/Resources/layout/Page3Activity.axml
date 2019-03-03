@@ -80,6 +80,7 @@
         app:layout_anchor="@id/members"
         app:layout_anchorGravity="top|right|end"
 		android:src="@drawable/baseline_add_black_18"
+		android:background="#FFFFFF"
         android:layout_margin="16dp" />
 	<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

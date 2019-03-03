@@ -10,6 +10,9 @@ using Android.Support.Design.Widget;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 第三頁:家戶人口資料
+    /// </summary>
     [Activity(Label = "Page3Activity")]
     public class Page3Activity : BaseActivity
     {
@@ -52,6 +55,9 @@ namespace Speech2TextApp.AndroidIna
             next.Click += NextButtonEvent;
         }
 
+        /// <summary>
+        /// 帶入家戶人口
+        /// </summary>
         private void InitMembers() {
             recycleView.RemoveAllViews();
             recycleView.HasFixedSize = true;
@@ -61,11 +67,21 @@ namespace Speech2TextApp.AndroidIna
             recycleView.SetAdapter(adapter);
         }
 
+        /// <summary>
+        /// 新增家戶人口資料
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void AddMemberEvent(object sender, EventArgs e)
         {
             StartActivity(typeof(Page3AddMemberActivity));
         }
 
+        /// <summary>
+        /// 下一頁
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NextButtonEvent(object sender, EventArgs e)
         {
             if (DataService.dataCurrent.IsLast)

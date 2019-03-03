@@ -7,6 +7,9 @@ using Android.Graphics;
 
 namespace Speech2TextApp.AndroidIna
 {
+    /// <summary>
+    /// 第四頁:備註資料
+    /// </summary>
     [Activity(Label = "Page4Activity")]
     public class Page4Activity : BaseActivity
     {
@@ -43,6 +46,10 @@ namespace Speech2TextApp.AndroidIna
 
         }
 
+        /// <summary>
+        /// 初始化是否同住
+        /// </summary>
+        /// <param name="rb"></param>
         private void InitLiveTogethe(RadioButton rb) {
             if (rb.Text == DataService.dataCurrent.VisitDetail.OtherPeople) {
                 rb.Checked = true;
@@ -53,6 +60,9 @@ namespace Speech2TextApp.AndroidIna
             };
         }
 
+        /// <summary>
+        /// 初始化其他備註
+        /// </summary>
         private void InitOtherDesc() {
             if (string.IsNullOrEmpty(DataService.dataCurrent.VisitDetail.OtherDesc)) {
                 DataService.dataCurrent.VisitDetail.OtherDesc = string.Join(@"。", DataService.dataCurrent.Message);
@@ -60,6 +70,11 @@ namespace Speech2TextApp.AndroidIna
             otherDesc.Text = DataService.dataCurrent.VisitDetail.OtherDesc;
         }
 
+        /// <summary>
+        /// 下一頁
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void NextButtonEvent(object sender, EventArgs e)
         {
             DataService.dataCurrent.VisitDetail.OtherDesc = otherDesc.Text;

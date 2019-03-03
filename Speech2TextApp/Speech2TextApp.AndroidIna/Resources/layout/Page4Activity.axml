@@ -81,7 +81,7 @@
 				  android:minLines="5"
 				  android:scrollbars="vertical"
 				  android:gravity="top"
-				  android:drawableEnd="@drawable/baseline_mic_black_24"
+				  android:drawableEnd="@drawable/baseline_mic_black_18"
 				  android:textColorHint="@color/form_color_blue"
 				  android:hint="其他家戶概述"  />
 				</android.support.design.widget.TextInputLayout>
