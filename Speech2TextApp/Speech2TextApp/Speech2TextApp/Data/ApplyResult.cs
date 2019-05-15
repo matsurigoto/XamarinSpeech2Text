@@ -6,6 +6,9 @@ namespace Speech2TextApp.Data
 {
     public class ApplyResult
     {
+        /// <summary>
+        /// 案件編號
+        /// </summary>
         public string Id { get; set; }
 
         /// <summary>
@@ -62,6 +65,23 @@ namespace Speech2TextApp.Data
         /// 訪問歷程
         /// </summary>
         public List<ApplyDetail> VisitDetails { get; set; }
+
+        /// <summary>
+        /// 訪視次數
+        /// </summary>
+        public int VisitCount { get; set; }
+
+        public bool IsLast { get; set; }
+
+        /// <summary>
+        /// 錄音內容
+        /// </summary>
+        public List<string> Message { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime? SendDate { get; set; }
     }
 
    

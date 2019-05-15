@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:background="@android:color/white"
+	android:orientation="vertical">
+	
+	
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="65px"
+		android:layout_marginLeft="85px"
+		android:layout_marginRight="85px"
+		android:layout_marginTop="29px"
+		android:orientation="horizontal"
+		android:id="@+id/circle_view01">
+		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle1"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="1"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle3"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="2"/>
+
+		
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="10px"
+			android:id="@+id/circle3"
+			android:background="@drawable/circle_activity"
+			android:textColor="#FFFFFF"
+			android:gravity="center"
+			android:text="3"/>
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle4"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="4"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle5"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="5"/>
+	</LinearLayout>
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+	
+			
+			<LinearLayout 
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="47px"
+			android:layout_marginRight="85px"
+			android:orientation="vertical">
+				<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="新增人口基本資料"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"/>
+			
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="稱謂"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"/>
+			  <EditText
+				android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
+				android:id="@+id/title" />
+			</LinearLayout>
+				<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="姓名"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"/>
+			  <EditText
+				
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
+				android:id="@+id/name" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+			<TextView
+				android:text="是否同住"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"/>
+		
+			<RadioGroup
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_centerHorizontal="true"
+				android:id="@+id/liveTogether">
+				<RadioButton
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="是"
+						android:textColor="@color/form_color_blue"
+					android:id="@+id/liveTogetherY" />
+				<RadioButton
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="否"
+						android:textColor="@color/form_color_blue"
+					android:id="@+id/liveTogetherN" />
+			
+			</RadioGroup>
+			</LinearLayout>
+	
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="13px"
+			android:orientation="vertical">
+			<TextView
+			android:text="身心健康狀況"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:textSize="14sp"
+			android:textColor="@color/form_color_blue"
+			/>
+			<RadioGroup
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:id="@+id/healthStatus">
+				<RadioButton
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="無明顯異常"
+						android:textColor="@color/form_color_blue"
+					android:id="@+id/healthStatusN" />
+				<RadioButton
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="長期患病"
+						android:textColor="@color/form_color_blue"
+					android:id="@+id/healthStatusSick" />
+				<RadioButton
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="身心障礙(肢障)"
+						android:textColor="@color/form_color_blue"
+					android:id="@+id/healthStatusSick2" />
+				<RadioButton
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="身心障礙(中度)"
+						android:textColor="@color/form_color_blue"
+					android:id="@+id/healthStatusSick3" />
+				
+			</RadioGroup>
+		</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+				<TextView
+				android:text="就業狀況"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"
+				/>
+				<RadioGroup
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/workStatus">
+						<RadioButton
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:checked="true"
+							android:text="固定工作"
+						android:textColor="@color/form_color_blue"
+							android:id="@+id/workStatusFix" />
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="臨時工作"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/workStatusTemp" />
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="攤販"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/workStatusStree" />
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="無工作"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/workStatusNo" />
+					
+				</RadioGroup>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+				<TextView
+				android:text="轉介就業服務"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"
+				/>
+				<RadioGroup
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/referrals">
+						
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="同意"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/referralsY" />
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="不同意"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/referralsN" />
+					
+				</RadioGroup>
+			</LinearLayout>
+				<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="13px"
+				android:orientation="vertical">
+				<TextView
+				android:text="是否安置於療養院所"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:textSize="14sp"
+				android:textColor="@color/form_color_blue"
+				/>
+				<RadioGroup
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:id="@+id/isInNursingHome">
+						
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="是"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/isInNursingHomeY" />
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="否"
+						android:textColor="@color/form_color_blue"
+						android:id="@+id/isInNursingHomeN" />
+					
+				</RadioGroup>
+			</LinearLayout>
+				
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginBottom="13px"
+				android:orientation="horizontal">
+				<Button
+					android:text="取消"
+					android:layout_weight="1"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:id="@+id/btn_page_3_cancel"/>
+				<Button
+					android:text="確定"
+					android:layout_weight="1"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:id="@+id/btn_page_3_add"/>
+			</LinearLayout>
+		</LinearLayout>
+	
+	</ScrollView>
+</LinearLayout>

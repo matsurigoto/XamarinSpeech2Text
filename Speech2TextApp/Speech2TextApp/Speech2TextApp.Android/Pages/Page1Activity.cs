@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Speech;
@@ -7,149 +8,214 @@ using Android.Views;
 using Android.Widget;
 using Java.Util;
 using System;
+using System.Collections.Generic;
+
 namespace Speech2TextApp.Droid.Pages
 {
     [Activity(Label = "Page1Activity")]
-    public class Page1Activity :  Activity
+    public class Page1Activity : BaseActivity
     {
+        TextView times;
+        TextView applyName;
+        EditText visitName;
+        EditText relatoinship;
+        TextView phone;
         LinearLayout addressLayout;
+        public string AddressType { get; set; }
         Button address1;
         Button address2;
         Button address3;
+        Button next;
+        //Button record;
         EditText visitDate;
-        
-        RadioButton radioButton1;
-        RadioButton radioButton2;
+        EditText _description;
+        RadioButton radoiAtHomeY;
+        RadioButton radoiAtHomeN;
         LinearLayout descLayout;
-
-        private  EditText _description;
         private readonly int VOICE = 10;
+        EditText address;
+
+       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Page1Activity);
-            var times = FindViewById<TextView>(Resource.Id.times);
-            var applyName = FindViewById<TextView>(Resource.Id.apply_name);
-            var visitName = FindViewById<TextView>(Resource.Id.visit_name);
-            var relationship = FindViewById<TextView>(Resource.Id.relatoinship);
-            var phone = FindViewById<TextView>(Resource.Id.phone);
+            this.Title = "訪視紀錄";
+            ActionBar.SetDisplayHomeAsUpEnabled(true);
+            
+            times = FindViewById<TextView>(Resource.Id.times);
+            applyName = FindViewById<TextView>(Resource.Id.apply_name);
+            visitName = FindViewById<EditText>(Resource.Id.visit_name);
+            relatoinship = FindViewById<EditText>(Resource.Id.relatoinship);
+            phone = FindViewById<TextView>(Resource.Id.phone);
 
             times.Text = MainActivity.dataCurrent.VisitDetails.Count.ToString();
             applyName.Text = MainActivity.dataCurrent.ApplyName;
             visitName.Text = MainActivity.dataCurrent.VisitName;
-            relationship.Text = MainActivity.dataCurrent.Relatoinship;
+            relatoinship.Text = MainActivity.dataCurrent.Relatoinship;
             phone.Text = MainActivity.dataCurrent.Phone;
+            AddressType = MainActivity.dataCurrent.AddressType;
 
-            #region address
             addressLayout = (LinearLayout)FindViewById(Resource.Id.showAddress);
             address1 = FindViewById<Button>(Resource.Id.address1);
             address2 = FindViewById<Button>(Resource.Id.address2);
             address3 = FindViewById<Button>(Resource.Id.address3);
-            address1.Click += delegate {
+
+            
+
+            address1.Click += delegate
+            {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
+                address1.SetTextColor(TextColor);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
+                address2.SetTextColor(TextColor);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
+                address3.SetTextColor(TextColor);
 
                 address1.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-
+                address1.SetTextColor(Color.White);
                 addressLayout.RemoveAllViews();
-                var address = new TextView(this)
-                {
-                    Text = MainActivity.dataCurrent.Address1
-                };
+                TextView address = new TextView(this);
+                address.Text = MainActivity.dataCurrent.Address1;
+                AddressType = "戶籍地址";
                 addressLayout.AddView(address);
             };
 
-            address2.Click += delegate {
+            address2.Click += delegate
+            {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
+                address1.SetTextColor(TextColor);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
+                address2.SetTextColor(TextColor);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
+                address3.SetTextColor(TextColor);
 
                 address2.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-
+                address2.SetTextColor(Color.White);
                 addressLayout.RemoveAllViews();
                 TextView address = new TextView(this);
                 address.Text = MainActivity.dataCurrent.Address2;
+                AddressType = "居住地址";
                 addressLayout.AddView(address);
             };
 
-            address3.Click += delegate {
+            address3.Click += delegate
+            {
                 address1.SetBackgroundResource(Resource.Drawable.blue_button);
+                address1.SetTextColor(TextColor);
                 address2.SetBackgroundResource(Resource.Drawable.blue_button);
+                address2.SetTextColor(TextColor);
                 address3.SetBackgroundResource(Resource.Drawable.blue_button);
+                address3.SetTextColor(TextColor);
 
                 address3.SetBackgroundResource(Resource.Drawable.blue_button_activity);
-
+                address3.SetTextColor(Color.White);
 
                 addressLayout.RemoveAllViews();
-                EditText addressArea = new EditText(this);
-                addressArea.Hint = "區";
-                addressLayout.AddView(addressArea);
-                //TextView address = new TextView(this);
-                //address.Text = "\\";
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "里";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "鄰";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "路";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "段";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "巷";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "弄";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "號";
-                addressLayout.AddView(addressArea);
-                //addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressArea.Hint = "樓";
-                addressLayout.AddView(addressArea);
-                TextView address = new TextView(this);
-                address.Text = "之";
+                //EditText addressArea = new EditText(this);
+                //addressArea.Hint = "區";
+                //addressLayout.AddView(addressArea);
+
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "里";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "鄰";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "路";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "段";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                //addressArea = new EditText(this);
+                //addressArea.Hint = "巷";
+                //addressLayout.AddView(addressArea);
+                ////addressLayout.AddView(address);
+                if (address == null)
+                {
+                    address = new EditText(this);
+                }
                 addressLayout.AddView(address);
-                addressArea = new EditText(this);
-                addressLayout.AddView(addressArea);
+
             };
 
-            #endregion
-
+            if (AddressType == "戶籍地址")
+            {
+                address1.PerformClick();
+            }
+            else if (AddressType == "居住地址")
+            {
+                address2.PerformClick();
+            }
+            else if (AddressType == "其他")
+            {
+                address = new EditText(this);
+                address.Text = MainActivity.dataCurrent.Address3;
+                address3.PerformClick();
+            }
             #region visit date
             Calendar myCalendar = Calendar.Instance;
             visitDate = FindViewById<EditText>(Resource.Id.visitDate);
+            if (MainActivity.dataCurrent.VisitDetail.VisitDate == null) {
+                MainActivity.dataCurrent.VisitDetail.VisitDate = new DateTime();
+            }
+            visitDate.Text = MainActivity.dataCurrent.VisitDetail.VisitDate.GetValueOrDefault().ToString("yyyy/MM/dd HH:mm");
+            visitDate.Click += delegate {
+                
+                View dialogView = View.Inflate(this, Resource.Layout.date_time_picker, null);
+                AlertDialog alertDialog = new AlertDialog.Builder(this).Create();
 
+                var buttonSubmit = dialogView.FindViewById<Button>(Resource.Id.date_time_set);
+                buttonSubmit.Click += delegate {
+                    DatePicker datePicker = (DatePicker)dialogView.FindViewById(Resource.Id.date_picker);
+                    TimePicker timePicker = (TimePicker)dialogView.FindViewById(Resource.Id.time_picker);
+
+                    Calendar calendar = new GregorianCalendar(datePicker.Year,
+                                       datePicker.Month,
+                                       datePicker.DayOfMonth,
+                                       timePicker.Hour,
+                                       timePicker.Minute);
+
+                    visitDate.Text = $"{datePicker.Year}/{datePicker.Month}/{datePicker.DayOfMonth} {timePicker.Hour}:{timePicker.Minute}";
+                    alertDialog.Dismiss();
+                };
+                alertDialog.SetView(dialogView);
+                alertDialog.Show();
+         };
             #endregion
 
             #region RadioButton
-            radioButton1 = FindViewById<RadioButton>(Resource.Id.radioButton1);
-            radioButton2 = FindViewById<RadioButton>(Resource.Id.radioButton2);
+            radoiAtHomeY = FindViewById<RadioButton>(Resource.Id.radoiAtHomeY);
+            radoiAtHomeN = FindViewById<RadioButton>(Resource.Id.radoiAtHomeN);
             descLayout = FindViewById<LinearLayout>(Resource.Id.areaDesc);
-            radioButton1.Click += VisitStatusClick;
-            radioButton2.Click += VisitStatusClick;
+            radoiAtHomeY.Click += VisitStatusClick;
+            radoiAtHomeN.Click += VisitStatusClick;
+            if (MainActivity.dataCurrent.VisitDetail.Status == "N")
+            {
+                radoiAtHomeN.Checked = true;
+                radoiAtHomeN.PerformClick();
+            }
+            else
+            {
+                radoiAtHomeY.Checked = true;
+                radoiAtHomeY.PerformClick();
+            }
+          
             #endregion
 
 
             var next = FindViewById<Button>(Resource.Id.btn_page_1_next);
             next.Click += NextButtonEvent;
 
-            var record = FindViewById<Button>(Resource.Id.btn_record);
+            //var record = FindViewById<Button>(Resource.Id.btn_record);
             _description = FindViewById<EditText>(Resource.Id.edittext_desc);
-            record.Click += RecordEvent;
+            //record.Click += RecordEvent;
         }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultVal, Intent data)
@@ -175,10 +241,10 @@ namespace Speech2TextApp.Droid.Pages
             var rb = (RadioButton)sender;
             switch (rb.Id)
             {
-                case Resource.Id.radioButton1:
+                case Resource.Id.radoiAtHomeY:
                     descLayout.Visibility = ViewStates.Invisible;
                     break;
-                case Resource.Id.radioButton2:
+                case Resource.Id.radoiAtHomeN:
                     descLayout.Visibility = ViewStates.Visible;
                     break;
                 default:
@@ -204,7 +270,31 @@ namespace Speech2TextApp.Droid.Pages
 
         public void NextButtonEvent(object sender, EventArgs e)
         {
-            StartActivity(typeof(Page2Activity));
+            MainActivity.dataCurrent.AddressType = AddressType;
+            if (AddressType == "其它")
+            {
+                //MainActivity.dataCurrent.Address3 = 
+            }
+            //MainActivity.dataCurrent.VisitDetail.VisitDate = visitDate.Text;
+            if (address != null) { 
+            MainActivity.dataCurrent.Address3 = address.Text;
+            }
+            MainActivity.dataCurrent.VisitDetail.VisitDesc = _description.Text;
+
+            MainActivity.dataCurrent.VisitDetail.LiveCityStatus = "是";
+            MainActivity.dataCurrent.VisitDetail.LiveStatus = "自有";
+            MainActivity.dataCurrent.VisitDetail.ApplyType = new List<string>() { "低收入戶", "中低收入戶" };
+            MainActivity.dataCurrent.VisitDetail.ApplyReason = "負擔家計者失業";
+
+            if (MainActivity.dataCurrent.IsLast)
+            {
+                StartActivity(typeof(Page5Activity));
+            }
+            else
+            {
+                StartActivity(typeof(Page2Activity));
+            }
         }
     }
+    
 }

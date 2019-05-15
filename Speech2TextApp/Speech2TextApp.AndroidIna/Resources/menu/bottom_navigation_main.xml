@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <!--Update strings and icons-->
+  <item android:id="@+id/action_edit"
+	      android:title="Edit"
+	      android:icon="@mipmap/ic_launcher"
+	      app:showAsAction="ifRoom"/>
+
+  <item android:id="@+id/action_save"
+         android:title="Save"
+         android:icon="@mipmap/ic_launcher"
+         app:showAsAction="ifRoom"/>
+
+</menu>

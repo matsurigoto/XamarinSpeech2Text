@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout  
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@android:color/white">
+	<LinearLayout 
+		android:id="@+id/main"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<include android:id="@+id/step" layout="@layout/step" />
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout 
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="47px"
+				android:layout_marginRight="85px"
+				android:orientation="vertical">
+					<TextView
+					android:text="家戶其他狀況概述"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
+					/>
+	
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dp"
+					android:orientation="vertical">
+					<TextView
+					android:text="有無人口之外其他共同居住之人口"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:theme="@style/RadioTitle"
+					/>
+				<RadioGroup
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:theme="@style/RadioEdit"
+						android:id="@+id/liveTogether">
+							<RadioButton
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:checked="true"
+								android:text="有"
+							android:textColor="@color/form_color_blue"
+								android:id="@+id/liveTogetherY" />
+						<RadioButton
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="無"
+							android:textColor="@color/form_color_blue"
+							android:id="@+id/liveTogetherN" />
+				
+					</RadioGroup>
+				</LinearLayout>
+
+					<android.support.design.widget.TextInputLayout
+				android:id="@+id/areaDesc"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:theme="@style/TextInputHint"
+				
+				app:errorEnabled="true"
+				>
+			  <EditText
+				  android:id="@+id/otherDesc"
+				  android:inputType="textMultiLine"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:minLines="5"
+				  android:scrollbars="vertical"
+				  android:gravity="top"
+				  android:drawableEnd="@drawable/baseline_mic_black_18"
+				  android:textColorHint="@color/form_color_blue"
+				  android:hint="其他家戶概述"  />
+				</android.support.design.widget.TextInputLayout>
+			</LinearLayout>
+		</ScrollView>
+		
+	</LinearLayout>
+	<Button
+						android:text="下一步"
+						android:layout_gravity="bottom"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:background="@drawable/blue_button_activity"
+						android:id="@+id/btn_page_4_next"/>
+	<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:layout_anchor="@id/main"
+        app:layout_anchorGravity="bottom|right|end"
+		android:src="@drawable/baseline_mic_black_18"
+        android:layout_margin="16dp" />
+</android.support.design.widget.CoordinatorLayout>

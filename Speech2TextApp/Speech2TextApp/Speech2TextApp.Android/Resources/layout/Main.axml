@@ -5,6 +5,11 @@
     android:layout_height="match_parent"
 	android:background="@color/colorWhite"
     android:weightSum="3">
+	<Toolbar
+		android:id="@+id/toolbar"
+		android:layout_height="?attr/actionBarSize"
+		android:layout_width="match_parent"
+		android:minHeight="?android:attr/actionBarSize" />
     <LinearLayout
         android:orientation="vertical"
         android:minWidth="100px"
@@ -40,34 +45,25 @@
 				android:layout_marginRight="0px"
 				android:id="@+id/visit_status_Y" />				
 		</LinearLayout>
-        <TextView
+		<TextView
 			android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/form_color_blue" 
 			android:id="@+id/data_count"/>
+		
     </LinearLayout>
-	
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-		android:background="@drawable/main_border"
         android:id="@+id/data_layout"
-		android:layout_marginTop="15px"
 		android:layout_marginLeft="110px"
-		android:layout_marginRight="100px"
-        android:layout_weight="1"
-		android:weightSum="3">
+		android:layout_marginRight="100px">
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mainLinearLayout3"
-        android:layout_weight="1" />
+	</ScrollView>
 </LinearLayout>

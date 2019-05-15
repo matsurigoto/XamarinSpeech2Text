@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:background="@android:color/white">
+	<LinearLayout     
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+	android:id="@+id/main"
+    android:layout_height="wrap_content">
+	<include android:id="@+id/step" layout="@layout/step" />
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="47px"
+			android:layout_marginRight="85px"
+			android:orientation="vertical">
+			<android.support.design.widget.TextInputLayout
+				android:id="@+id/til_apply_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:focusable="false"
+				android:focusableInTouchMode="false"
+				android:theme="@style/TextInputHint"
+				app:errorEnabled="true"
+				>
+			  <EditText
+				  android:id="@+id/apply_name"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:focusable="false"
+				  android:focusableInTouchMode="false"
+				  android:textColorHint="@color/form_color_blue"
+				  android:hint="申請人"  />
+		</android.support.design.widget.TextInputLayout>
+			
+			<android.support.design.widget.TextInputLayout
+				android:id="@+id/til_visit_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:theme="@style/TextInputHint"
+				app:errorEnabled="true"
+				>
+				<EditText
+					android:id="@+id/visit_name"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColorHint="@color/form_color_blue"
+					android:hint="受訪者" />
+			</android.support.design.widget.TextInputLayout>
+			<android.support.design.widget.TextInputLayout
+				android:id="@+id/til_relatoinship"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:theme="@style/TextInputHint"
+				app:errorEnabled="true"
+				>
+				<EditText
+					android:id="@+id/relatoinship"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColorHint="@color/form_color_blue"
+					android:hint="申請者與受訪者關係" />
+			</android.support.design.widget.TextInputLayout>
+			<android.support.design.widget.TextInputLayout
+			android:id="@+id/til_phone"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:theme="@style/TextInputHint"
+			app:errorEnabled="true"
+			>
+			<EditText
+				android:id="@+id/phone"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textColorHint="@color/form_color_blue"
+				android:drawableStart="@drawable/baseline_call_24"
+				android:hint="聯絡電話" />
+		</android.support.design.widget.TextInputLayout>
+
+			<TextView
+				android:text="訪視地點"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:theme="@style/RadioTitle"
+				android:textColor="@color/form_color_blue" />
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal">
+				<Button
+					android:text="戶籍地址"
+					android:layout_width="100dp"
+					android:layout_height="wrap_content"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:id="@+id/address1" />
+				<Button
+					android:text="居住地址"
+					android:layout_width="100dp"
+					android:layout_height="wrap_content"
+					android:background="@drawable/blue_button"
+					android:layout_marginLeft="0px"
+					android:layout_marginRight="0px"
+					android:id="@+id/address2" />
+				<Button
+					android:text="其它"
+					android:layout_width="100dp"
+					android:layout_height="wrap_content"
+					android:background="@drawable/blue_button"
+					android:id="@+id/address3" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal"
+				android:id="@+id/showAddress">
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal">
+				<TextView
+					android:text="受訪者是否在家"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:theme="@style/RadioTitle"
+					android:textColor="@color/form_color_blue"
+					/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:orientation="horizontal">
+				<RadioGroup
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:id="@+id/radioGroup1">
+					<RadioButton
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:checked="true"
+						android:text="是"
+						android:theme="@style/RadioEdit"
+								android:textColor="@color/form_color_blue"
+						android:id="@+id/radoiAtHomeY" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="否"
+								android:textColor="@color/form_color_blue"
+						android:theme="@style/RadioEdit"
+						android:id="@+id/radoiAtHomeN" />
+				</RadioGroup>
+			</LinearLayout>
+
+			<android.support.design.widget.TextInputLayout
+				android:id="@+id/til_visitDate"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				
+				android:theme="@style/TextInputHint"
+				app:errorEnabled="true">
+			  <EditText
+				  android:id="@+id/visitDate"
+				  android:inputType="textMultiLine"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				android:drawableEnd="@drawable/baseline_event_note_black_24"
+				  android:textColorHint="@color/form_color_blue"
+				  android:hint="訪視時間"  />
+		</android.support.design.widget.TextInputLayout>
+
+			<android.support.design.widget.TextInputLayout
+				android:id="@+id/areaDesc"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:theme="@style/TextInputHint"
+				
+				app:errorEnabled="true"
+				>
+			  <EditText
+				  android:id="@+id/edittext_desc"
+				  android:inputType="textMultiLine"
+				  android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:minLines="5"
+				  android:scrollbars="vertical"
+				  android:gravity="top"
+				  android:drawableEnd="@drawable/baseline_mic_black_24"
+				  android:textColorHint="@color/form_color_blue"
+				  android:hint="未訪原因"  />
+		</android.support.design.widget.TextInputLayout>
+			
+		</LinearLayout>
+		
+			<Button
+					android:text="下一步"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:layout_gravity="center"
+					android:id="@+id/btn_page_1_next"/>
+		</LinearLayout>
+	</ScrollView>
+	</LinearLayout>
+	<android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        app:layout_anchor="@id/main"
+        app:layout_anchorGravity="bottom|right|end"
+		android:src="@drawable/baseline_mic_black_18"
+        android:layout_margin="16dp" />
+</android.support.design.widget.CoordinatorLayout>

@@ -1,21 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	android:background="@android:color/white">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:background="@android:color/white"
+	android:orientation="vertical">
+	<LinearLayout
+	android:id="@+id/content"
+	android:layout_width="fill_parent"
+	android:layout_height="0dp" 
+	android:layout_weight="1" 
+	android:orientation="vertical">
+ 	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="65px"
+		android:layout_marginLeft="85px"
+		android:layout_marginRight="85px"
+		android:layout_marginTop="29px"
+		android:orientation="horizontal"
+		android:id="@+id/circle_view01">
+		
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle1"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="1"/>
 
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle3"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="2"/>
+
+		
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="10px"
+			android:id="@+id/circle3"
+			android:background="@drawable/circle_activity"
+			android:textColor="#FFFFFF"
+			android:gravity="center"
+			android:text="3"/>
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle4"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="4"/>
+
+		<View
+			android:layout_width="50dp"
+			android:layout_height="2dp"
+			android:layout_gravity="center_vertical"
+			android:background="#4A90E2"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/circle5"
+			android:background="@drawable/circle"
+			android:textColor="@color/form_color_blue"
+			android:gravity="center"
+			android:text="5"/>
+	</LinearLayout>
 	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		 android:layout_height="wrap_content">
 		<LinearLayout 
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="47px"
 			android:layout_marginRight="85px"
-			android:layout_marginTop="100px"
 			android:orientation="vertical">
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="21px"
 				android:orientation="vertical">
@@ -30,10 +115,11 @@
 			</LinearLayout>
 	
 			<LinearLayout
-				android:layout_width="wrap_content"
+				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginBottom="13px"
-				android:orientation="vertical">
+				android:orientation="horizontal">
+				
 				<TextView
 					android:text="共 1 筆  列表人口"
 					android:textAppearance="?android:attr/textAppearanceMedium"
@@ -42,32 +128,43 @@
 					android:minWidth="25px"
 					android:minHeight="25px"
 					android:textSize="14sp"
+					android:id="@+id/member_count"
 					android:textColor="@color/form_color_blue"/>
-				<View
-					android:layout_width="48px"
-					android:layout_height="48px"
-					android:background="#FF4A90E2"/>
-			</LinearLayout>
-
-			<LinearLayout
+				<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
-				android:orientation="vertical">
+				android:id="@+id/addMember"
+				android:background="@drawable/circle_activity_24"
+				android:textColor="#FFFFFF"
+				android:gravity="center"
+				android:layout_gravity="right"
+				android:text="+"/>
 			</LinearLayout>
 
 			<LinearLayout
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:layout_marginBottom="13px"
-				android:orientation="horizontal">
-				<Button
-					android:text="下一步"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:id="@+id/btn_page_3_next"/>
+				android:layout_height="wrap_content"
+				android:id="@+id/members"
+				android:orientation="vertical">
 			</LinearLayout>
+
+			
 	
 		</LinearLayout>
 	</ScrollView>
-</RelativeLayout>
+</LinearLayout>
+	<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="bottom"
+	android:orientation="vertical">
+	<Button
+		android:text="下一步"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom"
+		android:textColor="@android:color/white"
+		android:background="@drawable/blue_button_activity"
+		android:id="@+id/btn_page_3_next"/>
+		</LinearLayout>
+</LinearLayout>

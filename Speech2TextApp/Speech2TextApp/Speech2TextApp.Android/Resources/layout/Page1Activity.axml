@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	android:background="@android:color/white">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:background="@android:color/white"
+	android:orientation="vertical">
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="65px"
@@ -10,6 +11,7 @@
 		android:layout_marginRight="85px"
 		android:layout_marginTop="29px"
 		android:orientation="horizontal"
+		android:background="#FFFFFF"
 		android:id="@+id/circle_view01">
 		<TextView
 			android:layout_width="wrap_content"
@@ -81,20 +83,21 @@
 			android:gravity="center"
 			android:text="5"/>
 	</LinearLayout>
+
 	<ScrollView
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
+		android:layout_height="wrap_content">
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="47px"
 			android:layout_marginRight="85px"
-			android:layout_marginTop="100px"
+				
 			android:orientation="vertical">
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="訪視次數"
@@ -109,26 +112,29 @@
 				<TextView
 					android:text="3"
 					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="@color/form_color_blue"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:minWidth="25px"
 					android:minHeight="25px"
-					android:id="@+id/times"
-					android:textColor="@color/form_color_blue"
-					/>
+					android:id="@+id/times"/>
+				<ImageView
+						android:src="@drawable/baseline_assignment_24"
+						android:tint="@color/form_color_blue"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content" />
 				<TextView
 					android:text="紀錄檢視"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textSize="14sp"
-					android:textColor="@color/form_color_blue"
-					/>
+					android:textColor="@color/form_color_blue" />
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="申請人"
@@ -155,7 +161,7 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="受訪者"
@@ -168,7 +174,7 @@
 					android:textSize="14sp"
 					android:textColor="@color/form_color_blue"
 					/>
-				<TextView
+				<EditText
 					android:text="陳阿嬌"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
@@ -182,7 +188,7 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="申請者與受訪者關係"
@@ -195,7 +201,7 @@
 					android:textSize="14sp"
 					android:textColor="@color/form_color_blue"
 					/>
-				<TextView
+				<EditText
 					android:text="母女"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
@@ -209,8 +215,13 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
+				<ImageView
+						android:src="@drawable/baseline_call_24"
+						android:tint="@color/form_color_blue"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content" />
 				<TextView
 					android:text="聯絡電話 "
 					android:textAppearance="?android:attr/textAppearanceMedium"
@@ -226,7 +237,7 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="0923877900"
@@ -242,7 +253,7 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="訪視地點"
@@ -259,13 +270,14 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<Button
 					android:text="戶籍地址"
 					android:layout_width="100sp"
 					android:layout_height="wrap_content"
-				    android:background="@drawable/blue_button_activity"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
 					android:id="@+id/address1" />
 				<Button
 					android:text="居住地址"
@@ -279,21 +291,20 @@
 					android:text="其它"
 					android:layout_width="100sp"
 					android:layout_height="wrap_content"
-				
 					android:background="@drawable/blue_button"
 					android:id="@+id/address3" />
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal"
 				android:id="@+id/showAddress">
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="受訪者是否在家"
@@ -310,7 +321,7 @@
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<RadioGroup
 					android:layout_width="wrap_content"
@@ -322,18 +333,18 @@
 						android:layout_height="wrap_content"
 						android:checked="true"
 						android:text="是"
-						android:id="@+id/radioButton1" />
+						android:id="@+id/radoiAtHomeY" />
 					<RadioButton
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:text="否"
-						android:id="@+id/radioButton2" />
+						android:id="@+id/radoiAtHomeN" />
 				</RadioGroup>
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<TextView
 					android:text="訪視時間"
@@ -344,63 +355,71 @@
 					android:minWidth="25px"
 					android:minHeight="25px"
 					android:textSize="14sp"
-					android:textColor="@color/form_color_blue"
-					/>
+					android:textColor="@color/form_color_blue"/>
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<EditText
-					android:layout_width="wrap_content"
-					android:layout_height="match_parent"
-					android:clickable="true"
-					android:editable="false"
-					android:id="@+id/visitDate" />
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:textColor="@color/form_color_blue"
+					android:id="@+id/visitDate" />	
 				
+
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 			    android:id="@+id/areaDesc"
-			    android:visibility="invisible"
+			    android:visibility="visible"
 				android:orientation="vertical">
 				<TextView
-					android:text="訪視概述"
+					android:text="未訪原因"
 					android:textAppearance="?android:attr/textAppearanceMedium"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginRight="20px"
 					android:textSize="14sp"
-					android:textColor="@color/form_color_blue"
-					/>
-				<EditText
-					android:inputType="textMultiLine"
-				    android:minLines="4" 
-					android:layout_width="wrap_content"
+					android:textColor="@color/form_color_blue"/>
+				<LinearLayout
+					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
-					android:id="@+id/edittext_desc" />
-			    <Button
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="record"
-				    android:id="@+id/btn_record">
-				</Button>
+					android:orientation="vertical"
+					>
+					<EditText
+						android:inputType="textMultiLine"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:minLines="5"
+						android:scrollbars="vertical"
+						android:gravity="top"
+						android:background="@drawable/main_border"
+						android:id="@+id/edittext_desc" />
+					
+				</LinearLayout>
 			</LinearLayout>
 			
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:layout_marginBottom="13px"
+				android:layout_marginBottom="30px"
 				android:orientation="horizontal">
 				<Button
 					android:text="下一步"
 					android:layout_width="match_parent"
-					android:layout_height="match_parent"
+					android:layout_height="wrap_content"
+					android:textColor="@android:color/white"
+					android:background="@drawable/blue_button_activity"
+					android:layout_gravity="center"
 					android:id="@+id/btn_page_1_next"/>
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>
-</RelativeLayout>
+</LinearLayout>
